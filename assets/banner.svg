@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+  <title id="title">Awesome Anti-Bot Reverse Engineering</title>
+  <desc id="desc">Public research on challenge VMs, browser instrumentation and fingerprints.</desc>
+  <rect width="1200" height="260" rx="20" fill="#0b1220"/>
+  <g fill="none" stroke="#25334a" stroke-width="1"><path d="M0 65H1200M0 130H1200M0 195H1200M200 0V260M400 0V260M600 0V260M800 0V260M1000 0V260"/></g>
+  <rect x="48" y="40" width="5" height="180" rx="2" fill="#5eead4"/>
+  <text x="78" y="75" font-family="monospace" font-size="15" letter-spacing="3" fill="#5eead4">READ THE CODE. UNDERSTAND THE SIGNAL.</text>
+  <text x="76" y="132" font-family="Segoe UI,Arial,sans-serif" font-size="44" font-weight="700" fill="#f1f5f9">Awesome Anti-Bot</text>
+  <text x="78" y="177" font-family="Segoe UI,Arial,sans-serif" font-size="32" fill="#cbd5e1">Reverse Engineering</text>
+  <text x="78" y="215" font-family="monospace" font-size="15" fill="#94a3b8">CHALLENGE VMs / INSTRUMENTATION / FINGERPRINTS</text>
+  <g fill="none" stroke="#5eead4" stroke-width="3"><path d="M970 76l-40 54 40 54M1050 76l40 54-40 54M1025 66l-30 128"/></g>
+</svg>

@@ -1,8 +1,21 @@
+![Awesome Anti-Bot Reverse Engineering](assets/banner.svg)
+
 # Awesome Anti-Bot Reverse Engineering
 
 A curated list of public research, tools, and writeups on reversing browser anti-bot systems: challenge VMs, sensor payloads, TLS and HTTP fingerprinting, and the detection techniques behind them.
 
-Scope: reverse engineering and security research only. No paid solving services, no bypass-as-a-service, no account-market links. Projects move fast in this niche, so every entry notes its last known activity date. Dead projects are removed rather than kept for length.
+Scope: reverse engineering and security research only. No paid solving services, no bypass-as-a-service, no account-market links. Projects move fast in this niche, so every entry notes its last known activity date. Historical tools may remain when their methods are useful, with limitations noted. See the [curation guide](CURATION.md) for selection criteria.
+
+> **Public research · Evidence over hype · Quality over quantity**
+
+## Start here
+
+| Explore | Start with |
+| --- | --- |
+| Understand challenge logic | [Protocol research](#challenge-protocol-research) and [VM devirtualization](#vm-devirtualization-and-deobfuscation) |
+| Observe browser internals | [Engine instrumentation](#engine-level-instrumentation) |
+| Study identifying signals | [TLS and HTTP](#tls-and-http-fingerprinting) and [Detection side](#detection-side) |
+| Read deeper analysis | [Writeups and talks](#writeups-and-talks) and [Datasets](#datasets) |
 
 ## Contents
 
@@ -32,9 +45,10 @@ Teardowns and reimplementations of specific vendors' client-side protections.
 - [juanfrilla/FamousRussianMarketplace](https://github.com/juanfrilla/FamousRussianMarketplace) - Writeup plus pipeline for a register-based JSVMP: PC-anchored tracing, function substitution at known PCs, recovered AES with challenge-derived round counts. 2026-09.
 - [juanfrilla/trip_vm_reversed](https://github.com/juanfrilla/trip_vm_reversed) - Trip.com phantom-token stack VM reversed, with a Goja sandbox reimplementation as the follow-up repo. 2026-05.
 - [juanfrilla/awswaf_ast](https://github.com/juanfrilla/awswaf_ast) - Eleven-plugin Babel fixed-point pipeline for AWS WAF challenge scripts. 2026-06.
-- [voidstar0/akamai-deobfuscator](https://github.com/voidstar0/akamai-deobfuscator) - Single-file Babel pipeline for Akamai scripts: sequence-expression unrolling and string-array recovery. Archived, still a clean template. 2023.
+- [voidstar0/akamai-deobfuscator](https://github.com/voidstar0/akamai-deobfuscator) - Single-file Babel pipeline for Akamai scripts: sequence-expression unrolling and string-array recovery. **Historical:** archived; useful as a pipeline template. 2023.
 - [Probabilities/Stripe-Reverse](https://github.com/Probabilities/Stripe-Reverse) - Decoded field map of the Stripe m.stripe.com/6 init payload, the closest public analog to a vendor sensor dump. 2024-11.
 - [Ciarands/jscrambler-deobfuscator](https://github.com/Ciarands/jscrambler-deobfuscator) - Deobfuscator for JScrambler Enterprise with a samples corpus of real obfuscated targets. 2025-10.
+- [imwithyourbitch/cloudflare-turnstile-solver](https://github.com/imwithyourbitch/cloudflare-turnstile-solver) - Fork of munew's solver carrying a 29KB maintenance guide: module map, transformer order, and a change-detection playbook for Turnstile format rotations. 2026-09.
 
 ## VM devirtualization and deobfuscation
 
@@ -51,7 +65,7 @@ General tooling that survives vendor rotation.
 
 ## Engine-level instrumentation
 
-Observing code where page scripts cannot detect the observer.
+Tracing code inside the browser engine to study behavior below page-level hooks.
 
 - [WhiteNightShadow/firefox-reverse](https://github.com/WhiteNightShadow/firefox-reverse) - Firefox 153 fork with SpiderMonkey C++ trace points: per-instruction JSVMP tracing, signer-argument capture, WASM import boundaries, engine-level branch diffing. 2026-09.
 - [WhiteNightShadow/camoufox-reverse-mcp](https://github.com/WhiteNightShadow/camoufox-reverse-mcp) - MCP server exposing 35 RE tools over the patched browser, with a JSVMP playbook mapping anti-bot class to safe instrumentation mode. 2026-09.
@@ -59,8 +73,10 @@ Observing code where page scripts cannot detect the observer.
 
 ## TLS and HTTP fingerprinting
 
-- [lexiforest/curl_cffi](https://github.com/lexiforest/curl_cffi) - Python HTTP client with browser TLS impersonation built on curl-impersonate; ten releases through 2026. 2026-09.
-- [bogdanfinn/tls-client](https://github.com/bogdanfinn/tls-client) - Go TLS client with same-week Chrome profile updates and an HTTP/2 fingerprint. 2026-09.
+- [FoxIO-LLC/ja4](https://github.com/FoxIO-LLC/ja4) - JA4/JA4+ network fingerprint specifications and reference tooling for TLS, HTTP, and related protocols; component licenses vary. 2026-09.
+- [refraction-networking/utls](https://github.com/refraction-networking/utls) - Go crypto/tls fork with low-level ClientHello control and captured-hello parsing; browser mimicry is limited to ClientHello, not the full HTTP stack. 2026-08.
+- [lexiforest/curl_cffi](https://github.com/lexiforest/curl_cffi) - Python HTTP client with browser TLS impersonation built on curl-impersonate. 2026-09.
+- [bogdanfinn/tls-client](https://github.com/bogdanfinn/tls-client) - Go TLS client with browser profiles and HTTP/2 fingerprint control. 2026-09.
 - [0x676e67/wreq](https://github.com/0x676e67/wreq) - Rust HTTP client with browser emulation, successor to rnet. 2026-08.
 - [deedy5/primp](https://github.com/deedy5/primp) - Python bindings over a Rust core with chrome_144 through chrome_152 profiles. 2026-08.
 - [zhkl0228/impersonator](https://github.com/zhkl0228/impersonator) - Pure-Java TLS fingerprint impersonation on a BouncyCastle fork, including ECH per profile. 2026-09.
@@ -74,15 +90,15 @@ Listed for capture and instrumentation work; each entry notes its own tradeoffs.
 
 - [daijro/camoufox](https://github.com/daijro/camoufox) - Firefox-based anti-detect browser with a Python API, source public. 2026-09.
 - [Kaliiiiiiiiii-Vinyzu/patchright](https://github.com/Kaliiiiiiiiii-Vinyzu/patchright) - Drop-in Playwright fork tracking upstream releases within days. 2026-09.
-- [ultrafunkamsterdam/nodriver](https://github.com/ultrafunkamsterdam/nodriver) - Raw CDP driver over system Chrome; the only tool with zero blocked cells in the largest independent 2026 benchmark of the category. 2026-05.
+- [ultrafunkamsterdam/nodriver](https://github.com/ultrafunkamsterdam/nodriver) - Raw CDP driver over system Chrome for browser automation and instrumentation. 2026-05.
 - [CloakHQ/cloakbrowser](https://github.com/CloakHQ/cloakbrowser) - Chromium fork with a humanize pipeline; free Chromium 146 Windows build, drop-in Playwright API plus CDP endpoint. 2026-09.
 - [arman-bd/chromiumfish](https://github.com/arman-bd/chromiumfish) - Chromium fork spoofing fingerprints inside the C++ engine; macOS and Linux builds so far. 2026-08.
-- [imwithyourbitch/cloudflare-turnstile-solver](https://github.com/imwithyourbitch/cloudflare-turnstile-solver) - Fork of munew's solver carrying a 29KB maintenance guide: module map, transformer order, and a change-detection playbook for Turnstile format rotations. 2026-09.
 
 ## Detection side
 
-The checks any emulation must survive, from the people who write them.
+Detection techniques and implementations, from the people who study them.
 
+- [abrahamjuliot/creepjs](https://github.com/abrahamjuliot/creepjs) - Browser fingerprinting research suite with prototype-tampering checks and headless, canvas, WebGL, and worker probes; useful for studying inconsistent spoofing. 2026-06.
 - [antoinevastel/fpscanner](https://github.com/antoinevastel/fpscanner) - Headless-browser and driver detection heuristics. 2026-08.
 - [antoinevastel/fp-collect](https://github.com/antoinevastel/fp-collect) - Collects only attributes that detect bots, with each attribute's detection meaning documented. 2025-03.
 - [antoinevastel/bots-zoo](https://github.com/antoinevastel/bots-zoo) - Working configs for about twenty bot stacks plus UA and API-value pools. 2025.
@@ -98,13 +114,15 @@ The checks any emulation must survive, from the people who write them.
 
 ## Writeups and talks
 
+- [Why a classic CDP bot detection signal suddenly stopped working](https://blog.castle.io/why-a-classic-cdp-bot-detection-signal-suddenly-stopped-working-and-nobody-noticed/) - Castle; traces the failure of Error.stack getter-based automation detection to V8 inspector changes, with code excerpts and upstream commit links. 2025-08.
+- [FP-Inconsistent: Measurement and Analysis of Fingerprint Inconsistencies in Evasive Bot Traffic](https://arxiv.org/abs/2406.07647) - Honey-site study of 20 bot services, deriving detection rules from spatial and temporal browser fingerprint inconsistencies. 2025-09 (v3).
 - [Breaking the Seal: Static Deobfuscation of JSCeal's Compiled V8 Bytecode](https://research.checkpoint.com/2026/breaking-the-seal-static-deobfuscation-of-jsceals-compiled-v8-bytecode/) - Check Point Research, 2026-08. Black Hat USA 2025 slides on [SpeakerDeck](https://speakerdeck.com/hshrzd/breaking-the-seal-static-deobfuscation-of-compiled-v8-javascript-bytecode-malware).
 - [CASCADE: LLM-Powered JavaScript Deobfuscator at Google](https://arxiv.org/abs/2507.17691) - arXiv 2507.17691, accepted at ICSE-SEIP 2026.
 - [nullpt.rs](https://nullpt.rs/) - Long-running reverse engineering blog: devirtualizing Nike's bot protection (two parts), TikTok VM obfuscation, Vercel BotID, anti-debugging taxonomy. 2018-2026.
-- [Devirtualizing Nike.com's Bot Protection, part 1](https://nullpt.rs/devirtualizing-nike-vm-1/) and [part 2](https://nullpt.rs/devirtualizing-nike-vm-2/) - The canonical public challenge-VM walkthrough.
+- [Devirtualizing Nike.com's Bot Protection, part 1](https://nullpt.rs/devirtualizing-nike-vm-1/) and [part 2](https://nullpt.rs/devirtualizing-nike-vm-2/) - Two-part walkthrough of a client-side challenge VM.
 - [Anti-detect browser benchmark 2026](https://ianlpaterson.com/blog/anti-detect-browser-benchmark-patchright-nodriver-curl-cffi/) - Independent benchmark, 31 Cloudflare-family targets, 651 verdicts, updated through 2026-08.
 - [browsers-benchmark](https://github.com/techinz/browsers-benchmark) - Second independent benchmark of the same category. 2026-09.
-- [Kanxue JSVMP threads](https://bbs.kanxue.com/) - The highest-density Chinese source for JSVMP devirtualization writeups; search the Web Security board for "jsvmp" or "纯算还原".
+- [Kanxue JSVMP threads](https://bbs.kanxue.com/) - Chinese-language forum with JSVMP devirtualization writeups; search the Web Security board for "jsvmp" or "纯算还原".
 - [habr: Akamai Bot Manager deobfuscation via a custom AST interpreter](https://habr.com/ru/articles/720588/) - Russian; sandboxed execution defeating self-integrity checks. 2023.
 - [habr: Bypassing toString-based native checks with a V8 patch](https://habr.com/ru/articles/940092/) - Russian; C++ patch to BytecodeGenerator so the "in" operator lies about prototype. 2025-08.
 
@@ -116,11 +134,11 @@ The checks any emulation must survive, from the people who write them.
 
 ## Freshness
 
-Entries carry their last known activity date. This list is re-verified quarterly; dead links and dead projects get removed. Dates reflect the last observed push or publication, not a claim that the tool currently passes any specific vendor.
+Daily discovery is scheduled for 09:00 Asia/Saigon, with rotating freshness checks and a full audit due quarterly. An unchanged review need not produce a commit. Entry dates reflect last observed activity or publication, not verification dates or a claim that a tool currently passes a specific vendor. Historical research may remain with a caveat; inaccessible links are investigated before removal. See [the review process](CURATION.md#review-process).
 
 ## Contributing
 
-Public research and tools only: repos with readable code or writeups, articles, talks, datasets. No paid solving services, no API storefronts, no Telegram-gated content. Send a PR with the same one-line description style and a date.
+Public research and tools only: repos with readable code or writeups, articles, talks, datasets. No paid solving services, no API storefronts, no Telegram-gated content. Read the [selection criteria](CURATION.md#selection), then send a PR with the same one-line description style, a date, and evidence supporting the entry.
 
 ## License
 
