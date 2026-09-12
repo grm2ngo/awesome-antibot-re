@@ -1,6 +1,6 @@
 # Curation policy 1.1
 
-Effective 2026-09-12 under the repository owner's authorization to curate and publish autonomously. Version 1.1 corrects the loss of implementation RE in the 1.0 migration; acceptance scores are unchanged. Machine thresholds live in [config/curation.json](config/curation.json).
+This draft adds the maintainer-requested research company and manual review process to policy 1.1. Version 1.1 corrects the loss of implementation RE in the 1.0 migration; acceptance scores are unchanged. Machine thresholds live in [config/curation.json](config/curation.json).
 
 ## Scope and source types
 
@@ -101,7 +101,7 @@ Hourly budget is 4 queries/20 pages; the daily deepening budget is 30 queries/12
 
 Discovered → watchlist → source/code-reviewed → curated. Runtime-tested is an additional evidence level. Curated → needs-review → historical/removed only with a documented reason. One blocked fetch/403/429/timeout is inconclusive; confirm ordinary dead-link suspicion over three separate runs spanning at least seven days, considering moves and author archives. A clear shutdown/deprecation notice can establish retirement sooner.
 
-The owner authorized direct publication of meaningful policy-compliant updates on 2026-09-11. Do not ask for per-entry reapproval. Never force-push, overwrite unrelated changes, rewrite history, spend new funds, or create empty commits to make the repo appear active. If branch rules require a PR, create a ready PR and report that gate accurately.
+For this research company, the maintainer requires approval of each concrete draft revision and optional initiative. Earlier direct-publication wording is superseded by this review workflow. Prepare a draft PR; do not merge or push to the default branch before approval. Never force-push, overwrite unrelated changes, rewrite history, spend new funds, or create empty commits to make the repo appear active. Preserve unresolved objections in the draft; elapsed time, votes and silence are not approval.
 
 Audit migrated entries incrementally; the previous catalogue is preserved in [catalog/LEGACY.md](catalog/LEGACY.md) and is not silently certified under this policy. Every accepted entry has an evidence ledger. Reports record accepted/deferred/retired items, gaps, budgets, examined languages, reference traversal and next work. Keep machine link checks separate from editorial decisions.
 
@@ -113,3 +113,15 @@ Audit migrated entries incrementally; the previous catalogue is preserved in [ca
 - [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs): clear resource categories and the practical cost of low-quality submissions.
 
 These are design references, not endorsements. This owner-authorized, AI-assisted repository does not claim admission to the upstream Awesome index or compliance with its separate prohibition on AI-generated lists. The badge alone is not certification.
+
+## Research company and manual decisions
+
+Follow [company roles](docs/agents/company.md) and [separate search playbooks](docs/agents/README.md). Every run includes a dedicated Expansion Lead and independent Gatekeeper; staff repository, publication and social/regional researchers in waves. The parent coordinates and edits; the maintainer approves publication and new initiatives.
+
+Run every three days at 09:00 Asia/Saigon. Attempt English plus at least two relevant non-English languages per run, rotating the existing language atlas. Existing query/page/time limits are upper bounds for a run, not scheduled hourly work or acceptance quotas.
+
+The Gatekeeper independently opens the originals for every proposed promotion and materially changed claim. Round one records objections and alternative interpretations; round two records evidence-based responses. An unresolved material contradiction forces HOLD regardless of score. Numeric thresholds remain unchanged and cannot compensate for failed gates.
+
+Approval and independent-review outcome are separate from the existing evidence levels. Use the existing ledger schema; a source-reviewed or code-reviewed label never implies reproduction. Review packets can supplement ledger evidence but must not create a competing acceptance catalogue. See [record template](docs/agents/evidence-template.md).
+
+New ideas require a problem, benefit, cost, strongest objection and a smallest reversible trial. Researching possible directions does not authorize implementing the proposed feature. Keep deferred candidates and optional ideas outside the accepted README until the existing ledger requirements and manual review are complete.

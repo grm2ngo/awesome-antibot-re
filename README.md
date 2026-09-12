@@ -8,6 +8,14 @@ Selected **reverse-engineering case studies and tools for browser anti-bot syste
 
 [Tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-12-re-focus.md)
 
+## Browse by product and source
+
+[TikTok](docs/products.md#tiktok) · [Douyin](docs/products.md#douyin) · [reCAPTCHA](docs/products.md#recaptcha) · [Turnstile / JSD](docs/products.md#cloudflare) · [Akamai](#akamai-sensor-and-obfuscation) · [Imperva](#imperva-devirtualization) · [AWS WAF](#aws-waf-deobfuscation) · [Trip.com](docs/products.md#tripcom)
+
+[Source atlas](SOURCES.md) · [Blogs / papers / talks](SOURCES.md) · [X](docs/discovery.md#x) · [CSDN](docs/discovery.md#csdn) · [Community discovery](docs/discovery.md#other-communities) · [Research company](docs/agents/company.md)
+
+Product pages distinguish curated entries, supporting references and pending research; a navigation link is not an acceptance decision.
+
 ## Contents
 
 - [Akamai sensor and obfuscation](#akamai-sensor-and-obfuscation)
