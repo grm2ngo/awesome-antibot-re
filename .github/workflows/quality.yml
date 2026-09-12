@@ -1,0 +1,65 @@
+name: Catalogue quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '43 1 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catalogue-quality-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Validate catalogue
+        run: python3 scripts/validate.py
+      - name: Check editorial failure cases
+        run: python3 -m unittest discover -s tests -v
+
+  link-audit:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Observe resource links
+        run: python3 scripts/audit_links.py
+      - name: Summarize observations
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from collections import Counter
+          from pathlib import Path
+          p=Path('.audit/links.json')
+          lines=['## Link observations', '', 'HTTP reachability is not content or runtime verification.', '']
+          if p.exists():
+              counts=Counter(x['state'] for x in json.loads(p.read_text())['observations'])
+              lines += [f'- {k}: {v}' for k,v in sorted(counts.items())]
+          else:
+              lines += ['Audit failed before producing observations; inspect the job log.']
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+              f.write('\n'.join(lines)+'\n')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: resource-link-observations
+          path: .audit/links.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,145 +1,99 @@
 ![Awesome Anti-Bot Reverse Engineering](assets/banner.svg)
 
-# Awesome Anti-Bot Reverse Engineering
+# Awesome Anti-Bot Reverse Engineering [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-A curated list of public research, tools, and writeups on reversing browser anti-bot systems: challenge VMs, sensor payloads, TLS and HTTP fingerprinting, and the detection techniques behind them.
+Selected public research on browser anti-bot systems: challenge design, JavaScript analysis, instrumentation, network fingerprints, detection and measurement.
 
-Scope: reverse engineering and security research only. No paid solving services, no bypass-as-a-service, no account-market links. Projects move fast in this niche, so every entry notes its last known activity date. Historical tools may remain when their methods are useful, with limitations noted. See the [curation guide](CURATION.md) for selection criteria.
+**Learn the mechanism. Inspect the evidence. Keep the limits visible.**
 
-> **Public research · Evidence over hype · Quality over quantity**
-
-## Start here
-
-| Explore | Start with |
-| --- | --- |
-| Understand challenge logic | [Protocol research](#challenge-protocol-research) and [VM devirtualization](#vm-devirtualization-and-deobfuscation) |
-| Observe browser internals | [Engine instrumentation](#engine-level-instrumentation) |
-| Study identifying signals | [TLS and HTTP](#tls-and-http-fingerprinting) and [Detection side](#detection-side) |
-| Read deeper analysis | [Writeups and talks](#writeups-and-talks) and [Datasets](#datasets) |
+English descriptions preserve original source languages. [Hướng dẫn tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Latest review](reports/2026-09-11.md).
 
 ## Contents
 
-- [Challenge protocol research](#challenge-protocol-research)
-- [VM devirtualization and deobfuscation](#vm-devirtualization-and-deobfuscation)
-- [Engine-level instrumentation](#engine-level-instrumentation)
+- [Foundations and measurement](#foundations-and-measurement)
+- [CAPTCHA systems and service documentation](#captcha-systems-and-service-documentation)
+- [JavaScript analysis and instrumentation](#javascript-analysis-and-instrumentation)
 - [TLS and HTTP fingerprinting](#tls-and-http-fingerprinting)
-- [Stealth browsers and automation](#stealth-browsers-and-automation)
-- [Detection side](#detection-side)
-- [Identity and behavior realism](#identity-and-behavior-realism)
-- [Writeups and talks](#writeups-and-talks)
-- [Datasets](#datasets)
+- [Detection and browser behavior](#detection-and-browser-behavior)
+- [Original regional research](#original-regional-research)
+- [Papers benchmarks and datasets](#papers-benchmarks-and-datasets)
+- [Regional source atlas](#regional-source-atlas)
+- [Historical and pending research](#historical-and-pending-research)
+- [Maintenance](#maintenance)
 
-## Challenge protocol research
+## Start here
 
-Teardowns and reimplementations of specific vendors' client-side protections.
+| Goal | Route |
+| --- | --- |
+| Understand signals and false positives | Foundations → Detection → Measurement limitations. |
+| Study a client-side challenge | Instrumentation → JavaScript analysis → Original regional research. |
+| Compare human-verification designs | Service documentation → Self-hosted PoW → Benchmarks → Accessibility. |
+| Compare transport observations | TLS/HTTP definitions → Client libraries → TrackMe server observations. |
 
-- [munew/cloudflare-turnstile-solver](https://github.com/munew/cloudflare-turnstile-solver) - Rust reimplementation of the Cloudflare Turnstile request pipeline: VM parser, fingerprint entry generators, LZ/XTEA/RSA payload crypto. The author states the constants are out of date; the architecture map still holds. 2025-10.
-- [B00H0O/cloudflare-jsd-solver](https://github.com/B00H0O/cloudflare-jsd-solver) - Native Go solver for the Cloudflare JSD (JavaScript Detections) oneshot challenge, served as an HTTP API. 2026-08.
-- [xKiian/cloudflare-jsd](https://github.com/xKiian/cloudflare-jsd) - Go reverse of the JSD challenge: runtime AST deobfuscation of main.js, inverted property-type fingerprint table, LZ-string with the script's own alphabet. 2026-05.
-- [Ciarands/cloudflare-deobf](https://github.com/Ciarands/cloudflare-deobf) - Tree-sitter based string-array reconstructor for Cloudflare's challenge-platform script, with a real jsd sample embedded. 2025-04.
-- [hanzheng1954/douyin-abogus-analysis](https://github.com/hanzheng1954/douyin-abogus-analysis) - Full devirtualization of Douyin's a_bogus JSVMP: disassembler, 796 captured VM programs, SM3 pipeline, and a deterministic replay harness with byte-level baselines. 2026-08.
-- [armxe/tiktok-api](https://github.com/armxe/tiktok-api) - Pure-Python reimplementation of TikTok mobile and web signatures: X-Argus (protobuf, SM3, SIMON), X-Gnarly (ChaCha20, LZW), X-Bogus, TTEncrypt. 2026-07.
-- [arisune1337/akamai-bmp-research](https://github.com/arisune1337/akamai-bmp-research) - Static teardown of a 570KB Akamai BMP sensor: five obfuscation layers, a working TLV bytecode disassembler, decoded string catalog, and the sensor_data wire format. 2026-06.
-- [OneWinged-ShunKaido/akamai-xp1m-teardown](https://github.com/OneWinged-ShunKaido/akamai-xp1m-teardown) - Long-form teardown of Akamai XP1M: backward provenance slicing from a divergent output byte to the root probe, sensor reproduced to zero byte difference across daily builds. 2026-06.
-- [recurism/decapsula](https://github.com/recurism/decapsula) - Rust devirtualizer for the Imperva Reese84 interrogator: bytecode to triplets, abstract interpretation, constant folding, flat JS output. 2026-06.
-- [juanfrilla/FamousRussianMarketplace](https://github.com/juanfrilla/FamousRussianMarketplace) - Writeup plus pipeline for a register-based JSVMP: PC-anchored tracing, function substitution at known PCs, recovered AES with challenge-derived round counts. 2026-09.
-- [juanfrilla/trip_vm_reversed](https://github.com/juanfrilla/trip_vm_reversed) - Trip.com phantom-token stack VM reversed, with a Goja sandbox reimplementation as the follow-up repo. 2026-05.
-- [juanfrilla/awswaf_ast](https://github.com/juanfrilla/awswaf_ast) - Eleven-plugin Babel fixed-point pipeline for AWS WAF challenge scripts. 2026-06.
-- [voidstar0/akamai-deobfuscator](https://github.com/voidstar0/akamai-deobfuscator) - Single-file Babel pipeline for Akamai scripts: sequence-expression unrolling and string-array recovery. **Historical:** archived; useful as a pipeline template. 2023.
-- [Probabilities/Stripe-Reverse](https://github.com/Probabilities/Stripe-Reverse) - Decoded field map of the Stripe m.stripe.com/6 init payload, the closest public analog to a vendor sensor dump. 2024-11.
-- [Ciarands/jscrambler-deobfuscator](https://github.com/Ciarands/jscrambler-deobfuscator) - Deobfuscator for JScrambler Enterprise with a samples corpus of real obfuscated targets. 2025-10.
-- [imwithyourbitch/cloudflare-turnstile-solver](https://github.com/imwithyourbitch/cloudflare-turnstile-solver) - Fork of munew's solver carrying a 29KB maintenance guide: module map, transformer order, and a change-detection playbook for Turnstile format rotations. 2026-09.
+All entries below were **source-reviewed on 2026-09-11**. This means their primary material was read for the description; it does not mean the software was run or currently succeeds against a particular vendor. Per-entry evidence, dates, limitations and review deadlines are in [the resource ledger](data/resources.json). No runtime-tested label is assigned in this update.
 
-## VM devirtualization and deobfuscation
+## Foundations and measurement
 
-General tooling that survives vendor rotation.
+- [MDN: Fingerprinting](https://developer.mozilla.org/en-US/docs/Glossary/Fingerprinting) - Introduces browser fingerprint attributes and links to measurement and standards guidance. **en · foundation**. A glossary, not a bot detector or current effectiveness benchmark.
+- [W3C fingerprinting guidance](https://w3c.github.io/fingerprinting-guidance/) - Defines fingerprinting surfaces, threat models and mitigation tradeoffs for web specifications. **en · standard**. Living guidance; it does not promise complete prevention of fingerprinting.
+- [W3C: Inaccessibility of CAPTCHA](https://www.w3.org/TR/turingtest/) - Examines accessibility barriers and alternatives to visual human-verification challenges. **en · foundation**. A 2021 Group Draft Note; historical examples are not a current vendor ranking.
+- [Am I Unique?](https://amiunique.org/) - Research project for studying browser fingerprint diversity and evolution. **en · research**. A research sample does not establish population-wide uniqueness or bot detection accuracy.
 
-- [hasherezade/jsc_deobfuscator](https://github.com/hasherezade/jsc_deobfuscator) - Static pipeline for compiled V8 bytecode (JSCeal): patched-V8 disassembly, string decryption with bounded brute force, control-flow unflattening, optional LLM renaming with CSV caching. From the Check Point "Breaking the Seal" research. 2026-08.
-- [suleram/View8](https://github.com/suleram/View8) and [hasherezade/View8](https://github.com/hasherezade/View8) - Decompiler for serialized V8 code caches; the fork adds deterministic address normalization and jump-target metadata. 2026-08.
-- [google/jsir](https://github.com/google/jsir) - MLIR-based IR for JavaScript, designed to lift back to source losslessly while still supporting dataflow passes. The open core of Google's CASCADE deobfuscator. 2026-09.
-- [j4k0xb/webcrack](https://github.com/j4k0xb/webcrack) - Unpacks and deobfuscates bundler and obfuscator.io output. 2026-04.
-- [ctrl-escp/restringer](https://github.com/ctrl-escp/restringer) - The npm package (2.3.0) now points here; adds control-flow-flattening and js-confuser processors on top of the original REstringer. 2026-08.
-- [relative/synchrony](https://github.com/relative/synchrony) - Python deobfuscator for obfuscator.io class output, revived in 2026. 2026-07.
-- [youdie323323/js-confuser-deobfuscator](https://github.com/youdie323323/js-confuser-deobfuscator) - Per-transform deobfuscation of js-confuser output; the transform list doubles as a spec of the obfuscator's protection matrix. 2025-12.
-- [T14Raptor/go-fAST](https://github.com/T14Raptor/go-fAST) - Go parser, traverser, and generator for JavaScript ASTs; a common foundation for custom deobfuscators. 2026-08.
+## CAPTCHA systems and service documentation
 
-## Engine-level instrumentation
+- [Cloudflare Turnstile validation](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/) - Documents server-side token validation, errors and integration boundaries. **en · service-docs**. Vendor documentation; no paid service test or comparative success claim.
+- [Yandex SmartCaptcha quickstart](https://yandex.cloud/ru/docs/smartcaptcha/quickstart) - Russian-language first-party guide to widget integration and server-side answer validation. **ru · service-docs**. Documentation review only; account requirements and regional availability must be checked before adoption.
+- [hCaptcha developer guide](https://docs.hcaptcha.com/) - Explains widget integration, token verification, configuration and testing boundaries. **en · service-docs**. Vendor claims are not independent comparative evidence; no production integration tested.
+- [ALTCHA](https://github.com/altcha-org/altcha) - Source and documentation for a self-hosted proof-of-work challenge widget. **en · software**. Study algorithm/version tradeoffs; compliance and anti-bot efficacy claims were not independently validated.
+- [mCaptcha](https://github.com/mCaptcha/mCaptcha) - SHA-256 proof-of-work CAPTCHA system with an explanation of its challenge and validation flow. **en · software**. A computational cost mechanism is not proof of human identity; runtime and capacity not tested.
 
-Tracing code inside the browser engine to study behavior below page-level hooks.
+## JavaScript analysis and instrumentation
 
-- [WhiteNightShadow/firefox-reverse](https://github.com/WhiteNightShadow/firefox-reverse) - Firefox 153 fork with SpiderMonkey C++ trace points: per-instruction JSVMP tracing, signer-argument capture, WASM import boundaries, engine-level branch diffing. 2026-09.
-- [WhiteNightShadow/camoufox-reverse-mcp](https://github.com/WhiteNightShadow/camoufox-reverse-mcp) - MCP server exposing 35 RE tools over the patched browser, with a JSVMP playbook mapping anti-bot class to safe instrumentation mode. 2026-09.
-- [WhiteNightShadow/hello_js_reverse_skill](https://github.com/WhiteNightShadow/hello_js_reverse_skill) - Agent skill packaging the same methodology: 18 reference docs, hook generators, sandbox runner, case library. 2026-09.
+- [webcrack](https://github.com/j4k0xb/webcrack) - Deobfuscates JavaScript and unpacks webpack/browserify output with documented CLI and API usage. **en · software**. Supported transforms and Node/V8 dependencies bound what it can analyze.
+- [JSIR](https://github.com/google/jsir) - MLIR-based JavaScript representation for dataflow analysis and source-to-source transformation. **en · software**. Building LLVM/Bazel dependencies can be substantial; this review did not build the project.
+- [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) - Primary protocol reference for browser debugging, network observation and profiling. **en · standard**. Tip-of-tree can change without compatibility guarantees; match the browser version.
+- [WebDriver BiDi](https://www.w3.org/TR/webdriver-bidi/) - Standards-track reference for bidirectional browser automation commands and events. **en · standard**. Specification status and implementation coverage vary; this is not a tested compatibility matrix.
+- [Firefox-Reverse](https://github.com/WhiteNightShadow/firefox-reverse) - Chinese-language project documenting SpiderMonkey/Gecko instrumentation and isolated browser environments. **zh-Hans · software**. Experimental fork; the claimed instrumentation and current builds have not been executed in this review.
+- [nodriver](https://github.com/ultrafunkamsterdam/nodriver) - Asynchronous Python browser driver exposing CDP domains, commands and events. **en · software**. No claim of undetectability; browser-version changes affect behavior.
 
 ## TLS and HTTP fingerprinting
 
-- [FoxIO-LLC/ja4](https://github.com/FoxIO-LLC/ja4) - JA4/JA4+ network fingerprint specifications and reference tooling for TLS, HTTP, and related protocols; component licenses vary. 2026-09.
-- [refraction-networking/utls](https://github.com/refraction-networking/utls) - Go crypto/tls fork with low-level ClientHello control and captured-hello parsing; browser mimicry is limited to ClientHello, not the full HTTP stack. 2026-08.
-- [lexiforest/curl_cffi](https://github.com/lexiforest/curl_cffi) - Python HTTP client with browser TLS impersonation built on curl-impersonate. 2026-09.
-- [bogdanfinn/tls-client](https://github.com/bogdanfinn/tls-client) - Go TLS client with browser profiles and HTTP/2 fingerprint control. 2026-09.
-- [0x676e67/wreq](https://github.com/0x676e67/wreq) - Rust HTTP client with browser emulation, successor to rnet. 2026-08.
-- [deedy5/primp](https://github.com/deedy5/primp) - Python bindings over a Rust core with chrome_144 through chrome_152 profiles. 2026-08.
-- [zhkl0228/impersonator](https://github.com/zhkl0228/impersonator) - Pure-Java TLS fingerprint impersonation on a BouncyCastle fork, including ECH per profile. 2026-09.
-- [danikishin/SharpTls](https://github.com/danikishin/SharpTls) - Managed C# TLS stack with byte-exact ClientHello control, no native calls. 2026-08.
-- [pagpeter/TrackMe](https://github.com/pagpeter/TrackMe) - Passive request fingerprinting demo (tls.peet.ws) for TLS 1.2/1.3 and HTTP/2. 2026-08.
-- [pagpeter/charly](https://github.com/pagpeter/charly) - Go parser for Charles Proxy .chlz captures, including TLS details and timing per transaction. 2026-07.
+- [JA4 / JA4+](https://github.com/FoxIO-LLC/ja4) - Network fingerprint definitions and reference implementations spanning TLS, HTTP and related protocols. **en · software**. Licenses differ by component; do not treat all JA4+ methods as uniformly licensed.
+- [uTLS](https://github.com/refraction-networking/utls) - Go TLS fork exposing ClientHello controls and fingerprint-oriented handshake configuration. **en · software**. The README warns parts may lag; ClientHello control is not full browser-stack emulation.
+- [curl_cffi](https://github.com/lexiforest/curl_cffi) - Python bindings to a curl-impersonate fork for studying TLS and HTTP/2 client profiles. **en · software**. Profiles and supported Python versions change; embedded sponsor links are outside this listing.
+- [TrackMe](https://github.com/pagpeter/TrackMe) - Go HTTP/1 and HTTP/2 server that reports request, header-order and TLS fingerprint details. **en · software**. Demo output is not a general bot-detection verdict; local deployment was not tested.
 
-## Stealth browsers and automation
+## Detection and browser behavior
 
-Listed for capture and instrumentation work; each entry notes its own tradeoffs.
+- [CreepJS](https://github.com/abrahamjuliot/creepjs) - Browser fingerprinting research covering prototype tampering, rendering signals and consistency checks. **en · software**. Use the project-linked deployment; a fingerprint or inconsistency does not by itself prove bot traffic.
+- [FPScanner](https://github.com/antoinevastel/fpscanner) - Browser fingerprint collection and bot-detection primitives with documented limits and non-goals. **en · software**. Not a complete fraud-prevention system; sponsored by Castle as disclosed by the project.
+- [Camoufox](https://github.com/daijro/camoufox) - Firefox-based browser project for studying fingerprint configuration and automation tradeoffs. **en · software**. The project warns it is under development; production stability and present-day effectiveness were not tested.
 
-- [daijro/camoufox](https://github.com/daijro/camoufox) - Firefox-based anti-detect browser with a Python API, source public. 2026-09.
-- [Kaliiiiiiiiii-Vinyzu/patchright](https://github.com/Kaliiiiiiiiii-Vinyzu/patchright) - Drop-in Playwright fork tracking upstream releases within days. 2026-09.
-- [ultrafunkamsterdam/nodriver](https://github.com/ultrafunkamsterdam/nodriver) - Raw CDP driver over system Chrome for browser automation and instrumentation. 2026-05.
-- [CloakHQ/cloakbrowser](https://github.com/CloakHQ/cloakbrowser) - Chromium fork with a humanize pipeline; free Chromium 146 Windows build, drop-in Playwright API plus CDP endpoint. 2026-09.
-- [arman-bd/chromiumfish](https://github.com/arman-bd/chromiumfish) - Chromium fork spoofing fingerprints inside the C++ engine; macOS and Linux builds so far. 2026-08.
+## Original regional research
 
-## Detection side
+- [Douyin a_bogus analysis](https://github.com/hanzheng1954/douyin-abogus-analysis) - Chinese-language analysis with VM documentation, traces and a stated captured-version baseline. **zh-Hans · research**. Snapshot-specific author findings; no live target validation or current signature-success claim.
 
-Detection techniques and implementations, from the people who study them.
+## Papers benchmarks and datasets
 
-- [abrahamjuliot/creepjs](https://github.com/abrahamjuliot/creepjs) - Browser fingerprinting research suite with prototype-tampering checks and headless, canvas, WebGL, and worker probes; useful for studying inconsistent spoofing. 2026-06.
-- [antoinevastel/fpscanner](https://github.com/antoinevastel/fpscanner) - Headless-browser and driver detection heuristics. 2026-08.
-- [antoinevastel/fp-collect](https://github.com/antoinevastel/fp-collect) - Collects only attributes that detect bots, with each attribute's detection meaning documented. 2025-03.
-- [antoinevastel/bots-zoo](https://github.com/antoinevastel/bots-zoo) - Working configs for about twenty bot stacks plus UA and API-value pools. 2025.
-- [antoinevastel/picasso-like-canvas-fingerprinting](https://github.com/antoinevastel/picasso-like-canvas-fingerprinting) - Faithful implementation of the Picasso canvas proof-of-work challenge. 2025.
-- [antoinevastel/avastel-bot-ips-lists](https://github.com/antoinevastel/avastel-bot-ips-lists) - Daily proxy and botnet IP samples; the reputation view from the detector's side. Updated daily.
+- [Next-Gen CAPTCHAs](https://github.com/MetaAgentX/NextGen-CAPTCHAs) - Research platform with CAPTCHA generation, benchmark data and documented GUI-agent evaluation protocols. **en · research**. Benchmark claims are author-reported; model settings and full/lite subsets must not be conflated.
+- [Open CaptchaWorld dataset](https://huggingface.co/datasets/OpenCaptchaWorld/Open_CaptchaWorld) - Dataset card and files connected to the Open CaptchaWorld research platform. **en · research**. Dataset revisions, row counts and licenses must be tracked separately from paper/code; not downloaded or benchmarked.
 
-## Identity and behavior realism
+## Regional source atlas
 
-- [Vinyzu/chrome-fingerprints](https://github.com/Vinyzu/chrome-fingerprints) - Ten thousand real collected Windows Chrome fingerprints, packaged, covering navigator, WebGL, WebRTC codecs, and speech voices. 2024-12.
-- [Vinyzu/cursory](https://github.com/Vinyzu/cursory) - Mouse trajectory generation by retrieval from recorded human trajectories, morphing to targets, and timing regeneration. 2026-04.
-- [Vinyzu/recognizer](https://github.com/Vinyzu/recognizer) - reCAPTCHA solver combining YOLO with CLIP and CLIPSeg for segmentation and click ordering. 2026-03.
-- [Vinyzu/Botright](https://github.com/Vinyzu/Botright) - Testing framework bundling the above pieces over Patchright. 2026-09.
+Discovery spans **16 language lanes** and multiple publication types: original repos, official docs, independent blogs, company engineering posts, forums, standards, papers, conference talks and datasets. [The source atlas](SOURCES.md) records selection rules and whether a directory or an actual resource was read. Language is not proof of nationality or quality, and a translation is not an independent source.
 
-## Writeups and talks
+## Historical and pending research
 
-- [Why a classic CDP bot detection signal suddenly stopped working](https://blog.castle.io/why-a-classic-cdp-bot-detection-signal-suddenly-stopped-working-and-nobody-noticed/) - Castle; traces the failure of Error.stack getter-based automation detection to V8 inspector changes, with code excerpts and upstream commit links. 2025-08.
-- [FP-Inconsistent: Measurement and Analysis of Fingerprint Inconsistencies in Evasive Bot Traffic](https://arxiv.org/abs/2406.07647) - Honey-site study of 20 bot services, deriving detection rules from spatial and temporal browser fingerprint inconsistencies. 2025-09 (v3).
-- [Breaking the Seal: Static Deobfuscation of JSCeal's Compiled V8 Bytecode](https://research.checkpoint.com/2026/breaking-the-seal-static-deobfuscation-of-jsceals-compiled-v8-bytecode/) - Check Point Research, 2026-08. Black Hat USA 2025 slides on [SpeakerDeck](https://speakerdeck.com/hshrzd/breaking-the-seal-static-deobfuscation-of-compiled-v8-javascript-bytecode-malware).
-- [CASCADE: LLM-Powered JavaScript Deobfuscator at Google](https://arxiv.org/abs/2507.17691) - arXiv 2507.17691, accepted at ICSE-SEIP 2026.
-- [nullpt.rs](https://nullpt.rs/) - Long-running reverse engineering blog: devirtualizing Nike's bot protection (two parts), TikTok VM obfuscation, Vercel BotID, anti-debugging taxonomy. 2018-2026.
-- [Devirtualizing Nike.com's Bot Protection, part 1](https://nullpt.rs/devirtualizing-nike-vm-1/) and [part 2](https://nullpt.rs/devirtualizing-nike-vm-2/) - Two-part walkthrough of a client-side challenge VM.
-- [Anti-detect browser benchmark 2026](https://ianlpaterson.com/blog/anti-detect-browser-benchmark-patchright-nodriver-curl-cffi/) - Independent benchmark, 31 Cloudflare-family targets, 651 verdicts, updated through 2026-08.
-- [browsers-benchmark](https://github.com/techinz/browsers-benchmark) - Second independent benchmark of the same category. 2026-09.
-- [Kanxue JSVMP threads](https://bbs.kanxue.com/) - Chinese-language forum with JSVMP devirtualization writeups; search the Web Security board for "jsvmp" or "纯算还原".
-- [habr: Akamai Bot Manager deobfuscation via a custom AST interpreter](https://habr.com/ru/articles/720588/) - Russian; sandboxed execution defeating self-integrity checks. 2023.
-- [habr: Bypassing toString-based native checks with a V8 patch](https://habr.com/ru/articles/940092/) - Russian; C++ patch to BytecodeGenerator so the "in" operator lies about prototype. 2025-08.
+- [Historical methods](catalog/HISTORICAL.md) - Older material retained for a specific educational purpose with dated limitations.
+- [Watchlist](WATCHLIST.md) - Promising leads missing full text, dates or sufficient evidence.
+- [Previous catalogue](catalog/LEGACY.md) - Earlier specialized entries preserved while their claims are rechecked under the stricter policy.
 
-## Datasets
+## Maintenance
 
-- [hasherezade/jsceal_datasets](https://github.com/hasherezade/jsceal_datasets) - 23 JSCeal payloads with extracted strings and labeled LLM renaming sessions across 21,000 functions. 2026-09.
-- [Vinyzu/chrome-fingerprints](https://github.com/Vinyzu/chrome-fingerprints) - See above; also usable as an evaluation corpus.
-- [antoinevastel/bots-zoo](https://github.com/antoinevastel/bots-zoo) - See above; bot stack configs and value pools.
+Hourly research checks and daily deeper discovery follow [the automation runbook](docs/AUTOMATION.md). The included GitHub Actions workflow validates the catalogue and audits registered resource links daily once installed. See the [implementation report](reports/2026-09-11.md#publication-and-scheduler) for confirmed activation and publication status. Only meaningful, evidence-supported changes are published; an unchanged review does not produce a cosmetic commit.
 
-## Freshness
-
-Daily discovery is scheduled for 09:00 Asia/Saigon, with rotating freshness checks and a full audit due quarterly. An unchanged review need not produce a commit. Entry dates reflect last observed activity or publication, not verification dates or a claim that a tool currently passes a specific vendor. Historical research may remain with a caveat; inaccessible links are investigated before removal. See [the review process](CURATION.md#review-process).
+New articles normally use a rolling 365-day window. Living projects are not rejected for being old; foundations and historical research need explicit reasons and review deadlines. HTTP reachability is separate from content verification and runtime testing.
 
 ## Contributing
 
-Public research and tools only: repos with readable code or writeups, articles, talks, datasets. No paid solving services, no API storefronts, no Telegram-gated content. Read the [selection criteria](CURATION.md#selection), then send a PR with the same one-line description style, a date, and evidence supporting the entry.
-
-## License
-
-[![CC0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+Read [CONTRIBUTING.md](CONTRIBUTING.md). Submit the exact resource, original evidence, limitations, language and date provenance. No popularity threshold, addition quota or paid placement. Public vendor documentation is eligible; paid solving storefronts and account-market links remain outside the catalogue's scope.

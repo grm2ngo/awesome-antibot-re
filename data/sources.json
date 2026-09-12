@@ -1,0 +1,517 @@
+[
+  {
+    "id": "github",
+    "name": "GitHub",
+    "url": "https://github.com/",
+    "languages": [
+      "en",
+      "ru",
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "ko",
+      "de",
+      "fr",
+      "es",
+      "pt",
+      "vi",
+      "hi",
+      "he",
+      "ar",
+      "pl",
+      "tr"
+    ],
+    "kind": "forge",
+    "status": "content-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "github.com",
+    "selection_rule": "Read code/docs, resolve canonical owner, check archive state and license scope; stars are discovery signals only.",
+    "discovery_only": true
+  },
+  {
+    "id": "habr",
+    "name": "Habr",
+    "url": "https://habr.com/ru/",
+    "languages": [
+      "ru",
+      "en"
+    ],
+    "kind": "community",
+    "status": "content-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "habr.com",
+    "selection_rule": "Original author, technical mechanism and dated evidence; distinguish company blogs, translation and repost.",
+    "discovery_only": true
+  },
+  {
+    "id": "opennet",
+    "name": "OpenNet",
+    "url": "https://www.opennet.ru/",
+    "languages": [
+      "ru"
+    ],
+    "kind": "news-community",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "www.opennet.ru",
+    "selection_rule": "Follow news references to original release/code/paper; a headline is not sufficient.",
+    "discovery_only": true
+  },
+  {
+    "id": "yandex",
+    "name": "Yandex SmartCaptcha docs",
+    "url": "https://yandex.cloud/ru/docs/smartcaptcha/quickstart",
+    "languages": [
+      "ru",
+      "en"
+    ],
+    "kind": "vendor-docs",
+    "status": "content-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "yandex",
+    "selection_rule": "Use actual documented integration and limits; separate regional availability and vendor assertions.",
+    "discovery_only": true
+  },
+  {
+    "id": "kanxue",
+    "name": "Kanxue",
+    "url": "https://bbs.kanxue.com/",
+    "languages": [
+      "zh-Hans"
+    ],
+    "kind": "forum",
+    "status": "blocked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "bbs.kanxue.com",
+    "selection_rule": "Exact public thread plus original author/traces required; never substitute a forum home page for a read article.",
+    "discovery_only": true
+  },
+  {
+    "id": "csdn",
+    "name": "CSDN",
+    "url": "https://blog.csdn.net/",
+    "languages": [
+      "zh-Hans"
+    ],
+    "kind": "community",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "blog.csdn.net",
+    "selection_rule": "Require original author/work, date provenance and primary references; reject scraped/repackaged SEO summaries.",
+    "discovery_only": true
+  },
+  {
+    "id": "cnblogs",
+    "name": "Cnblogs",
+    "url": "https://www.cnblogs.com/",
+    "languages": [
+      "zh-Hans"
+    ],
+    "kind": "community",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "www.cnblogs.com",
+    "selection_rule": "Prefer original implementation/experiments; trace reposts to the first publisher.",
+    "discovery_only": true
+  },
+  {
+    "id": "ithome",
+    "name": "iT 邦幫忙",
+    "url": "https://ithelp.ithome.com.tw/",
+    "languages": [
+      "zh-Hant"
+    ],
+    "kind": "community",
+    "status": "pending",
+    "checked_at": null,
+    "publisher_group": "ithelp.ithome.com.tw",
+    "selection_rule": "Select specific technical posts with primary references; popularity alone is insufficient.",
+    "discovery_only": true
+  },
+  {
+    "id": "qiita",
+    "name": "Qiita CAPTCHA topic",
+    "url": "https://qiita.com/tags/captcha",
+    "languages": [
+      "ja"
+    ],
+    "kind": "community",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "qiita.com",
+    "selection_rule": "Read the complete article and repository/version; do not accept tag pages as articles.",
+    "discovery_only": true
+  },
+  {
+    "id": "zenn",
+    "name": "Zenn CAPTCHA topic",
+    "url": "https://zenn.dev/topics/captcha",
+    "languages": [
+      "ja"
+    ],
+    "kind": "community",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "zenn.dev",
+    "selection_rule": "Prefer reproducible technical posts and authored books; preserve Japanese title and translation notes.",
+    "discovery_only": true
+  },
+  {
+    "id": "lycorp",
+    "name": "LY Corporation engineering",
+    "url": "https://techblog.lycorp.co.jp/ja/",
+    "languages": [
+      "ja",
+      "en"
+    ],
+    "kind": "engineering-blog",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "lycorp",
+    "selection_rule": "Select relevant first-party engineering work, distinguishing translation from independent corroboration.",
+    "discovery_only": true
+  },
+  {
+    "id": "line",
+    "name": "LINE Engineering",
+    "url": "https://engineering.linecorp.com/ko/",
+    "languages": [
+      "ko",
+      "en"
+    ],
+    "kind": "engineering-blog",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "lycorp",
+    "selection_rule": "Require an actual article, mechanism and evidence; treat related corporate publications as one publisher group.",
+    "discovery_only": true
+  },
+  {
+    "id": "kakao",
+    "name": "Kakao Tech",
+    "url": "https://tech.kakao.com/",
+    "languages": [
+      "ko"
+    ],
+    "kind": "engineering-blog",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "kakao",
+    "selection_rule": "Read article/slides/transcript; a video landing page alone remains a lead.",
+    "discovery_only": true
+  },
+  {
+    "id": "viblo",
+    "name": "Viblo",
+    "url": "https://viblo.asia/",
+    "languages": [
+      "vi",
+      "en"
+    ],
+    "kind": "community",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "viblo.asia",
+    "selection_rule": "Prioritize original Vietnamese experiments with exact version and source references.",
+    "discovery_only": true
+  },
+  {
+    "id": "sstic",
+    "name": "SSTIC",
+    "url": "https://www.sstic.org/",
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "kind": "conference",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "www.sstic.org",
+    "selection_rule": "Read selected paper/slides with named authors; require direct topic relevance.",
+    "discovery_only": true
+  },
+  {
+    "id": "ccc",
+    "name": "CCC media archive",
+    "url": "https://media.ccc.de/",
+    "languages": [
+      "de",
+      "en"
+    ],
+    "kind": "conference",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "media.ccc.de",
+    "selection_rule": "Inspect slides/transcript and timestamps; distinguish archival talks from current claims.",
+    "discovery_only": true
+  },
+  {
+    "id": "developpez",
+    "name": "Developpez",
+    "url": "https://www.developpez.com/",
+    "languages": [
+      "fr"
+    ],
+    "kind": "community",
+    "status": "blocked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "www.developpez.com",
+    "selection_rule": "Require primary code/research behind the article; retry only through allowed public access.",
+    "discovery_only": true
+  },
+  {
+    "id": "heise",
+    "name": "Heise developer",
+    "url": "https://www.heise.de/developer/",
+    "languages": [
+      "de"
+    ],
+    "kind": "news-community",
+    "status": "blocked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "www.heise.de",
+    "selection_rule": "Trace original technical work; do not count reporting and the cited original as independent results.",
+    "discovery_only": true
+  },
+  {
+    "id": "stackexchange",
+    "name": "Information Security Stack Exchange",
+    "url": "https://security.stackexchange.com/",
+    "languages": [
+      "en"
+    ],
+    "kind": "forum",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "security.stackexchange.com",
+    "selection_rule": "Question context, answer evidence and present-day applicability must all be read; votes alone are insufficient.",
+    "discovery_only": true
+  },
+  {
+    "id": "arxiv",
+    "name": "arXiv",
+    "url": "https://arxiv.org/",
+    "languages": [
+      "en"
+    ],
+    "kind": "paper-index",
+    "status": "content-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "arxiv.org",
+    "selection_rule": "Read relevant methods and limitations, pin paper version, follow code/data; label preprint status accurately.",
+    "discovery_only": true
+  },
+  {
+    "id": "huggingface",
+    "name": "Hugging Face datasets",
+    "url": "https://huggingface.co/datasets",
+    "languages": [
+      "en",
+      "zh-Hans"
+    ],
+    "kind": "dataset-host",
+    "status": "content-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "huggingface.co",
+    "selection_rule": "Read dataset card, version, provenance and per-asset license; downloads/likes are not quality proof.",
+    "discovery_only": true
+  },
+  {
+    "id": "w3c",
+    "name": "W3C",
+    "url": "https://www.w3.org/",
+    "languages": [
+      "en"
+    ],
+    "kind": "standards",
+    "status": "content-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "www.w3.org",
+    "selection_rule": "Record Draft/Note/Recommendation status and version; avoid presenting a draft as a final standard.",
+    "discovery_only": true
+  },
+  {
+    "id": "mozilla",
+    "name": "MDN",
+    "url": "https://developer.mozilla.org/",
+    "languages": [
+      "en",
+      "ru",
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "ko",
+      "de",
+      "fr",
+      "es",
+      "pt"
+    ],
+    "kind": "standards-docs",
+    "status": "content-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "mozilla",
+    "selection_rule": "Match feature/version; translations share one evidence origin.",
+    "discovery_only": true
+  },
+  {
+    "id": "cloudflare",
+    "name": "Cloudflare technical material",
+    "url": "https://blog.cloudflare.com/",
+    "languages": [
+      "en",
+      "ru",
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "ko",
+      "de",
+      "fr",
+      "es",
+      "pt",
+      "vi",
+      "he",
+      "ar",
+      "pl",
+      "tr"
+    ],
+    "kind": "vendor-research",
+    "status": "content-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "cloudflare",
+    "selection_rule": "Use original mechanisms/docs, not marketing outcomes; all translations are one publisher.",
+    "discovery_only": true
+  },
+  {
+    "id": "hcaptcha",
+    "name": "hCaptcha docs",
+    "url": "https://docs.hcaptcha.com/",
+    "languages": [
+      "en"
+    ],
+    "kind": "vendor-docs",
+    "status": "content-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "hcaptcha",
+    "selection_rule": "Check server-side contract, test guidance and stated limits; do not infer effectiveness.",
+    "discovery_only": true
+  },
+  {
+    "id": "portswigger",
+    "name": "PortSwigger Research",
+    "url": "https://portswigger.net/research",
+    "languages": [
+      "en"
+    ],
+    "kind": "vendor-research",
+    "status": "directory-checked",
+    "checked_at": "2026-09-11",
+    "publisher_group": "portswigger.net",
+    "selection_rule": "Only browser/protocol/instrumentation work directly relevant to scope; exclude unrelated vulnerability news.",
+    "discovery_only": true
+  },
+  {
+    "id": "checkpoint",
+    "name": "Check Point Research",
+    "url": "https://research.checkpoint.com/",
+    "languages": [
+      "en"
+    ],
+    "kind": "vendor-research",
+    "status": "pending",
+    "checked_at": null,
+    "publisher_group": "research.checkpoint.com",
+    "selection_rule": "Select original JavaScript/VM analysis with sample provenance; exclude generic product pages.",
+    "discovery_only": true
+  },
+  {
+    "id": "nullptr",
+    "name": "nullpt.rs",
+    "url": "https://nullpt.rs/",
+    "languages": [
+      "en"
+    ],
+    "kind": "independent-blog",
+    "status": "pending",
+    "checked_at": null,
+    "publisher_group": "nullpt.rs",
+    "selection_rule": "Inspect exact article, samples and captured version; older methods may enter Historical.",
+    "discovery_only": true
+  },
+  {
+    "id": "gitlab",
+    "name": "GitLab",
+    "url": "https://gitlab.com/",
+    "languages": [
+      "en",
+      "ru",
+      "de",
+      "fr",
+      "es",
+      "pt"
+    ],
+    "kind": "forge",
+    "status": "pending",
+    "checked_at": null,
+    "publisher_group": "gitlab.com",
+    "selection_rule": "Resolve original project and public source; a mirror is not an independent resource.",
+    "discovery_only": true
+  },
+  {
+    "id": "codeberg",
+    "name": "Codeberg",
+    "url": "https://codeberg.org/",
+    "languages": [
+      "en",
+      "de",
+      "fr"
+    ],
+    "kind": "forge",
+    "status": "pending",
+    "checked_at": null,
+    "publisher_group": "codeberg.org",
+    "selection_rule": "Same repository gates as GitHub; avoid platform bias.",
+    "discovery_only": true
+  },
+  {
+    "id": "gitee",
+    "name": "Gitee",
+    "url": "https://gitee.com/",
+    "languages": [
+      "zh-Hans"
+    ],
+    "kind": "forge",
+    "status": "pending",
+    "checked_at": null,
+    "publisher_group": "gitee.com",
+    "selection_rule": "Establish upstream identity and license; distinguish original projects from mirrors.",
+    "discovery_only": true
+  },
+  {
+    "id": "usenix",
+    "name": "USENIX",
+    "url": "https://www.usenix.org/",
+    "languages": [
+      "en"
+    ],
+    "kind": "conference",
+    "status": "pending",
+    "checked_at": null,
+    "publisher_group": "www.usenix.org",
+    "selection_rule": "Read full browser measurement/security paper and artifact; preserve experimental conditions.",
+    "discovery_only": true
+  },
+  {
+    "id": "ndss",
+    "name": "NDSS",
+    "url": "https://www.ndss-symposium.org/",
+    "languages": [
+      "en"
+    ],
+    "kind": "conference",
+    "status": "pending",
+    "checked_at": null,
+    "publisher_group": "www.ndss-symposium.org",
+    "selection_rule": "Read full relevant paper, version and artifact; no venue-wide endorsement.",
+    "discovery_only": true
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "parent_url": "https://arxiv.org/abs/2505.24878",
+    "child_url": "https://github.com/MetaAgentX/OpenCaptchaWorld",
+    "relation": "implementation",
+    "depth": 1,
+    "observed_at": "2026-09-11",
+    "child_read": true,
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/MetaAgentX/OpenCaptchaWorld",
+    "child_url": "https://github.com/MetaAgentX/NextGen-CAPTCHAs",
+    "relation": "related-project",
+    "depth": 2,
+    "observed_at": "2026-09-11",
+    "child_read": true,
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/MetaAgentX/OpenCaptchaWorld",
+    "child_url": "https://huggingface.co/datasets/OpenCaptchaWorld/Open_CaptchaWorld",
+    "relation": "dataset",
+    "depth": 2,
+    "observed_at": "2026-09-11",
+    "child_read": true,
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/MetaAgentX/NextGen-CAPTCHAs",
+    "child_url": "https://arxiv.org/abs/2602.09012",
+    "relation": "paper",
+    "depth": 3,
+    "observed_at": "2026-09-11",
+    "child_read": true,
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://developer.mozilla.org/en-US/docs/Glossary/Fingerprinting",
+    "child_url": "https://w3c.github.io/fingerprinting-guidance/",
+    "relation": "background-reference",
+    "depth": 1,
+    "observed_at": "2026-09-11",
+    "child_read": true,
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://developers.cloudflare.com/turnstile/",
+    "child_url": "https://developers.cloudflare.com/turnstile/get-started/server-side-validation/",
+    "relation": "official-docs",
+    "depth": 1,
+    "observed_at": "2026-09-11",
+    "child_read": true,
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://yandex.cloud/en/docs/smartcaptcha/",
+    "child_url": "https://yandex.cloud/en/docs/smartcaptcha/quickstart",
+    "relation": "official-docs",
+    "depth": 1,
+    "observed_at": "2026-09-11",
+    "child_read": true,
+    "independent_corroboration": false
+  }
+]

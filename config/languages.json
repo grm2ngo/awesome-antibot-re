@@ -1,0 +1,192 @@
+[
+  {
+    "language": "en",
+    "ecosystem": "Global; US/UK/Canada/Australia and English-language engineering",
+    "terms": [
+      "browser fingerprinting",
+      "CAPTCHA",
+      "deobfuscation",
+      "instrumentation"
+    ],
+    "sources": "GitHub, standards, research labs",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "ru",
+    "ecosystem": "Russian-speaking engineering",
+    "terms": [
+      "отпечаток браузера",
+      "капча",
+      "деобфускация",
+      "анализ JavaScript"
+    ],
+    "sources": "Habr, OpenNet, Yandex docs",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "zh-Hans",
+    "ecosystem": "Simplified-Chinese engineering",
+    "terms": [
+      "浏览器指纹",
+      "验证码",
+      "JS逆向",
+      "反混淆",
+      "检测"
+    ],
+    "sources": "Kanxue, CSDN, Cnblogs, Gitee",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "zh-Hant",
+    "ecosystem": "Traditional-Chinese engineering",
+    "terms": [
+      "瀏覽器指紋",
+      "驗證碼",
+      "反混淆",
+      "機器人偵測"
+    ],
+    "sources": "iT 邦幫忙, author repositories",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "ja",
+    "ecosystem": "Japanese engineering",
+    "terms": [
+      "ブラウザフィンガープリント",
+      "CAPTCHA",
+      "難読化解除",
+      "ボット検知"
+    ],
+    "sources": "Qiita, Zenn, LY engineering",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "ko",
+    "ecosystem": "Korean engineering",
+    "terms": [
+      "브라우저 지문",
+      "캡차",
+      "난독화 해제",
+      "봇 탐지"
+    ],
+    "sources": "Kakao, LINE, original developer posts",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "de",
+    "ecosystem": "German-speaking engineering",
+    "terms": [
+      "Browser-Fingerprinting",
+      "CAPTCHA",
+      "Deobfuskation",
+      "Bot-Erkennung"
+    ],
+    "sources": "CCC, Heise, research institutions",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "fr",
+    "ecosystem": "French-speaking engineering",
+    "terms": [
+      "empreinte du navigateur",
+      "CAPTCHA",
+      "désobfuscation",
+      "détection de robots"
+    ],
+    "sources": "SSTIC, Developpez, original research",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "vi",
+    "ecosystem": "Vietnamese engineering",
+    "terms": [
+      "dấu vân tay trình duyệt",
+      "mã xác thực",
+      "giải mã rối",
+      "phát hiện bot"
+    ],
+    "sources": "Viblo, original author repositories",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "es",
+    "ecosystem": "Spanish-speaking engineering",
+    "terms": [
+      "huella del navegador",
+      "CAPTCHA",
+      "desofuscación",
+      "detección de bots"
+    ],
+    "sources": "Original researchers, conferences and vendor docs",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "pt",
+    "ecosystem": "Portuguese-speaking engineering; including Brazil",
+    "terms": [
+      "impressão digital do navegador",
+      "CAPTCHA",
+      "desofuscação",
+      "detecção de bots"
+    ],
+    "sources": "Original researchers and engineering blogs",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "hi",
+    "ecosystem": "Hindi-language discovery; Indian research also searched in English",
+    "terms": [
+      "ब्राउज़र फिंगरप्रिंटिंग",
+      "कैप्चा",
+      "बॉट पहचान"
+    ],
+    "sources": "Original author/lab pages discovered through queries",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "he",
+    "ecosystem": "Hebrew-language discovery; Israeli research also searched in English",
+    "terms": [
+      "טביעת אצבע של דפדפן",
+      "קפצ׳ה",
+      "זיהוי בוטים"
+    ],
+    "sources": "Original author/lab pages discovered through queries",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "ar",
+    "ecosystem": "Arabic-language discovery; regional research also searched in English",
+    "terms": [
+      "بصمة المتصفح",
+      "كابتشا",
+      "كشف الروبوتات"
+    ],
+    "sources": "Original author/lab pages discovered through queries",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "pl",
+    "ecosystem": "Polish-language engineering",
+    "terms": [
+      "odcisk przeglądarki",
+      "CAPTCHA",
+      "deobfuskacja",
+      "wykrywanie botów"
+    ],
+    "sources": "Original researchers and technical communities",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  },
+  {
+    "language": "tr",
+    "ecosystem": "Turkish-language engineering",
+    "terms": [
+      "tarayıcı parmak izi",
+      "CAPTCHA",
+      "kod çözümleme",
+      "bot tespiti"
+    ],
+    "sources": "Original researchers and technical communities",
+    "translation_review": "Query seeds; preserve original terms and verify technical meaning in each accepted article."
+  }
+]

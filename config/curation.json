@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "effective_date": "2026-09-11",
+  "scope": "Public browser anti-bot reverse engineering, detection, fingerprinting, CAPTCHA research and measurement.",
+  "fresh_window_days": 365,
+  "accept_score": 85,
+  "watch_score": 70,
+  "weights": {
+    "scope": 25,
+    "depth": 20,
+    "evidence": 25,
+    "distinctiveness": 15,
+    "documentation": 15
+  },
+  "languages": [
+    "en",
+    "ru",
+    "zh-Hans",
+    "zh-Hant",
+    "ja",
+    "ko",
+    "de",
+    "fr",
+    "es",
+    "pt",
+    "vi",
+    "hi",
+    "he",
+    "ar",
+    "pl",
+    "tr"
+  ],
+  "core_languages": [
+    "en",
+    "ru",
+    "zh-Hans",
+    "zh-Hant",
+    "ja",
+    "ko",
+    "de",
+    "fr",
+    "vi"
+  ],
+  "discovery": {
+    "max_depth": 3,
+    "max_children": 10,
+    "hourly_queries": 4,
+    "hourly_pages": 20,
+    "daily_queries": 30,
+    "daily_pages": 120,
+    "daily_minutes": 30,
+    "new_source_budget_percent": 20,
+    "undated_or_old_budget_percent": 20,
+    "fresh_budget_percent": 60,
+    "domain_parallelism": 2,
+    "domain_delay_seconds": 2
+  },
+  "diversity": {
+    "max_publisher_share_soft": 0.25,
+    "max_github_discovery_share_soft": 0.5,
+    "core_language_review_days": 7,
+    "all_language_review_days": 28,
+    "minimum_independent_publishers_for_comparison": 2
+  },
+  "review_days": {
+    "service-docs": 30,
+    "software": 30,
+    "research": 90,
+    "standard": 90,
+    "foundation": 180,
+    "historical": 180
+  },
+  "publication": {
+    "authorized_by_owner": true,
+    "target_branch": "main",
+    "force_push": false,
+    "auto_publish_evidence_supported": true,
+    "new_paid_services": false
+  },
+  "schedule": {
+    "timezone": "Asia/Ho_Chi_Minh",
+    "discovery": "hourly at minute 17",
+    "daily_deepening": "first 09:17 local run each day",
+    "weekly_audit": "Monday daily deepening",
+    "github_quality_cron_utc": "43 1 * * *"
+  }
+}
