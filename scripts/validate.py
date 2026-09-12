@@ -39,7 +39,7 @@ def validate_resources(records, policy, today=None):
     required = ['id','title','url','category','kind','language','publisher_group','description',
                 'why_include','limitations','verification','status','checked_at','review_due',
                 'freshness','freshness_reason','date_basis','evidence_urls','score','score_rationale',
-                'score_total','reviewer','policy_version']
+                'score_total','reviewer','policy_version','editorial_role','listing_file']
     for item in records:
         name=item.get('id','<missing>')
         missing=[k for k in required if not item.get(k)]
@@ -59,6 +59,21 @@ def validate_resources(records, policy, today=None):
             errors.append(f'{name}: wrong policy version')
         if item['status'] != 'curated':
             errors.append(f'{name}: main ledger is for curated resources')
+        editorial=policy['editorial']
+        role=item['editorial_role']
+        if role not in editorial['listings']:
+            errors.append(f'{name}: unknown editorial role')
+        elif item['listing_file'] != editorial['listings'][role]:
+            errors.append(f'{name}: wrong listing for editorial role')
+        if role in editorial['main_roles']:
+            if any(not item.get(k) for k in editorial['core_required_fields']):
+                errors.append(f'{name}: core RE needs target, method and artifact evidence')
+            elif not isinstance(item['re_artifact_urls'],list) or any(
+                not valid_url(u) or u not in item['evidence_urls'] for u in item['re_artifact_urls']
+            ):
+                errors.append(f'{name}: RE artifacts must be listed HTTPS evidence URLs')
+        if role=='case-study' and any(not item.get(k) for k in editorial['case_required_fields']):
+            errors.append(f'{name}: RE case needs sample and version scope')
         scores=item['score']; weights=policy['weights']
         if set(scores)!=set(weights) or any(type(v) not in (int,float) or not 0<=v<=5 for v in scores.values()):
             errors.append(f'{name}: invalid score dimensions')
@@ -89,8 +104,15 @@ def validate_resources(records, policy, today=None):
                 errors.append(f'{name}: unsupported recent label')
         except (ValueError,TypeError):
             errors.append(f'{name}: invalid ISO date')
-        if item['freshness'] not in ('recent','living','foundation'):
-            errors.append(f'{name}: historical/unknown records do not belong in main ledger')
+        if item['freshness'] not in policy['freshness_routes']:
+            errors.append(f'{name}: unsupported freshness route')
+        if item['freshness']=='snapshot':
+            if item['kind']!='research' or role!='case-study':
+                errors.append(f'{name}: snapshot is bounded research, not current tooling')
+            if not item.get('published_at') and not any(
+                re.search(r'/blob/[0-9a-f]{40}/',u) for u in item.get('re_artifact_urls',[])
+            ):
+                errors.append(f'{name}: undated snapshot needs an immutable artifact')
         if item['verification'] not in ('source-reviewed','code-reviewed','runtime-tested'):
             errors.append(f'{name}: unsupported verification level')
         if item['verification']=='code-reviewed':
@@ -139,9 +161,13 @@ def validate(root=ROOT):
     if len(p['languages'])!=len(set(p['languages'])): errors.append('duplicate language lanes')
     lanes=load(root/'config/languages.json')
     if {x['language'] for x in lanes}!=set(p['languages']): errors.append('language registry mismatch')
-    readme=(root/'README.md').read_text()
+    listings={name:(root/name).read_text() for name in set(p['editorial']['listings'].values())}
     for e in records:
-        if f']({e["url"]})' not in readme: errors.append(f'{e["id"]}: missing from README')
+        listing=e.get('listing_file')
+        if f']({e["url"]})' not in listings.get(listing,''):
+            errors.append(f'{e["id"]}: missing from designated listing')
+        if e.get('editorial_role')=='supporting' and f']({e["url"]})' in listings['README.md']:
+            errors.append(f'{e["id"]}: supporting resource must not substitute for main RE entries')
     source_ids=set()
     for s in load(root/'data/sources.json'):
         if s['id'] in source_ids: errors.append('duplicate source ID')

@@ -1,7 +1,7 @@
 {
-  "version": "1.0",
-  "effective_date": "2026-09-11",
-  "scope": "Public browser anti-bot reverse engineering, detection, fingerprinting, CAPTCHA research and measurement.",
+  "version": "1.1",
+  "effective_date": "2026-09-12",
+  "scope": "Reverse engineering of browser anti-bot implementations and the methods/tools used to inspect them; related standards, detection, CAPTCHA design and service docs are supporting material.",
   "fresh_window_days": 365,
   "accept_score": 85,
   "watch_score": 70,
@@ -83,5 +83,34 @@
     "daily_deepening": "first 09:17 local run each day",
     "weekly_audit": "Monday daily deepening",
     "github_quality_cron_utc": "43 1 * * *"
-  }
+  },
+  "editorial": {
+    "main_roles": [
+      "case-study",
+      "re-tool"
+    ],
+    "supporting_role": "supporting",
+    "listings": {
+      "case-study": "README.md",
+      "re-tool": "README.md",
+      "supporting": "SUPPORTING.md"
+    },
+    "core_required_fields": [
+      "re_target",
+      "re_method",
+      "re_artifact_urls"
+    ],
+    "case_required_fields": [
+      "sample_scope",
+      "snapshot_version"
+    ],
+    "core_discovery_effort_target": 0.7,
+    "effort_target_is_acceptance_quota": false
+  },
+  "freshness_routes": [
+    "recent",
+    "living",
+    "foundation",
+    "snapshot"
+  ]
 }

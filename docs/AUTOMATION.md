@@ -9,9 +9,11 @@ The owner authorized recurring research and direct evidence-supported publicatio
 - Hourly check at minute 17, Asia/Ho_Chi_Minh (the repository previously used the equivalent Asia/Saigon timezone).
 - The first local 09:17 run each day performs deeper discovery and a rotating audit. Monday's deeper run also reviews coverage, overdue entries and scheduler/quality health.
 - Read the current repository policy, ledger, last report and queue at every run. Normal budget: 4 queries/20 pages; daily deeper budget: 30 queries/120 pages/30 minutes. An unchanged source needs no cosmetic commit.
+- Policy 1.1 prioritizes implementation RE: target 70% of discovery effort at concrete case studies, VM/AST analysis, sensor/signing logic, anti-debugging, engine instrumentation and protocol/fingerprint reconstruction. Rotate methods/vendors as well as languages. Record gaps; do not promote weak items to fill them.
+- Keep service integration and general supporting references in SUPPORTING.md. Main entries must expose an RE target, method and inspected artifact. Qualified old captured-version studies remain eligible as snapshots; age alone must not move them out of the RE list.
 - Rotate a language lane by local day/hour and prioritize neglected lanes. Core lanes must be attempted every 7 days, all 16 every 28; record gaps rather than inventing accepted results.
 - Follow primary references at most 3 edges/10 children per page. Store remaining queue, parent-child evidence, dates and decisions in a dated report.
-- Revalidate every new/promoted entry; update README plus ledger coherently. Publish supported changes to main with a non-forced atomic commit. If branch rules prevent this, use a ready PR and report the blocker.
+- Revalidate every new/promoted entry; update its README/SUPPORTING listing plus ledger coherently. Publish supported changes to main with a non-forced atomic commit. If branch rules prevent this, use a ready PR and report the blocker.
 - Do not use a previous workspace as persistent state. The GitHub repository and dated reports are authoritative. Do not read private source accounts or Library files for this task.
 
 Activation status is recorded in the dated implementation report only after the scheduler confirms creation. The existence of this runbook alone does not activate a schedule.

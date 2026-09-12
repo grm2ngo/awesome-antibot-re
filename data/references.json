@@ -1,65 +1,155 @@
 [
   {
-    "parent_url": "https://arxiv.org/abs/2505.24878",
+    "child_read": true,
     "child_url": "https://github.com/MetaAgentX/OpenCaptchaWorld",
-    "relation": "implementation",
     "depth": 1,
+    "independent_corroboration": false,
     "observed_at": "2026-09-11",
-    "child_read": true,
-    "independent_corroboration": false
+    "parent_url": "https://arxiv.org/abs/2505.24878",
+    "relation": "implementation"
   },
   {
-    "parent_url": "https://github.com/MetaAgentX/OpenCaptchaWorld",
+    "child_read": true,
     "child_url": "https://github.com/MetaAgentX/NextGen-CAPTCHAs",
-    "relation": "related-project",
     "depth": 2,
+    "independent_corroboration": false,
     "observed_at": "2026-09-11",
-    "child_read": true,
-    "independent_corroboration": false
-  },
-  {
     "parent_url": "https://github.com/MetaAgentX/OpenCaptchaWorld",
+    "relation": "related-project"
+  },
+  {
+    "child_read": true,
     "child_url": "https://huggingface.co/datasets/OpenCaptchaWorld/Open_CaptchaWorld",
-    "relation": "dataset",
     "depth": 2,
+    "independent_corroboration": false,
     "observed_at": "2026-09-11",
-    "child_read": true,
-    "independent_corroboration": false
+    "parent_url": "https://github.com/MetaAgentX/OpenCaptchaWorld",
+    "relation": "dataset"
   },
   {
-    "parent_url": "https://github.com/MetaAgentX/NextGen-CAPTCHAs",
+    "child_read": true,
     "child_url": "https://arxiv.org/abs/2602.09012",
-    "relation": "paper",
     "depth": 3,
+    "independent_corroboration": false,
     "observed_at": "2026-09-11",
-    "child_read": true,
-    "independent_corroboration": false
+    "parent_url": "https://github.com/MetaAgentX/NextGen-CAPTCHAs",
+    "relation": "paper"
   },
   {
-    "parent_url": "https://developer.mozilla.org/en-US/docs/Glossary/Fingerprinting",
+    "child_read": true,
     "child_url": "https://w3c.github.io/fingerprinting-guidance/",
-    "relation": "background-reference",
     "depth": 1,
+    "independent_corroboration": false,
     "observed_at": "2026-09-11",
-    "child_read": true,
-    "independent_corroboration": false
+    "parent_url": "https://developer.mozilla.org/en-US/docs/Glossary/Fingerprinting",
+    "relation": "background-reference"
   },
   {
-    "parent_url": "https://developers.cloudflare.com/turnstile/",
+    "child_read": true,
     "child_url": "https://developers.cloudflare.com/turnstile/get-started/server-side-validation/",
-    "relation": "official-docs",
     "depth": 1,
+    "independent_corroboration": false,
     "observed_at": "2026-09-11",
-    "child_read": true,
-    "independent_corroboration": false
+    "parent_url": "https://developers.cloudflare.com/turnstile/",
+    "relation": "official-docs"
   },
   {
-    "parent_url": "https://yandex.cloud/en/docs/smartcaptcha/",
-    "child_url": "https://yandex.cloud/en/docs/smartcaptcha/quickstart",
-    "relation": "official-docs",
-    "depth": 1,
-    "observed_at": "2026-09-11",
     "child_read": true,
-    "independent_corroboration": false
+    "child_url": "https://yandex.cloud/en/docs/smartcaptcha/quickstart",
+    "depth": 1,
+    "independent_corroboration": false,
+    "observed_at": "2026-09-11",
+    "parent_url": "https://yandex.cloud/en/docs/smartcaptcha/",
+    "relation": "official-docs"
+  },
+  {
+    "child_read": true,
+    "child_url": "https://github.com/arisune1337/akamai-bmp-research/blob/a97e5f51b335eb6dd1e6905040bf8cca42e99559/tools/disasm.js",
+    "depth": 1,
+    "independent_corroboration": false,
+    "inspection_scope": "Read the complete 3.6 KB linear opcode decoder, including unknown-opcode handling and operand-size dispatch; compared FUNC interpretation with README limitations. No runtime execution.",
+    "observed_at": "2026-09-12",
+    "parent_url": "https://github.com/arisune1337/akamai-bmp-research",
+    "relation": "repository-artifact"
+  },
+  {
+    "child_read": true,
+    "child_url": "https://github.com/OneWinged-ShunKaido/akamai-xp1m-teardown/blob/d9e0d34fb5b78bdfde67c4e5fa8755a15572fd7b/docs/index.md",
+    "depth": 1,
+    "independent_corroboration": false,
+    "inspection_scope": "Read abstract, target and layered-obfuscation explanation, section 5 backward slice and DOM-probe analysis, and reproducibility limitations. This is a document review, not engine code review.",
+    "observed_at": "2026-09-12",
+    "parent_url": "https://github.com/OneWinged-ShunKaido/akamai-xp1m-teardown",
+    "relation": "repository-artifact"
+  },
+  {
+    "child_read": true,
+    "child_url": "https://github.com/recurism/decapsula/blob/9db9ad646816eb0d978edcb80433aad35414f559/src/processing/flatten.rs",
+    "depth": 1,
+    "independent_corroboration": false,
+    "inspection_scope": "Inspected AbsVal representation, triplet loop, deferred forcing and reduction/depth limits in flatten.rs; did not audit the complete 32 KB module or end-to-end extraction.",
+    "observed_at": "2026-09-12",
+    "parent_url": "https://github.com/recurism/decapsula",
+    "relation": "repository-artifact"
+  },
+  {
+    "child_read": true,
+    "child_url": "https://github.com/juanfrilla/FamousRussianMarketplace/blob/917a0a56048e29e8dbf86a9da5594e8ab37775e7/js/ast-babel-deobfuscation/main.js",
+    "depth": 1,
+    "independent_corroboration": false,
+    "inspection_scope": "Read complete Babel pipeline driver: three transforms, metadata-stripped AST hashing, stage exports and ten-iteration cap. Read writeup sections on anti-debugging, selective tracing and reconstruction; did not inspect every VM handler.",
+    "observed_at": "2026-09-12",
+    "parent_url": "https://github.com/juanfrilla/FamousRussianMarketplace",
+    "relation": "repository-artifact"
+  },
+  {
+    "child_read": true,
+    "child_url": "https://github.com/juanfrilla/awswaf_ast/blob/005f2114f2e57aaf8738619b569f4b88fb83113d/main.js",
+    "depth": 1,
+    "independent_corroboration": false,
+    "inspection_scope": "Read the complete driver, plugin array, AST-hash convergence check, per-stage writes and ten-iteration cap; compared loaded plugins with README. Individual plugin implementations were not audited.",
+    "observed_at": "2026-09-12",
+    "parent_url": "https://github.com/juanfrilla/awswaf_ast",
+    "relation": "repository-artifact"
+  },
+  {
+    "child_read": true,
+    "child_url": "https://github.com/juanfrilla/trip_vm_reversed/blob/a692ec0a814c888f76b55ff75a048454b15694a2/js/vm_logged.js",
+    "depth": 1,
+    "independent_corroboration": false,
+    "inspection_scope": "Inspected browser-global stubs, commented Proxy/watch setup and selected arithmetic/bitwise logging sites in vm_logged.js. Did not audit all 104 KB, execute the VM or test the scraper.",
+    "observed_at": "2026-09-12",
+    "parent_url": "https://github.com/juanfrilla/trip_vm_reversed",
+    "relation": "repository-artifact"
+  },
+  {
+    "child_read": true,
+    "child_url": "https://github.com/WhiteNightShadow/camoufox-reverse-mcp/blob/da5162a45b09901fa3bf78dc3893691d42f5a71a/docs/REAL_SOURCE_VALIDATION.md",
+    "depth": 1,
+    "independent_corroboration": false,
+    "inspection_scope": "Read the dated validation document, including local source cases, unavailable original logs, failure boundaries, hook side effects and output limits; this is documentation review, not implementation review.",
+    "observed_at": "2026-09-12",
+    "parent_url": "https://github.com/WhiteNightShadow/camoufox-reverse-mcp",
+    "relation": "repository-artifact"
+  },
+  {
+    "child_read": true,
+    "child_url": "https://github.com/rastvl/akamai-deobfuscator-2.0",
+    "depth": 1,
+    "independent_corroboration": false,
+    "inspection_scope": "Linked repository README only; no implementation audit.",
+    "observed_at": "2026-09-12",
+    "parent_url": "https://habr.com/ru/articles/720588/",
+    "relation": "implementation"
+  },
+  {
+    "child_read": false,
+    "child_url": "https://habr.com/ru/articles/716434/",
+    "depth": 1,
+    "independent_corroboration": false,
+    "inspection_scope": "Opened and identified as related Cloudflare article; full methodological review remains queued.",
+    "observed_at": "2026-09-12",
+    "parent_url": "https://habr.com/ru/articles/720588/",
+    "relation": "previous-article"
   }
 ]

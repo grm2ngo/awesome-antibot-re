@@ -1,15 +1,15 @@
-# Awesome Anti-Bot Reverse Engineering — hướng dẫn tiếng Việt
+# Awesome Anti-Bot Reverse Engineering — tiếng Việt
 
-[Danh sách chính](README.md) · [Nguồn đa ngôn ngữ](SOURCES.md) · [Tiêu chí](CURATION.md) · [Lịch cập nhật](docs/AUTOMATION.md)
+[Case RE và công cụ](README.md) · [Tài liệu hỗ trợ](SUPPORTING.md) · [Nguồn đa ngôn ngữ](SOURCES.md) · [Tiêu chí](CURATION.md)
 
-Repo tuyển chọn nghiên cứu công khai về anti-bot trình duyệt: cơ chế CAPTCHA, phân tích JavaScript, quan sát browser engine, TLS/HTTP fingerprint, phát hiện bot và đánh giá. Mỗi mục giải thích học được gì và giới hạn nào cần biết.
+Trọng tâm repo là **bóc tách cách anti-bot được triển khai**: deobfuscation JavaScript, VM/JSVMP, sensor, thuật toán ký, anti-debug, quan sát browser engine và phân tích giao thức. Mục chính phải chỉ ra đối tượng RE, phương pháp và mã/trace/bài phân tích đã đọc.
 
-**Đa dạng có chọn lọc:** 16 luồng ngôn ngữ gồm Anh, Nga, Trung giản thể/phồn thể, Nhật, Hàn, Đức, Pháp, Việt, Tây Ban Nha, Bồ Đào Nha, Hindi, Hebrew, Ả Rập, Ba Lan và Thổ Nhĩ Kỳ. Đây là phạm vi tìm kiếm, không phải tuyên bố đã đọc đủ bài hay có mục đạt chuẩn ở cả 16 ngôn ngữ. Không suy đoán quốc tịch từ tên tác giả/ngôn ngữ. Mọi nguồn dùng cùng ngưỡng tuyển chọn.
+Danh sách hiện có case Akamai BMP/XP1M/Bot Manager 2.0, Imperva Reese84, AWS WAF, Trip.com, VM của một marketplace và Douyin. Công cụ được nhóm theo AST/IR và instrumentation. Tài liệu tích hợp CAPTCHA, chuẩn TLS/HTTP, detection, accessibility và dataset nằm ở trang hỗ trợ.
 
-**Không loại máy móc tài nguyên cũ:** bài mới ưu tiên 365 ngày; dự án sống xét docs/phiên bản/bằng chứng hiện tại. Nguồn nền tảng hoặc lịch sử có lý do giữ và hạn xét lại. Ngày đọc hôm nay không biến nội dung cũ thành nội dung mới.
+**Nguồn cũ vẫn có giá trị RE.** Ưu tiên bài trong 365 ngày, nhưng một nghiên cứu phiên bản cụ thể được xét là snapshot nếu phương pháp có bằng chứng, mẫu hoặc phiên bản được xác định và giới hạn được ghi rõ. Không biến nghiên cứu cũ thành hướng dẫn đang chạy được. Ngày đọc, ngày công bố, phiên bản mẫu và ngày test là các trường riêng.
 
-**Phân biệt mức kiểm chứng:** source-reviewed là đã đọc nguồn gốc cho mô tả; code-reviewed có chỉ rõ file/commit đã xem; runtime-tested phải có môi trường, phiên bản, bước thử và kết quả. Đợt 2026-09-11 không gắn runtime-tested cho phần mềm nào.
+**Kiểm chứng có phạm vi.** Source-reviewed là đã đọc nội dung gốc liên quan; code-reviewed ghi chính xác file/commit và phần mã đã xem, không đồng nghĩa audit toàn repo. Runtime-tested cần môi trường, phiên bản, bước thử, expected/actual và bằng chứng trong 30 ngày. Đợt sửa 2026-09-12 không chạy công cụ RE trên mục tiêu thực và không cấp nhãn runtime-tested.
 
-**Vòng tìm:** query đa ngôn ngữ → đọc nguồn → mở references/related → đọc nguồn con → gộp bản trùng → chấm điểm → phản biện claim → cập nhật. Độ sâu tối đa 3, tối đa 10 link liên quan/trang, có ngân sách và hàng chờ cho lượt sau.
+**Đa dạng có chọn lọc.** Giữ 16 luồng ngôn ngữ và 33 kênh khám phá; en, ru, zh-Hans là ngôn ngữ của các mục hiện được nhận. Đọc một directory không có nghĩa đã đọc bài gốc; tên repo, tên tác giả và ngôn ngữ không chứng minh quốc tịch. Không nâng điểm để đủ số mục hoặc ngôn ngữ.
 
-Chủ repo đã giao quyền cập nhật: thay đổi đạt tiêu chí được đưa lên main mà không cần xin duyệt lại từng mục. Khi thiếu bằng chứng, giữ trong watchlist; mỗi thay đổi vẫn có lịch sử và lý do để bạn xem hoặc đảo lại.
+Vòng cập nhật: tìm theo case/phương pháp RE → đọc nguồn → theo references/related/code → chống trùng → chấm điểm → tự phản biện → cập nhật README, ledger và queue. Ngưỡng vẫn ≥85 và phải qua mọi gate. Xem [báo cáo sửa trọng tâm](reports/2026-09-12-re-focus.md) và [lịch duy trì](docs/AUTOMATION.md).

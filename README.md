@@ -2,98 +2,82 @@
 
 # Awesome Anti-Bot Reverse Engineering [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-Selected public research on browser anti-bot systems: challenge design, JavaScript analysis, instrumentation, network fingerprints, detection and measurement.
+Selected **reverse-engineering case studies and tools for browser anti-bot systems**: JavaScript deobfuscation, virtual machines, sensor and signing logic, anti-debugging, browser internals and protocol analysis.
 
-**Learn the mechanism. Inspect the evidence. Keep the limits visible.**
+**Start with the implementation. Trace the mechanism. Keep the evidence and limits visible.**
 
-English descriptions preserve original source languages. [Hướng dẫn tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Latest review](reports/2026-09-11.md) · [Deployment status](reports/2026-09-12.md).
+[Tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-12-re-focus.md)
 
 ## Contents
 
-- [Foundations and measurement](#foundations-and-measurement)
-- [CAPTCHA systems and service documentation](#captcha-systems-and-service-documentation)
-- [JavaScript analysis and instrumentation](#javascript-analysis-and-instrumentation)
-- [TLS and HTTP fingerprinting](#tls-and-http-fingerprinting)
-- [Detection and browser behavior](#detection-and-browser-behavior)
-- [Original regional research](#original-regional-research)
-- [Papers benchmarks and datasets](#papers-benchmarks-and-datasets)
-- [Regional source atlas](#regional-source-atlas)
-- [Historical and pending research](#historical-and-pending-research)
+- [Akamai sensor and obfuscation](#akamai-sensor-and-obfuscation)
+- [Imperva devirtualization](#imperva-devirtualization)
+- [AWS WAF deobfuscation](#aws-waf-deobfuscation)
+- [Application signing and challenge VMs](#application-signing-and-challenge-vms)
+- [AST and intermediate representations](#ast-and-intermediate-representations)
+- [RE instrumentation](#re-instrumentation)
+- [Supporting references](#supporting-references)
+- [Research gaps and pending cases](#research-gaps-and-pending-cases)
 - [Maintenance](#maintenance)
 
-## Start here
+## Reading guide
 
-| Goal | Route |
+| RE question | Start with |
 | --- | --- |
-| Understand signals and false positives | Foundations → Detection → Measurement limitations. |
-| Study a client-side challenge | Instrumentation → JavaScript analysis → Original regional research. |
-| Compare human-verification designs | Service documentation → Self-hosted PoW → Benchmarks → Accessibility. |
-| Compare transport observations | TLS/HTTP definitions → Client libraries → TrackMe server observations. |
+| How is a sensor assembled? | Akamai BMP for static analysis; XP1M for backward provenance. |
+| How do I study stateful obfuscation? | The Russian Akamai AST-interpreter article. |
+| How can VM bytecode become readable logic? | Reese84 combinator lifting; marketplace register-VM and Trip.com stack-VM traces. |
+| How do I inspect an obfuscated signing flow? | Douyin's captured SDK analysis and browser instrumentation tools. |
+| What supports transport and detection experiments? | The separate [TLS/HTTP and measurement references](SUPPORTING.md). |
 
-All entries below were **source-reviewed on 2026-09-11**. This means their primary material was read for the description; it does not mean the software was run or currently succeeds against a particular vendor. Per-entry evidence, dates, limitations and review deadlines are in [the resource ledger](data/resources.json). No runtime-tested label is assigned in this update.
+**Snapshot** means a study of the stated artifact/version, including older implementations. Its method can remain useful after a vendor changes its code. **Source-reviewed** means relevant primary material was read; **code-reviewed** names the exact source portions inspected in the ledger. Neither means a live target test. No runtime-tested claim is assigned.
 
-## Foundations and measurement
+## Akamai sensor and obfuscation
 
-- [MDN: Fingerprinting](https://developer.mozilla.org/en-US/docs/Glossary/Fingerprinting) - Introduces browser fingerprint attributes and links to measurement and standards guidance. **en · foundation**. A glossary, not a bot detector or current effectiveness benchmark.
-- [W3C fingerprinting guidance](https://w3c.github.io/fingerprinting-guidance/) - Defines fingerprinting surfaces, threat models and mitigation tradeoffs for web specifications. **en · standard**. Living guidance; it does not promise complete prevention of fingerprinting.
-- [W3C: Inaccessibility of CAPTCHA](https://www.w3.org/TR/turingtest/) - Examines accessibility barriers and alternatives to visual human-verification challenges. **en · foundation**. A 2021 Group Draft Note; historical examples are not a current vendor ranking.
-- [Am I Unique?](https://amiunique.org/) - Research project for studying browser fingerprint diversity and evolution. **en · research**. A research sample does not establish population-wide uniqueness or bot detection accuracy.
+- [Akamai BMP sensor teardown](https://github.com/arisune1337/akamai-bmp-research) - Dissects an Akamai BMP sensor through string recovery, bytecode disassembly and sensor-data structure analysis. **en · snapshot study · code-reviewed**. Single sample; unknown opcodes and incomplete decoding.
+- [Akamai XP1M: provenance slicing](https://github.com/OneWinged-ShunKaido/akamai-xp1m-teardown) - Uses backward provenance traces to connect a divergent sensor character to DOM property checks across VM layers. **en · snapshot study · source-reviewed**. Detailed trace excerpts; engine and raw captures are unavailable.
+- [Akamai Bot Manager 2.0: AST interpretation](https://habr.com/ru/articles/720588/) - Builds a small AST interpreter to inspect obfuscated Akamai JavaScript and recover state-dependent strings. **ru · snapshot study · source-reviewed**. 2023 case; interpreter semantics and browser environment are partial.
 
-## CAPTCHA systems and service documentation
+## Imperva devirtualization
 
-- [Cloudflare Turnstile validation](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/) - Documents server-side token validation, errors and integration boundaries. **en · service-docs**. Vendor documentation; no paid service test or comparative success claim.
-- [Yandex SmartCaptcha quickstart](https://yandex.cloud/ru/docs/smartcaptcha/quickstart) - Russian-language first-party guide to widget integration and server-side answer validation. **ru · service-docs**. Documentation review only; account requirements and regional availability must be checked before adoption.
-- [hCaptcha developer guide](https://docs.hcaptcha.com/) - Explains widget integration, token verification, configuration and testing boundaries. **en · service-docs**. Vendor claims are not independent comparative evidence; no production integration tested.
-- [ALTCHA](https://github.com/altcha-org/altcha) - Source and documentation for a self-hosted proof-of-work challenge widget. **en · software**. Study algorithm/version tradeoffs; compliance and anti-bot efficacy claims were not independently validated.
-- [mCaptcha](https://github.com/mCaptcha/mCaptcha) - SHA-256 proof-of-work CAPTCHA system with an explanation of its challenge and validation flow. **en · software**. A computational cost mechanism is not proof of human identity; runtime and capacity not tested.
+- [decapsula: Imperva Reese84 devirtualization](https://github.com/recurism/decapsula) - Lifts Reese84 bytecode into triplets, interprets combinator expressions and folds the result into readable JavaScript. **en · snapshot study · code-reviewed**. Lossy output; unknown values and bounded reductions remain.
 
-## JavaScript analysis and instrumentation
+## AWS WAF deobfuscation
 
-- [webcrack](https://github.com/j4k0xb/webcrack) - Deobfuscates JavaScript and unpacks webpack/browserify output with documented CLI and API usage. **en · software**. Supported transforms and Node/V8 dependencies bound what it can analyze.
-- [JSIR](https://github.com/google/jsir) - MLIR-based JavaScript representation for dataflow analysis and source-to-source transformation. **en · software**. Building LLVM/Bazel dependencies can be substantial; this review did not build the project.
-- [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) - Primary protocol reference for browser debugging, network observation and profiling. **en · standard**. Tip-of-tree can change without compatibility guarantees; match the browser version.
-- [WebDriver BiDi](https://www.w3.org/TR/webdriver-bidi/) - Standards-track reference for bidirectional browser automation commands and events. **en · standard**. Specification status and implementation coverage vary; this is not a tested compatibility matrix.
-- [Firefox-Reverse](https://github.com/WhiteNightShadow/firefox-reverse) - Chinese-language project documenting SpiderMonkey/Gecko instrumentation and isolated browser environments. **zh-Hans · software**. Experimental fork; the claimed instrumentation and current builds have not been executed in this review.
-- [nodriver](https://github.com/ultrafunkamsterdam/nodriver) - Asynchronous Python browser driver exposing CDP domains, commands and events. **en · software**. No claim of undetectability; browser-version changes affect behavior.
+- [AWS WAF challenge AST cleanup](https://github.com/juanfrilla/awswaf_ast) - Shows a staged Babel pipeline for simplifying AWS WAF challenge JavaScript and inspecting intermediate transformations. **en · snapshot study · code-reviewed**. Raw input absent; driver loads 10 transforms versus 11 in README.
 
-## TLS and HTTP fingerprinting
+## Application signing and challenge VMs
 
-- [JA4 / JA4+](https://github.com/FoxIO-LLC/ja4) - Network fingerprint definitions and reference implementations spanning TLS, HTTP and related protocols. **en · software**. Licenses differ by component; do not treat all JA4+ methods as uniformly licensed.
-- [uTLS](https://github.com/refraction-networking/utls) - Go TLS fork exposing ClientHello controls and fingerprint-oriented handshake configuration. **en · software**. The README warns parts may lag; ClientHello control is not full browser-stack emulation.
-- [curl_cffi](https://github.com/lexiforest/curl_cffi) - Python bindings to a curl-impersonate fork for studying TLS and HTTP/2 client profiles. **en · software**. Profiles and supported Python versions change; embedded sponsor links are outside this listing.
-- [TrackMe](https://github.com/pagpeter/TrackMe) - Go HTTP/1 and HTTP/2 server that reports request, header-order and TLS fingerprint details. **en · software**. Demo output is not a general bot-detection verdict; local deployment was not tested.
+- [Douyin a_bogus analysis](https://github.com/hanzheng1954/douyin-abogus-analysis) - Maps a_bogus signing to a stack VM using table extraction, disassembly and opcode traces. **zh-Hans · snapshot study · source-reviewed**. Author's 2026-08-30 captured version; no live target validation or current signature-success claim.
+- [Marketplace JSVMP: tracing a register VM](https://github.com/juanfrilla/FamousRussianMarketplace) - Explains AST cleanup and VM-handler tracing for reconstructing the fingerprint logic of an anonymized marketplace. **en · snapshot study · code-reviewed**. Version-specific register VM; live behavior not tested.
+- [Trip.com Phantom-Token VM analysis](https://github.com/juanfrilla/trip_vm_reversed) - Documents signer localization, browser-environment discovery and VM-handler traces for understanding Phantom-Token logic. **en · snapshot study · code-reviewed**. Instrumentation study; trace logging is not a general taint engine.
 
-## Detection and browser behavior
+## AST and intermediate representations
 
-- [CreepJS](https://github.com/abrahamjuliot/creepjs) - Browser fingerprinting research covering prototype tampering, rendering signals and consistency checks. **en · software**. Use the project-linked deployment; a fingerprint or inconsistency does not by itself prove bot traffic.
-- [FPScanner](https://github.com/antoinevastel/fpscanner) - Browser fingerprint collection and bot-detection primitives with documented limits and non-goals. **en · software**. Not a complete fraud-prevention system; sponsored by Castle as disclosed by the project.
-- [Camoufox](https://github.com/daijro/camoufox) - Firefox-based browser project for studying fingerprint configuration and automation tradeoffs. **en · software**. The project warns it is under development; production stability and present-day effectiveness were not tested.
+- [webcrack](https://github.com/j4k0xb/webcrack) - Deobfuscates JavaScript and unpacks webpack/browserify output with documented CLI and API usage. **en · RE tool · source-reviewed**. Supported transforms and Node/V8 dependencies bound what it can analyze.
+- [JSIR](https://github.com/google/jsir) - MLIR-based JavaScript representation for dataflow analysis and source-to-source transformation. **en · RE tool · source-reviewed**. Building LLVM/Bazel dependencies can be substantial; this review did not build the project.
 
-## Original regional research
+## RE instrumentation
 
-- [Douyin a_bogus analysis](https://github.com/hanzheng1954/douyin-abogus-analysis) - Chinese-language analysis with VM documentation, traces and a stated captured-version baseline. **zh-Hans · research**. Snapshot-specific author findings; no live target validation or current signature-success claim.
+- [Firefox-Reverse](https://github.com/WhiteNightShadow/firefox-reverse) - Documents SpiderMonkey/Gecko hooks for observing request-signing logic, JSVMP execution and WASM boundaries. **zh-Hans · RE tool · source-reviewed**. Experimental fork; the claimed instrumentation and current builds have not been executed in this review.
+- [Camoufox Reverse MCP](https://github.com/WhiteNightShadow/camoufox-reverse-mcp) - Documents browser RE instrumentation and local validation cases for hooks, source capture and signer comparisons. **zh-Hans · RE tool · source-reviewed**. Maintainer-reported validation; hooks can alter observations.
 
-## Papers benchmarks and datasets
+## Supporting references
 
-- [Next-Gen CAPTCHAs](https://github.com/MetaAgentX/NextGen-CAPTCHAs) - Research platform with CAPTCHA generation, benchmark data and documented GUI-agent evaluation protocols. **en · research**. Benchmark claims are author-reported; model settings and full/lite subsets must not be conflated.
-- [Open CaptchaWorld dataset](https://huggingface.co/datasets/OpenCaptchaWorld/Open_CaptchaWorld) - Dataset card and files connected to the Open CaptchaWorld research platform. **en · research**. Dataset revisions, row counts and licenses must be tracked separately from paper/code; not downloaded or benchmarked.
+[Supporting references](SUPPORTING.md) contains browser debugging protocols, TLS/HTTP fingerprints, detection and measurement, CAPTCHA design, accessibility, datasets and service documentation. These help investigate systems; service integration guides do not substitute for implementation RE.
 
-## Regional source atlas
+## Research gaps and pending cases
 
-Discovery spans **16 language lanes** and multiple publication types: original repos, official docs, independent blogs, company engineering posts, forums, standards, papers, conference talks and datasets. [The source atlas](SOURCES.md) records selection rules and whether a directory or an actual resource was read. Language is not proof of nationality or quality, and a translation is not an independent source.
+Cloudflare/Turnstile VM analysis, DataDome, Kasada, PerimeterX/HUMAN, hCaptcha internals and mobile/WebView anti-bot RE need further primary-source review. A named vendor is a research lane, not evidence of coverage.
 
-## Historical and pending research
-
-- [Historical methods](catalog/HISTORICAL.md) - Older material retained for a specific educational purpose with dated limitations.
-- [Watchlist](WATCHLIST.md) - Promising leads missing full text, dates or sufficient evidence.
-- [Previous catalogue](catalog/LEGACY.md) - Earlier specialized entries preserved while their claims are rechecked under the stricter policy.
+The [watchlist](WATCHLIST.md) records Turnstile's explicitly obsolete implementation, a fork guide with unverified claims, Cloudflare deobfuscator documentation gaps, and blocked Nike-VM article reads. The [original catalogue](catalog/LEGACY.md) remains available; its old dates and operational descriptions are not newly certified. [Historical context](catalog/HISTORICAL.md) retains earlier research decisions.
 
 ## Maintenance
 
-Hourly research checks and daily deeper discovery follow [the automation runbook](docs/AUTOMATION.md). The installed GitHub Actions workflow is configured to validate the catalogue and audit registered resource links daily. See the [deployment report](reports/2026-09-12.md) for publication, scheduler activation and the unresolved workflow startup failure. Only meaningful, evidence-supported changes are published; an unchanged review does not produce a cosmetic commit.
+- Acceptance requires ≥85/100, primary evidence and all [mandatory gates](CURATION.md#mandatory-gates). A core entry additionally names the RE target, method and inspected artifact; cases specify their sample/version.
+- Prefer new research within 365 days, while retaining qualified snapshot studies. Never refresh a source date merely because it was read or committed today.
+- Explore [16 language lanes and 33 source channels](SOURCES.md), including original blogs, forums, papers, talks and code. Current accepted source languages are en, ru and zh-Hans; other lanes remain coverage goals.
+- Recurring discovery prioritizes actual RE methods and cases. [Automation runbook](docs/AUTOMATION.md) separates research from link and catalogue checks. Actions startup remains unresolved in the [deployment report](reports/2026-09-12.md); a configured cron is not evidence of successful execution.
+- [Contributions](CONTRIBUTING.md) need a concrete learning benefit and limitations. Author claims, source inspection and our own runtime tests remain distinct.
 
-New articles normally use a rolling 365-day window. Living projects are not rejected for being old; foundations and historical research need explicit reasons and review deadlines. HTTP reachability is separate from content verification and runtime testing.
-
-## Contributing
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md). Submit the exact resource, original evidence, limitations, language and date provenance. No popularity threshold, addition quota or paid placement. Public vendor documentation is eligible; paid solving storefronts and account-market links remain outside the catalogue's scope.
+This AI-assisted catalogue does not claim acceptance into the upstream Awesome index. Repository text is [CC0](LICENSE); linked resources retain their own licenses.

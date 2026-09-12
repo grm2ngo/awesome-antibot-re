@@ -431,11 +431,12 @@
       "en"
     ],
     "kind": "independent-blog",
-    "status": "pending",
-    "checked_at": null,
+    "status": "blocked",
+    "checked_at": "2026-09-12",
     "publisher_group": "nullpt.rs",
-    "selection_rule": "Inspect exact article, samples and captured version; older methods may enter Historical.",
-    "discovery_only": true
+    "selection_rule": "Inspect exact article, samples and captured version; older methods may qualify as snapshot studies.",
+    "discovery_only": true,
+    "observation": "Original Nike-VM parts 1 and 2 returned server errors; no article content inferred. This observation does not establish that the site is permanently unavailable."
   },
   {
     "id": "gitlab",

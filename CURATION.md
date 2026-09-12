@@ -1,12 +1,22 @@
-# Curation policy 1.0
+# Curation policy 1.1
 
-Effective 2026-09-11 under the repository owner's authorization to broaden research and publish updates autonomously. Machine thresholds live in [config/curation.json](config/curation.json). This policy supersedes the earlier 8/10 guide and the unactivated v0.1 proposal.
+Effective 2026-09-12 under the repository owner's authorization to curate and publish autonomously. Version 1.1 corrects the loss of implementation RE in the 1.0 migration; acceptance scores are unchanged. Machine thresholds live in [config/curation.json](config/curation.json).
 
 ## Scope and source types
 
 Public research on browser anti-bot reverse engineering, challenge design, JavaScript/VM analysis, instrumentation, TLS/HTTP and browser fingerprints, detection, human-verification usability, and reproducible measurement. Include source, docs, defensive service specifications, original blogs, explainers, public forum threads, papers, datasets and talks when they teach this scope. General technology news and geographic representation alone do not qualify.
 
 Public vendor documentation is eligible as first-party documentation; it is not evidence of comparative superiority. Paid solving storefronts, account markets, referral placements, gated-only content and thin SEO compilations remain excluded. Commercial authors may contribute excellent public technical work.
+
+## Editorial priority: implementation RE
+
+The main README is for reverse engineering: studies of concrete anti-bot implementations and tools that expose or transform their internals. Each core entry names `re_target`, `re_method` and the inspected `re_artifact_urls`. A case study additionally records `sample_scope` and `snapshot_version`; a dated original writeup with actual code/trace examples can be its artifact. A general product page, integration tutorial or feature list is insufficient.
+
+- `case-study`: JavaScript/VM deobfuscation, sensor or signing reconstruction, anti-debugging, browser-engine behavior, protocol or fingerprint analysis grounded in a specific implementation.
+- `re-tool`: AST/IR transforms, disassemblers, decompilers, trace analysis and browser/engine instrumentation with substantive documentation explaining the RE operation.
+- `supporting`: related standards, basic concepts, service integration, CAPTCHA design/accessibility, general browser drivers, detection and measurement. These remain useful and curated in [SUPPORTING.md](SUPPORTING.md), with the same score threshold, but do not count as implementation RE.
+
+Spend a target 70% of discovery effort on actual RE cases/methods/tools, rotating vendors, techniques, languages and source types. This is an effort target, never a required number of accepted entries. Record exceptions and missing vendor/technique coverage. Broader diversity must not displace the repository's subject.
 
 ## Mandatory gates
 
@@ -19,7 +29,7 @@ Every new or promoted item must satisfy all gates:
 5. No unacknowledged duplication. Canonical project and stable ID are known; forks need a concrete difference. Mirrors, translations and articles copying one source count as one origin.
 6. Dates are sourced and typed: publication, substantive update, read, verification and test dates are separate. Unknown dates remain null. Do not infer activity from copyright year, title, search crawl, cosmetic commit or a README news mention.
 7. Limitations, maturity and commercial affiliation are visible. Source-visible is not automatically open source. Record licensing per code/data/paper asset before asserting an open-source or reuse claim.
-8. Freshness route and next review date are recorded. Archived/deprecated work is Historical, not presented as current tooling.
+8. Freshness route and next review date are recorded. Archived/deprecated tools are not presented as current tooling; their methods may qualify separately as explicitly bounded snapshot research.
 9. Evidence ledger and score rationale exist; no fabricated second reviewer or runtime result. Uncertainty is recorded, not averaged away by a high score.
 10. The complete diff passes local validation. Publication uses a non-forced update based on the actual current branch; concurrent changes are preserved.
 
@@ -53,8 +63,9 @@ Use “working” only with runtime-tested evidence within 30 days and name the 
 - Recent: dated articles/benchmarks normally fall within the rolling 365-day window computed at run time. A substantive update must be evidenced; a changed title does not qualify.
 - Living: age of a repo/service is not a cutoff. Inspect relevant current docs and status for descriptive inclusion; operational claims require a supported-version test. No visible release is not proof of abandonment.
 - Foundation: older concepts can remain if still useful, with explicit boundaries and corroborating current primary context. Do not carry old benchmark results into present rankings.
-- Historical: methods from archived/deprecated tools or captured vendor versions live in a separate file with dates, purpose and limitations.
-- Unknown: if a time-sensitive claim lacks a date, defer it. Undated living docs may be accepted for a narrow specification claim with the uncertainty recorded.
+- Snapshot: a study of a captured implementation may remain in the main RE list regardless of age if it meets the same score and evidence gates. Require a named sample/version or immutable artifact, a concrete method, an explanation of its continuing educational value and explicit limits. Preserve publication/capture dates when known; an immutable source revision can bound an undated case without implying recent publication. Missing original captures or private tools must be disclosed and constrain claims. Snapshot is research, not a recommendation that obsolete software currently runs.
+- Historical: retain superseded context, deprecated tools without a qualifying standalone study, old benchmark results and earlier decisions separately. Age alone is not a reason to hide a qualified RE method from the main list.
+- Unknown: if a time-sensitive claim lacks a date, defer it. Undated living docs may be accepted for a narrow specification claim; an undated snapshot needs an immutable artifact and cannot make current-compatibility claims. Otherwise keep it in watchlist.
 
 Review service docs/software within 30 days; research/standards within 90; foundations/history within 180. Major releases, deprecations or contradictory findings trigger earlier review. Review deadlines cause a recheck, not automatic factual conclusions or deletion. Keep old primary references available to discovery even when ineligible for the current list.
 
@@ -84,7 +95,7 @@ Use [SOURCES.md](SOURCES.md) and [config/languages.json](config/languages.json).
 7. Score candidates, then perform a separate skeptical review pass: challenge unsupported details, source dependence, dates, novelty and comparison conditions. Record one actual reviewer honestly; use additional reviewers when available, never invent agreement.
 8. Publish only supported entries and corrections. Preserve rejected/deferred reasons and old descriptions in the migration/history files.
 
-Hourly budget is 4 queries/20 pages; the daily deepening budget is 30 queries/120 pages/30 minutes. Stop at the first limit. At most 2 concurrent requests/domain, at least 2 seconds between requests and backoff for throttling. No newly purchased API or subscription. These are upper bounds, not quotas.
+Hourly budget is 4 queries/20 pages; the daily deepening budget is 30 queries/120 pages/30 minutes. Stop at the first limit. At most 2 concurrent requests/domain, at least 2 seconds between requests and backoff for throttling. No newly purchased API or subscription. These are upper bounds, not quotas. An explicit owner-requested editorial correction is recorded separately from a scheduled discovery run; do not disguise it as a completed hourly or daily run.
 
 ## Lifecycle, retention and autonomy
 

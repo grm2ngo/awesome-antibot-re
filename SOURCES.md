@@ -1,6 +1,6 @@
 # Multilingual source atlas
 
-[Back to the list](README.md). This is a discovery registry, not a list of endorsed articles. Status is from 2026-09-11: **content-checked** = at least one relevant primary resource read; **directory-checked** = directory/site inspected only; **blocked** = access failed or relevant text unavailable; **pending** = seed not yet inspected. No status exempts future articles from the curation gates.
+[Back to the list](README.md). This is a discovery registry, not a list of endorsed articles. Status is from 2026-09-11 unless the ledger records a later check: **content-checked** = at least one relevant primary resource read; **directory-checked** = directory/site inspected only; **blocked** = access failed or relevant text unavailable; **pending** = seed not yet inspected. No status exempts future articles from the curation gates.
 
 ## Language and ecosystem lanes
 
@@ -56,7 +56,7 @@ Coverage is driven by technical relevance and information gaps, not a ranking of
 | [hCaptcha docs](https://docs.hcaptcha.com/) | en | vendor-docs | content-checked | Check server-side contract, test guidance and stated limits; do not infer effectiveness. |
 | [PortSwigger Research](https://portswigger.net/research) | en | vendor-research | directory-checked | Only browser/protocol/instrumentation work directly relevant to scope; exclude unrelated vulnerability news. |
 | [Check Point Research](https://research.checkpoint.com/) | en | vendor-research | pending | Select original JavaScript/VM analysis with sample provenance; exclude generic product pages. |
-| [nullpt.rs](https://nullpt.rs/) | en | independent-blog | pending | Inspect exact article, samples and captured version; older methods may enter Historical. |
+| [nullpt.rs](https://nullpt.rs/) | en | independent-blog | blocked | Nike-VM article reads failed on 2026-09-12; retry or find a legitimate author mirror. Older studies may qualify as snapshots. |
 | [GitLab](https://gitlab.com/) | en, ru, de, fr, es, pt | forge | pending | Resolve original project and public source; a mirror is not an independent resource. |
 | [Codeberg](https://codeberg.org/) | en, de, fr | forge | pending | Same repository gates as GitHub; avoid platform bias. |
 | [Gitee](https://gitee.com/) | zh-Hans | forge | pending | Establish upstream identity and license; distinguish original projects from mirrors. |
