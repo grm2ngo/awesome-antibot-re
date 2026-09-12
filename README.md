@@ -6,7 +6,7 @@ Selected **reverse-engineering case studies and tools for browser anti-bot syste
 
 **Start with the implementation. Trace the mechanism. Keep the evidence and limits visible.**
 
-[Tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-12-re-focus.md)
+[Tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-12-cloudflare-review.md)
 
 ## Contents
 

@@ -151,5 +151,65 @@
     "observed_at": "2026-09-12",
     "parent_url": "https://habr.com/ru/articles/720588/",
     "relation": "previous-article"
+  },
+  {
+    "parent_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed",
+    "child_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed/blob/7e1264e4ba82f3a5763fc0afc68c21ac19e5af2e/docs/04-loader-internals.md",
+    "relation": "repository-documentation",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read complete loader-excerpt note; no raw bundle or HAR was present to independently bind excerpts to the claimed capture.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed",
+    "child_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed/blob/7e1264e4ba82f3a5763fc0afc68c21ac19e5af2e/docs/01-challenge-flow.md",
+    "relation": "repository-documentation",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read complete flow note; request sequence is author-reported without an archived raw capture.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed",
+    "child_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed/blob/7e1264e4ba82f3a5763fc0afc68c21ac19e5af2e/docs/fingerprinting/README.md",
+    "relation": "repository-documentation",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read fingerprinting index and its distinction between captured loader observations and runtime vectors reconstructed from general public sources.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed",
+    "child_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed/blob/7e1264e4ba82f3a5763fc0afc68c21ac19e5af2e/tools/capture.py",
+    "relation": "repository-artifact",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read complete static HTML extractor and optional paid-solver integration; no code executed.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed",
+    "child_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed/blob/7e1264e4ba82f3a5763fc0afc68c21ac19e5af2e/docs/observed-builds.md",
+    "relation": "observation-log",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read complete sitekey observation log; entries support extraction only, not challenge analysis or working-token claims.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed",
+    "child_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed/blob/7e1264e4ba82f3a5763fc0afc68c21ac19e5af2e/.github/workflows/capture-check.yml",
+    "relation": "observation-procedure",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read complete workflow; set +e means capture errors do not fail the run and may append sitekey=none.",
+    "independent_corroboration": false
   }
 ]
