@@ -4,17 +4,14 @@
 
 ## Research scheduler
 
-The owner authorized recurring research and direct evidence-supported publication. The scheduler is a ChatGPT automation using the connected GitHub account and public-source readers, not a background process in an ephemeral workspace.
+This draft aligns the research company with the maintainer's request: every three days at 09:00 Asia/Saigon, with concrete changes and optional ideas awaiting manual approval. The Codex heartbeat for this task has been updated. An older external hourly schedule described in repository history may be a separate scheduler; it has not been inspected or disabled by this task.
 
-- Hourly check at minute 17, Asia/Ho_Chi_Minh (the repository previously used the equivalent Asia/Saigon timezone).
-- The first local 09:17 run each day performs deeper discovery and a rotating audit. Monday's deeper run also reviews coverage, overdue entries and scheduler/quality health.
-- Read the current repository policy, ledger, last report and queue at every run. Normal budget: 4 queries/20 pages; daily deeper budget: 30 queries/120 pages/30 minutes. An unchanged source needs no cosmetic commit.
-- Policy 1.1 prioritizes implementation RE: target 70% of discovery effort at concrete case studies, VM/AST analysis, sensor/signing logic, anti-debugging, engine instrumentation and protocol/fingerprint reconstruction. Rotate methods/vendors as well as languages. Record gaps; do not promote weak items to fill them.
-- Keep service integration and general supporting references in SUPPORTING.md. Main entries must expose an RE target, method and inspected artifact. Qualified old captured-version studies remain eligible as snapshots; age alone must not move them out of the RE list.
-- Rotate a language lane by local day/hour and prioritize neglected lanes. Core lanes must be attempted every 7 days, all 16 every 28; record gaps rather than inventing accepted results.
-- Follow primary references at most 3 edges/10 children per page. Store remaining queue, parent-child evidence, dates and decisions in a dated report.
-- Revalidate every new/promoted entry; update its README/SUPPORTING listing plus ledger coherently. Publish supported changes to main with a non-forced atomic commit. If branch rules prevent this, use a ready PR and report the blocker.
-- Do not use a previous workspace as persistent state. The GitHub repository and dated reports are authoritative. Do not read private source accounts or Library files for this task.
+- Read the current repository, evidence ledger, reports, watchlist and pending PRs before discovery; preserve concurrent changes.
+- Follow [the company roles](agents/company.md). Expansion Lead and Gatekeeper are mandatory; separate scouts use their own multilingual search playbooks.
+- Keep the policy's implementation-RE focus, language atlas and bounded traversal. Search English plus at least two relevant other languages each run; log actual attempts and gaps.
+- Independently verify proposed claims, debate objections, and prepare a draft PR. No default-branch push or merge before approval of the specific revision.
+- Keep optional ideas separate. No-change runs stay quiet; notify for meaningful review material or actionable conflicts.
+- The repository and reports hold durable evidence; the local checkout can be reconstructed. Do not overwrite pending changes.
 
 Activation status is recorded in the dated implementation report only after the scheduler confirms creation. The existence of this runbook alone does not activate a schedule.
 
