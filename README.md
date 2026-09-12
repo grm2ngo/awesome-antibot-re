@@ -6,11 +6,12 @@ Selected **reverse-engineering case studies and tools for browser anti-bot syste
 
 **Start with the implementation. Trace the mechanism. Keep the evidence and limits visible.**
 
-[Tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-12-cloudflare-review.md)
+[Tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-12-cloudflare-habr.md)
 
 ## Contents
 
 - [Akamai sensor and obfuscation](#akamai-sensor-and-obfuscation)
+- [Cloudflare challenge analysis](#cloudflare-challenge-analysis)
 - [Imperva devirtualization](#imperva-devirtualization)
 - [AWS WAF deobfuscation](#aws-waf-deobfuscation)
 - [Application signing and challenge VMs](#application-signing-and-challenge-vms)
@@ -26,6 +27,7 @@ Selected **reverse-engineering case studies and tools for browser anti-bot syste
 | --- | --- |
 | How is a sensor assembled? | Akamai BMP for static analysis; XP1M for backward provenance. |
 | How do I study stateful obfuscation? | The Russian Akamai AST-interpreter article. |
+| How do I combine runtime observation with AST cleanup? | The bounded 2023 Cloudflare challenge study. |
 | How can VM bytecode become readable logic? | Reese84 combinator lifting; marketplace register-VM and Trip.com stack-VM traces. |
 | How do I inspect an obfuscated signing flow? | Douyin's captured SDK analysis and browser instrumentation tools. |
 | What supports transport and detection experiments? | The separate [TLS/HTTP and measurement references](SUPPORTING.md). |
@@ -37,6 +39,10 @@ Selected **reverse-engineering case studies and tools for browser anti-bot syste
 - [Akamai BMP sensor teardown](https://github.com/arisune1337/akamai-bmp-research) - Dissects an Akamai BMP sensor through string recovery, bytecode disassembly and sensor-data structure analysis. **en · snapshot study · code-reviewed**. Single sample; unknown opcodes and incomplete decoding.
 - [Akamai XP1M: provenance slicing](https://github.com/OneWinged-ShunKaido/akamai-xp1m-teardown) - Uses backward provenance traces to connect a divergent sensor character to DOM property checks across VM layers. **en · snapshot study · source-reviewed**. Detailed trace excerpts; engine and raw captures are unavailable.
 - [Akamai Bot Manager 2.0: AST interpretation](https://habr.com/ru/articles/720588/) - Builds a small AST interpreter to inspect obfuscated Akamai JavaScript and recover state-dependent strings. **ru · snapshot study · source-reviewed**. 2023 case; interpreter semantics and browser environment are partial.
+
+## Cloudflare challenge analysis
+
+- [Cloudflare JS challenge: AST deobfuscation and environment reconstruction](https://habr.com/ru/articles/716434/) - Hooks serialization to observe a fingerprint payload, then uses Babel AST passes to recover strings, simplify proxy/control-flow constructs and map browser-environment reads. **ru · snapshot study · source-reviewed**. Captured 2023 site/Chrome 109 case; exact vendor bundle hash is absent and the environment overrides are explicitly detectable.
 
 ## Imperva devirtualization
 
@@ -68,9 +74,9 @@ Selected **reverse-engineering case studies and tools for browser anti-bot syste
 
 ## Research gaps and pending cases
 
-Cloudflare/Turnstile VM analysis, DataDome, Kasada, PerimeterX/HUMAN, hCaptcha internals and mobile/WebView anti-bot RE need further primary-source review. A named vendor is a research lane, not evidence of coverage.
+Cloudflare/Turnstile VM analysis beyond the bounded 2023 JS-challenge snapshot, DataDome, Kasada, PerimeterX/HUMAN, hCaptcha internals and mobile/WebView anti-bot RE need further primary-source review. A named vendor is a research lane, not evidence of coverage.
 
-The [watchlist](WATCHLIST.md) records Turnstile's explicitly obsolete implementation, a fork guide with unverified claims, Cloudflare deobfuscator documentation gaps, and blocked Nike-VM article reads. The [original catalogue](catalog/LEGACY.md) remains available; its old dates and operational descriptions are not newly certified. [Historical context](catalog/HISTORICAL.md) retains earlier research decisions.
+The [watchlist](WATCHLIST.md) records Turnstile's explicitly obsolete implementation, a fork guide with unverified claims, Cloudflare deobfuscator documentation gaps, and blocked Nike-VM article reads. The accepted Cloudflare article remains a version-bounded snapshot, not a Turnstile or present-day bypass claim. The [original catalogue](catalog/LEGACY.md) remains available; its old dates and operational descriptions are not newly certified. [Historical context](catalog/HISTORICAL.md) retains earlier research decisions.
 
 ## Maintenance
 

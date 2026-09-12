@@ -1689,5 +1689,63 @@
     "url": "https://habr.com/ru/articles/720588/",
     "verification": "source-reviewed",
     "why_include": "A detailed Russian-language method for studying self-checking JavaScript without treating the captured vendor version as current."
+  },
+  {
+    "category": "Cloudflare challenge analysis",
+    "checked_at": "2026-09-12",
+    "date_basis": "Original Habr article header: 12 February 2023, 19:58.",
+    "description": "Hooks serialization to observe a fingerprint payload, then uses Babel AST passes to recover strings, simplify proxy/control-flow constructs and map browser-environment reads.",
+    "editorial_reviewed_at": "2026-09-12",
+    "editorial_role": "case-study",
+    "evidence_urls": [
+      "https://habr.com/ru/articles/716434/",
+      "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/README.md",
+      "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/deobfuscator/Deobfuscator.js",
+      "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/index.js"
+    ],
+    "freshness": "snapshot",
+    "freshness_reason": "Dated Cloudflare challenge case with original code examples and a related same-author implementation; accepted for its bounded method, not present-day effectiveness.",
+    "id": "cloudflare-habr-ast-deobfuscation",
+    "inspection_note": "Read the original article's Playwright hook, Babel AST transformations, string-array/proxy/control-flow sections, environment reconstruction, final Chrome example and explicit detection warning. Separately inspected the complete 355-byte driver and selected transformation routines in the same-author repository at c653ec47a10fef4def0a762ff5852decb8e31974; the article page did not visibly link that repository in the retrieved text.",
+    "kind": "research",
+    "language": "ru",
+    "license_note": "Article is linked for reading; no redistribution license is inferred. The related repository reports MIT for its code, but that does not establish redistribution rights for captured vendor input/output.",
+    "limitations": "Published in 2023 for a documented site and Chrome 109 example; the exact Cloudflare bundle hash/version is absent. The related repository is same-author evidence, not independent corroboration. Final success screenshots are author-reported, no live target was tested, and the article explicitly warns that its browser-property overrides are easy for other anti-bots to detect.",
+    "listing_file": "README.md",
+    "policy_version": "1.1",
+    "published_at": "2023-02-12",
+    "publisher_group": "rastvl",
+    "re_artifact_urls": [
+      "https://habr.com/ru/articles/716434/"
+    ],
+    "re_method": "Playwright pre-load serialization hooks, Babel AST constant/string-array/proxy/control-flow simplification, and reconstruction of browser-environment reads.",
+    "re_target": "Cloudflare browser JavaScript challenge captured by the author in February 2023",
+    "readme_limit": "Captured 2023 site/Chrome 109 case; exact vendor bundle hash is absent and the environment overrides are explicitly detectable.",
+    "review_due": "2026-12-11",
+    "reviewer": "Codex; original article and pinned same-author README, driver and selected deobfuscator routines read on 2026-09-12",
+    "runtime_test": null,
+    "sample_scope": "Challenge served on esfaucets.com as documented in the article; Chrome 109.0.5414.120 appears in the final example; exact script hash is unknown.",
+    "score": {
+      "depth": 5,
+      "distinctiveness": 4,
+      "documentation": 5,
+      "evidence": 4,
+      "scope": 5
+    },
+    "score_rationale": {
+      "depth": "Develops runtime observation, AST recovery passes, environment dependencies and a final bounded experiment rather than only naming techniques.",
+      "distinctiveness": "Connects serialization hooks, structural deobfuscation and browser-environment reconstruction in one anti-bot case.",
+      "documentation": "Long-form Russian explanation includes incremental code, observed data and an explicit warning against generalizing the overrides.",
+      "evidence": "Original code examples support the described method and a pinned same-author implementation contains matching transform families; the exact captured bundle and independent reproduction are absent.",
+      "scope": "Direct reverse engineering of browser JavaScript used by a Cloudflare challenge."
+    },
+    "score_total": 92,
+    "snapshot_version": "Article 716434, published 2023-02-12; documented Cloudflare sample with Chrome 109 example; vendor script hash/version not supplied.",
+    "status": "curated",
+    "substantively_updated_at": null,
+    "title": "Cloudflare JS challenge: AST deobfuscation and environment reconstruction",
+    "url": "https://habr.com/ru/articles/716434/",
+    "verification": "source-reviewed",
+    "why_include": "A concrete Russian-language case that joins runtime observation to reproducible AST transformation ideas while stating why its environment overrides should not be treated as a general bypass."
   }
 ]

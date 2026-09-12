@@ -143,11 +143,11 @@
     "relation": "implementation"
   },
   {
-    "child_read": false,
+    "child_read": true,
     "child_url": "https://habr.com/ru/articles/716434/",
     "depth": 1,
     "independent_corroboration": false,
-    "inspection_scope": "Opened and identified as related Cloudflare article; full methodological review remains queued.",
+    "inspection_scope": "Read the original article in full: Playwright serialization hook, Babel AST constant/string/proxy/control-flow passes, browser-environment reconstruction, final Chrome 109 example and explicit detection warning.",
     "observed_at": "2026-09-12",
     "parent_url": "https://habr.com/ru/articles/720588/",
     "relation": "previous-article"
@@ -210,6 +210,36 @@
     "observed_at": "2026-09-12",
     "child_read": true,
     "inspection_scope": "Read complete workflow; set +e means capture errors do not fail the run and may append sitekey=none.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://habr.com/ru/articles/716434/",
+    "child_url": "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/README.md",
+    "relation": "search-discovered-same-author-implementation",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read the pinned README and repository tree. The implementation exposes matching AST transform families, but the retrieved article text did not visibly link it; same authorship is not independent corroboration.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/README.md",
+    "child_url": "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/deobfuscator/Deobfuscator.js",
+    "relation": "repository-artifact",
+    "depth": 2,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Inspected the parser/traversal setup and selected routines for constant evaluation, string recovery, proxy/object/logical transforms and the commented control-flow-flattening path. This is a scoped static read, not full audit or execution.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/README.md",
+    "child_url": "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/index.js",
+    "relation": "repository-artifact",
+    "depth": 2,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read the complete 355-byte driver: it reads input/cf-main-challenge.js, invokes Deobfuscator.deobfuscate(), and writes output/deobfuscated_code.js. No code was executed.",
     "independent_corroboration": false
   }
 ]
