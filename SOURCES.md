@@ -32,8 +32,8 @@ Coverage is driven by technical relevance and information gaps, not a ranking of
 | [GitHub](https://github.com/) | en, ru, zh-Hans, zh-Hant, ja, ko, de, fr, es, pt, vi, hi, he, ar, pl, tr | forge | content-checked | Read code/docs, resolve canonical owner, check archive state and license scope; stars are discovery signals only. |
 | [Habr](https://habr.com/ru/) | ru, en | community | content-checked | Original author, technical mechanism and dated evidence; distinguish company blogs, translation and repost. |
 | [OpenNet](https://www.opennet.ru/) | ru | news-community | directory-checked | Follow news references to original release/code/paper; a headline is not sufficient. |
-| [Yandex SmartCaptcha docs](https://yandex.cloud/ru/docs/smartcaptcha/quickstart) | ru, en | vendor-docs | content-checked | Use actual documented integration and limits; separate regional availability and vendor assertions. |
-| [Kanxue](https://bbs.kanxue.com/) | zh-Hans | forum | blocked | Exact public thread plus original author/traces required; never substitute a forum home page for a read article. |
+| [Yandex SmartCaptcha docs](https://yandex.cloud/ru/docs/smartcaptcha/quickstart) | ru, en | vendor-docs | content-checked | Use documented protocol boundaries only as evidence for a concrete RE case; standalone integration guides are excluded. |
+| [Kanxue](https://bbs.kanxue.com/) | zh-Hans | forum | content-checked | Exact public thread plus original author/traces required; never substitute a forum home page for a read article. |
 | [CSDN](https://blog.csdn.net/) | zh-Hans | community | directory-checked | Require original author/work, date provenance and primary references; reject scraped/repackaged SEO summaries. |
 | [Cnblogs](https://www.cnblogs.com/) | zh-Hans | community | directory-checked | Prefer original implementation/experiments; trace reposts to the first publisher. |
 | [iT 邦幫忙](https://ithelp.ithome.com.tw/) | zh-Hant | community | pending | Select specific technical posts with primary references; popularity alone is insufficient. |
@@ -50,10 +50,10 @@ Coverage is driven by technical relevance and information gaps, not a ranking of
 | [Information Security Stack Exchange](https://security.stackexchange.com/) | en | forum | directory-checked | Question context, answer evidence and present-day applicability must all be read; votes alone are insufficient. |
 | [arXiv](https://arxiv.org/) | en | paper-index | content-checked | Read relevant methods and limitations, pin paper version, follow code/data; label preprint status accurately. |
 | [Hugging Face datasets](https://huggingface.co/datasets) | en, zh-Hans | dataset-host | content-checked | Read dataset card, version, provenance and per-asset license; downloads/likes are not quality proof. |
-| [W3C](https://www.w3.org/) | en | standards | content-checked | Record Draft/Note/Recommendation status and version; avoid presenting a draft as a final standard. |
+| [W3C](https://www.w3.org/) | en | standards | content-checked | Use exact protocol semantics to resolve a concrete RE observation; general surveys do not become catalogue entries. |
 | [MDN](https://developer.mozilla.org/) | en, ru, zh-Hans, zh-Hant, ja, ko, de, fr, es, pt | standards-docs | content-checked | Match feature/version; translations share one evidence origin. |
 | [Cloudflare technical material](https://blog.cloudflare.com/) | en, ru, zh-Hans, zh-Hant, ja, ko, de, fr, es, pt, vi, he, ar, pl, tr | vendor-research | content-checked | Use original mechanisms/docs, not marketing outcomes; all translations are one publisher. |
-| [hCaptcha docs](https://docs.hcaptcha.com/) | en | vendor-docs | content-checked | Check server-side contract, test guidance and stated limits; do not infer effectiveness. |
+| [hCaptcha docs](https://docs.hcaptcha.com/) | en | vendor-docs | content-checked | Use documented protocol boundaries only as evidence for a concrete RE case; standalone integration guides are excluded. |
 | [PortSwigger Research](https://portswigger.net/research) | en | vendor-research | directory-checked | Only browser/protocol/instrumentation work directly relevant to scope; exclude unrelated vulnerability news. |
 | [Check Point Research](https://research.checkpoint.com/) | en | vendor-research | pending | Select original JavaScript/VM analysis with sample provenance; exclude generic product pages. |
 | [nullpt.rs](https://nullpt.rs/) | en | independent-blog | blocked | Nike-VM article reads failed on 2026-09-12; retry or find a legitimate author mirror. Older studies may qualify as snapshots. |
@@ -72,3 +72,7 @@ Coverage is driven by technical relevance and information gaps, not a ranking of
 - Source promotion requires at least 3 inspected relevant resources from the past year, at least 2 original technical contributions, identifiable authorship, and correction/version practices. A source with too little evidence remains a seed; individual excellent articles can still pass.
 - Search local spellings, technical English loanwords, alternative terminology and original authors. For translations, preserve title/terms, quote short original passages only when needed and mark uncertain translation.
 - When search is empty, use known public directories and author references through available authorized readers. Never bypass login/access restrictions or equate metadata with full-text inspection.
+
+## Latest regional pass
+
+[Scope and regional review](reports/2026-09-12-scope-and-regional-review.md) records the actual visited originals and remaining queue. Kanxue access recovered: two implementation threads were partially read, with holds. Habr originals and linked English fingerprinting research were inspected. Viblo remained directory-only; the Russian-language Reverse4You forum and GitHub Following reads failed. Searches aimed at Vietnamese and Polish sources did not establish an eligible original. These are coverage gaps, not claims that a community lacks useful work.

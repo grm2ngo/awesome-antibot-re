@@ -281,5 +281,75 @@
     "child_read": true,
     "inspection_scope": "Read pinned model.js used as the decompiler's JavaScript model input; no execution or current endpoint comparison.",
     "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://bbs.kanxue.com/",
+    "child_url": "https://bbs.kanxue.com/thread-292935.htm",
+    "relation": "directory-discovery",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read selected version, native-path and limitations sections; remaining body/replies pending.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://bbs.kanxue.com/",
+    "child_url": "https://bbs.kanxue.com/thread-292866.htm",
+    "relation": "directory-discovery",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read introduction and signing/serialization sections; not a complete article/code review.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://habr.com/ru/articles/1063180/",
+    "child_url": "https://github.com/lwthiker/curl-impersonate",
+    "relation": "reference",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read README mechanism and browser-version sections, not patch code.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://habr.com/ru/articles/1063180/",
+    "child_url": "https://github.com/lexiforest/curl_cffi",
+    "relation": "reference",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": false,
+    "inspection_scope": "Opened repository page; no new substantive library review. Existing record unchanged.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/lwthiker/curl-impersonate",
+    "child_url": "https://lwthiker.com/networks/2022/06/17/tls-fingerprinting.html",
+    "relation": "reference",
+    "depth": 2,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read dated original as context; current-browser comparisons not adopted.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/lwthiker/curl-impersonate",
+    "child_url": "https://lwthiker.com/networks/2022/06/17/http2-fingerprinting.html",
+    "relation": "reference",
+    "depth": 2,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read original observation procedure, frame examples and limits; candidate remains held.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://lwthiker.com/networks/2022/06/17/http2-fingerprinting.html",
+    "child_url": "https://github.com/lwthiker/ts1",
+    "relation": "reference",
+    "depth": 3,
+    "observed_at": "2026-09-12",
+    "child_read": false,
+    "inspection_scope": "Opened repository landing page; source, version and license audit queued. Depth limit reached.",
+    "independent_corroboration": false
   }
 ]

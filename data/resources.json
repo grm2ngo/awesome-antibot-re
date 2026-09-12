@@ -1,331 +1,5 @@
 [
   {
-    "category": "Foundations and measurement",
-    "checked_at": "2026-09-11",
-    "date_basis": "Date explicitly shown by the primary source.",
-    "description": "Introduces browser fingerprint attributes and links to measurement and standards guidance.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://developer.mozilla.org/en-US/docs/Glossary/Fingerprinting",
-      "https://w3c.github.io/fingerprinting-guidance/"
-    ],
-    "freshness": "foundation",
-    "freshness_reason": "Retained for concepts and study, not current effectiveness; scope and limitations explicitly recorded.",
-    "id": "mdn-fingerprinting",
-    "kind": "foundation",
-    "language": "en",
-    "limitations": "A glossary, not a bot detector or current effectiveness benchmark.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": null,
-    "publisher_group": "mozilla",
-    "readme_blob_sha": null,
-    "review_due": "2027-03-10",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "A concise entry point before tool-specific work.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports foundations and measurement."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": "2025-07-11",
-    "title": "MDN: Fingerprinting",
-    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Fingerprinting",
-    "verification": "source-reviewed",
-    "why_include": "A concise entry point before tool-specific work."
-  },
-  {
-    "category": "Foundations and measurement",
-    "checked_at": "2026-09-11",
-    "date_basis": "Publication/activity date not established; live source inspected on checked_at.",
-    "description": "Defines fingerprinting surfaces, threat models and mitigation tradeoffs for web specifications.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://w3c.github.io/fingerprinting-guidance/"
-    ],
-    "freshness": "living",
-    "freshness_reason": "Current primary documentation inspected for the narrow descriptive claim; no claim of tested operation.",
-    "id": "w3c-fingerprinting",
-    "kind": "standard",
-    "language": "en",
-    "limitations": "Living guidance; it does not promise complete prevention of fingerprinting.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": null,
-    "publisher_group": "w3c",
-    "readme_blob_sha": null,
-    "review_due": "2026-12-10",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "Adds standards and privacy perspectives to detection research.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports foundations and measurement."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": null,
-    "title": "W3C fingerprinting guidance",
-    "url": "https://w3c.github.io/fingerprinting-guidance/",
-    "verification": "source-reviewed",
-    "why_include": "Adds standards and privacy perspectives to detection research."
-  },
-  {
-    "category": "Foundations and measurement",
-    "checked_at": "2026-09-11",
-    "date_basis": "Date explicitly shown by the primary source.",
-    "description": "Examines accessibility barriers and alternatives to visual human-verification challenges.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://www.w3.org/TR/turingtest/",
-      "https://www.w3.org/TR/2021/DNOTE-turingtest-20211216/"
-    ],
-    "freshness": "foundation",
-    "freshness_reason": "Retained for concepts and study, not current effectiveness; scope and limitations explicitly recorded.",
-    "id": "captcha-accessibility",
-    "kind": "foundation",
-    "language": "en",
-    "limitations": "A 2021 Group Draft Note; historical examples are not a current vendor ranking.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": "2021-12-16",
-    "publisher_group": "w3c",
-    "readme_blob_sha": null,
-    "review_due": "2027-03-10",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "Requires CAPTCHA evaluations to account for legitimate users as well as bots.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports foundations and measurement."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": null,
-    "title": "W3C: Inaccessibility of CAPTCHA",
-    "url": "https://www.w3.org/TR/turingtest/",
-    "verification": "source-reviewed",
-    "why_include": "Requires CAPTCHA evaluations to account for legitimate users as well as bots."
-  },
-  {
-    "category": "Foundations and measurement",
-    "checked_at": "2026-09-11",
-    "date_basis": "Publication/activity date not established; live source inspected on checked_at.",
-    "description": "Research project for studying browser fingerprint diversity and evolution.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://amiunique.org/"
-    ],
-    "freshness": "living",
-    "freshness_reason": "Current primary documentation inspected for the narrow descriptive claim; no claim of tested operation.",
-    "id": "amiunique",
-    "kind": "research",
-    "language": "en",
-    "limitations": "A research sample does not establish population-wide uniqueness or bot detection accuracy.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": null,
-    "publisher_group": "amiunique.org",
-    "readme_blob_sha": null,
-    "review_due": "2026-12-10",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "Adds a measurement-oriented research perspective.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports foundations and measurement."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": null,
-    "title": "Am I Unique?",
-    "url": "https://amiunique.org/",
-    "verification": "source-reviewed",
-    "why_include": "Adds a measurement-oriented research perspective."
-  },
-  {
-    "category": "CAPTCHA systems and service documentation",
-    "checked_at": "2026-09-11",
-    "date_basis": "Publication/activity date not established; live source inspected on checked_at.",
-    "description": "Documents server-side token validation, errors and integration boundaries.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://developers.cloudflare.com/turnstile/get-started/server-side-validation/",
-      "https://developers.cloudflare.com/turnstile/"
-    ],
-    "freshness": "living",
-    "freshness_reason": "Current primary documentation inspected for the narrow descriptive claim; no claim of tested operation.",
-    "id": "turnstile-docs",
-    "kind": "service-docs",
-    "language": "en",
-    "limitations": "Vendor documentation; no paid service test or comparative success claim.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": null,
-    "publisher_group": "cloudflare",
-    "readme_blob_sha": null,
-    "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "Provides the vendor-side protocol contract to compare with client-side research.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports captcha systems and service documentation."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": null,
-    "title": "Cloudflare Turnstile validation",
-    "url": "https://developers.cloudflare.com/turnstile/get-started/server-side-validation/",
-    "verification": "source-reviewed",
-    "why_include": "Provides the vendor-side protocol contract to compare with client-side research."
-  },
-  {
-    "category": "CAPTCHA systems and service documentation",
-    "checked_at": "2026-09-11",
-    "date_basis": "Date explicitly shown by the primary source.",
-    "description": "Russian-language first-party guide to widget integration and server-side answer validation.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://yandex.cloud/ru/docs/smartcaptcha/quickstart",
-      "https://yandex.cloud/en/docs/smartcaptcha/quickstart"
-    ],
-    "freshness": "recent",
-    "freshness_reason": "Dated primary material within the rolling 365-day window.",
-    "id": "yandex-smartcaptcha",
-    "kind": "service-docs",
-    "language": "ru",
-    "limitations": "Documentation review only; account requirements and regional availability must be checked before adoption.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": null,
-    "publisher_group": "yandex",
-    "readme_blob_sha": null,
-    "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "Adds original Russian service documentation with concrete integration material.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports captcha systems and service documentation."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": "2026-07-23",
-    "title": "Yandex SmartCaptcha quickstart",
-    "url": "https://yandex.cloud/ru/docs/smartcaptcha/quickstart",
-    "verification": "source-reviewed",
-    "why_include": "Adds original Russian service documentation with concrete integration material."
-  },
-  {
-    "category": "CAPTCHA systems and service documentation",
-    "checked_at": "2026-09-11",
-    "date_basis": "Publication/activity date not established; live source inspected on checked_at.",
-    "description": "Explains widget integration, token verification, configuration and testing boundaries.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://docs.hcaptcha.com/"
-    ],
-    "freshness": "living",
-    "freshness_reason": "Current primary documentation inspected for the narrow descriptive claim; no claim of tested operation.",
-    "id": "hcaptcha-docs",
-    "kind": "service-docs",
-    "language": "en",
-    "limitations": "Vendor claims are not independent comparative evidence; no production integration tested.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": null,
-    "publisher_group": "hcaptcha",
-    "readme_blob_sha": null,
-    "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "Adds another independent CAPTCHA vendor protocol reference.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports captcha systems and service documentation."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": null,
-    "title": "hCaptcha developer guide",
-    "url": "https://docs.hcaptcha.com/",
-    "verification": "source-reviewed",
-    "why_include": "Adds another independent CAPTCHA vendor protocol reference."
-  },
-  {
     "category": "CAPTCHA systems and service documentation",
     "checked_at": "2026-09-11",
     "date_basis": "Publication/activity date not established; live source inspected on checked_at.",
@@ -369,7 +43,8 @@
     "title": "ALTCHA",
     "url": "https://github.com/altcha-org/altcha",
     "verification": "source-reviewed",
-    "why_include": "Adds a self-hosted challenge design alongside hosted service documentation."
+    "why_include": "Adds a self-hosted challenge design alongside hosted service documentation.",
+    "re_use": "Inspect a public computational-challenge implementation and its client/verifier boundary; parameter/vector audit remains pending."
   },
   {
     "category": "CAPTCHA systems and service documentation",
@@ -415,7 +90,8 @@
     "title": "mCaptcha",
     "url": "https://github.com/mCaptcha/mCaptcha",
     "verification": "source-reviewed",
-    "why_include": "Adds a separately maintained PoW implementation for architectural comparison."
+    "why_include": "Adds a separately maintained PoW implementation for architectural comparison.",
+    "re_use": "Trace the SHA-256 computational-challenge and validation flow; no reproduced work-factor or capacity claim."
   },
   {
     "archived": false,
@@ -571,53 +247,8 @@
     "title": "Chrome DevTools Protocol",
     "url": "https://chromedevtools.github.io/devtools-protocol/",
     "verification": "source-reviewed",
-    "why_include": "Provides the underlying instrumentation contract for CDP-based tools."
-  },
-  {
-    "category": "JavaScript analysis and instrumentation",
-    "checked_at": "2026-09-11",
-    "date_basis": "Publication/activity date not established; live source inspected on checked_at.",
-    "description": "Standards-track reference for bidirectional browser automation commands and events.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://www.w3.org/TR/webdriver-bidi/"
-    ],
-    "freshness": "living",
-    "freshness_reason": "Current primary documentation inspected for the narrow descriptive claim; no claim of tested operation.",
-    "id": "webdriver-bidi",
-    "kind": "standard",
-    "language": "en",
-    "limitations": "Specification status and implementation coverage vary; this is not a tested compatibility matrix.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": null,
-    "publisher_group": "w3c",
-    "readme_blob_sha": null,
-    "review_due": "2026-12-10",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "Adds cross-browser protocol context beyond CDP.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports javascript analysis and instrumentation."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": null,
-    "title": "WebDriver BiDi",
-    "url": "https://www.w3.org/TR/webdriver-bidi/",
-    "verification": "source-reviewed",
-    "why_include": "Adds cross-browser protocol context beyond CDP."
+    "why_include": "Provides the underlying instrumentation contract for CDP-based tools.",
+    "re_use": "Locate browser debugger, runtime and network observation commands when instrumenting a captured challenge."
   },
   {
     "archived": false,
@@ -676,52 +307,6 @@
     "why_include": "Adds engine-level observation and an original Chinese technical source."
   },
   {
-    "category": "JavaScript analysis and instrumentation",
-    "checked_at": "2026-09-11",
-    "date_basis": "Publication/activity date not established; live source inspected on checked_at.",
-    "description": "Asynchronous Python browser driver exposing CDP domains, commands and events.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://github.com/ultrafunkamsterdam/nodriver/blob/HEAD/README.md"
-    ],
-    "freshness": "living",
-    "freshness_reason": "Current primary documentation inspected for the narrow descriptive claim; no claim of tested operation.",
-    "id": "nodriver",
-    "kind": "software",
-    "language": "en",
-    "limitations": "No claim of undetectability; browser-version changes affect behavior.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": null,
-    "publisher_group": "ultrafunkamsterdam",
-    "readme_blob_sha": "d3da38d0daab9192b552179011c9f9f241041872",
-    "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "Provides a lightweight instrumentation approach without a WebDriver binary.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports javascript analysis and instrumentation."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": null,
-    "title": "nodriver",
-    "url": "https://github.com/ultrafunkamsterdam/nodriver",
-    "verification": "source-reviewed",
-    "why_include": "Provides a lightweight instrumentation approach without a WebDriver binary."
-  },
-  {
     "category": "TLS and HTTP fingerprinting",
     "checked_at": "2026-09-11",
     "date_basis": "Publication/activity date not established; live source inspected on checked_at.",
@@ -765,7 +350,8 @@
     "title": "JA4 / JA4+",
     "url": "https://github.com/FoxIO-LLC/ja4",
     "verification": "source-reviewed",
-    "why_include": "Connects client-side research to server-observable signals."
+    "why_include": "Connects client-side research to server-observable signals.",
+    "re_use": "Compare extracted TLS/HTTP attributes and reference fingerprint definitions against a captured client trace."
   },
   {
     "category": "TLS and HTTP fingerprinting",
@@ -811,7 +397,8 @@
     "title": "uTLS",
     "url": "https://github.com/refraction-networking/utls",
     "verification": "source-reviewed",
-    "why_include": "Useful for understanding which handshake properties are observable."
+    "why_include": "Useful for understanding which handshake properties are observable.",
+    "re_use": "Vary ClientHello configuration in a controlled transport-fingerprint experiment."
   },
   {
     "category": "TLS and HTTP fingerprinting",
@@ -857,7 +444,8 @@
     "title": "curl_cffi",
     "url": "https://github.com/lexiforest/curl_cffi",
     "verification": "source-reviewed",
-    "why_include": "Adds a Python interface to transport-level experimentation."
+    "why_include": "Adds a Python interface to transport-level experimentation.",
+    "re_use": "Compare documented TLS/HTTP2 profiles with browser captures; a profile is not evidence of target success."
   },
   {
     "category": "TLS and HTTP fingerprinting",
@@ -903,7 +491,8 @@
     "title": "TrackMe",
     "url": "https://github.com/pagpeter/TrackMe",
     "verification": "source-reviewed",
-    "why_include": "Adds a server-side observation tool to compare client implementations."
+    "why_include": "Adds a server-side observation tool to compare client implementations.",
+    "re_use": "Observe request/header-order/TLS fields on a controlled server during fingerprint analysis."
   },
   {
     "category": "Detection and browser behavior",
@@ -949,7 +538,8 @@
     "title": "CreepJS",
     "url": "https://github.com/abrahamjuliot/creepjs",
     "verification": "source-reviewed",
-    "why_include": "Adds cross-surface consistency analysis and privacy measurement."
+    "why_include": "Adds cross-surface consistency analysis and privacy measurement.",
+    "re_use": "Inspect browser consistency and prototype-tampering predicates used as detection signals."
   },
   {
     "category": "Detection and browser behavior",
@@ -995,53 +585,8 @@
     "title": "FPScanner",
     "url": "https://github.com/antoinevastel/fpscanner",
     "verification": "source-reviewed",
-    "why_include": "Adds a detector-maintainer perspective with explicit scope limits."
-  },
-  {
-    "category": "Detection and browser behavior",
-    "checked_at": "2026-09-11",
-    "date_basis": "Publication/activity date not established; live source inspected on checked_at.",
-    "description": "Firefox-based browser project for studying fingerprint configuration and automation tradeoffs.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://github.com/daijro/camoufox/blob/HEAD/README.md"
-    ],
-    "freshness": "living",
-    "freshness_reason": "Current primary documentation inspected for the narrow descriptive claim; no claim of tested operation.",
-    "id": "camoufox",
-    "kind": "software",
-    "language": "en",
-    "limitations": "The project warns it is under development; production stability and present-day effectiveness were not tested.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": null,
-    "publisher_group": "daijro",
-    "readme_blob_sha": "e25272f7ab7c974c3ce3ea355f874ae437f7d22d",
-    "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "Adds Gecko-based behavior to a largely Chromium-oriented tool landscape.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports detection and browser behavior."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": null,
-    "title": "Camoufox",
-    "url": "https://github.com/daijro/camoufox",
-    "verification": "source-reviewed",
-    "why_include": "Adds Gecko-based behavior to a largely Chromium-oriented tool landscape."
+    "why_include": "Adds a detector-maintainer perspective with explicit scope limits.",
+    "re_use": "Inspect fingerprint-collection and bot-detection primitives when mapping a detection predicate."
   },
   {
     "archived": false,
@@ -1100,101 +645,6 @@
     "url": "https://github.com/hanzheng1954/douyin-abogus-analysis",
     "verification": "source-reviewed",
     "why_include": "Original Chinese research adds a distinct challenge-VM case study."
-  },
-  {
-    "category": "Papers benchmarks and datasets",
-    "checked_at": "2026-09-11",
-    "date_basis": "Date explicitly shown by the primary source.",
-    "description": "Research platform with CAPTCHA generation, benchmark data and documented GUI-agent evaluation protocols.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://github.com/MetaAgentX/NextGen-CAPTCHAs/blob/HEAD/README.md",
-      "https://arxiv.org/html/2602.09012v2"
-    ],
-    "freshness": "recent",
-    "freshness_reason": "Dated primary material within the rolling 365-day window.",
-    "id": "nextgen-captchas",
-    "kind": "research",
-    "language": "en",
-    "limitations": "Benchmark claims are author-reported; model settings and full/lite subsets must not be conflated.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": "2026-02-09",
-    "publisher_group": "metaagentx",
-    "readme_blob_sha": "0c595a229b27c1d17b9d5958f7836a3204d78ca5",
-    "review_due": "2026-12-10",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "Connects paper, implementation and evaluation material through an inspectable reference chain.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports papers benchmarks and datasets."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": "2026-06-21",
-    "title": "Next-Gen CAPTCHAs",
-    "url": "https://github.com/MetaAgentX/NextGen-CAPTCHAs",
-    "verification": "source-reviewed",
-    "why_include": "Connects paper, implementation and evaluation material through an inspectable reference chain."
-  },
-  {
-    "category": "Papers benchmarks and datasets",
-    "checked_at": "2026-09-11",
-    "date_basis": "Publication/activity date not established; live source inspected on checked_at.",
-    "description": "Dataset card and files connected to the Open CaptchaWorld research platform.",
-    "editorial_reviewed_at": "2026-09-12",
-    "editorial_role": "supporting",
-    "evidence_urls": [
-      "https://huggingface.co/datasets/OpenCaptchaWorld/Open_CaptchaWorld",
-      "https://github.com/MetaAgentX/OpenCaptchaWorld",
-      "https://arxiv.org/abs/2505.24878"
-    ],
-    "freshness": "living",
-    "freshness_reason": "Current primary documentation inspected for the narrow descriptive claim; no claim of tested operation.",
-    "id": "opencaptchaworld-data",
-    "kind": "research",
-    "language": "en",
-    "limitations": "Dataset revisions, row counts and licenses must be tracked separately from paper/code; not downloaded or benchmarked.",
-    "listing_file": "SUPPORTING.md",
-    "policy_version": "1.1",
-    "published_at": null,
-    "publisher_group": "huggingface.co",
-    "readme_blob_sha": null,
-    "review_due": "2026-12-10",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
-    "runtime_test": null,
-    "score": {
-      "depth": 4,
-      "distinctiveness": 4,
-      "documentation": 5,
-      "evidence": 4,
-      "scope": 5
-    },
-    "score_rationale": {
-      "depth": "The inspected primary material explains the mechanisms named in the description.",
-      "distinctiveness": "Adds a separately identifiable data artifact instead of treating paper and code as the entire experiment.",
-      "documentation": "Accessible source material with a precise link; publication date kept separate from review date.",
-      "evidence": "Primary source read; descriptions bounded to source support; runtime effectiveness not tested.",
-      "scope": "Directly supports papers benchmarks and datasets."
-    },
-    "score_total": 88,
-    "status": "curated",
-    "substantively_updated_at": null,
-    "title": "Open CaptchaWorld dataset",
-    "url": "https://huggingface.co/datasets/OpenCaptchaWorld/Open_CaptchaWorld",
-    "verification": "source-reviewed",
-    "why_include": "Adds a separately identifiable data artifact instead of treating paper and code as the entire experiment."
   },
   {
     "archived": false,

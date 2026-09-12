@@ -5,7 +5,7 @@
 | Lead | Language | Observation on 2026-09-11 | Required next step |
 | --- | --- | --- | --- |
 | [Kakao DKAPTCHA talk](https://tech.kakao.com/posts/604) | ko | Title and official landing page visible; substantive talk/transcript not retrieved. | Obtain public slides/transcript and read methods/limitations before scoring. |
-| [Kanxue](https://bbs.kanxue.com/) | zh-Hans | Fetch failed; no thread accepted from a snippet. | Resolve an exact public thread and read original evidence. |
+| [Kanxue](https://bbs.kanxue.com/) | zh-Hans | Original 2026-09-11 fetch failed; access recovered on 2026-09-12. | Two exact thread reviews are recorded below; recovery does not imply acceptance. |
 | [Qiita CAPTCHA](https://qiita.com/tags/captcha) | ja | Topic directory read; article bodies not surfaced by available retrieval. | Find and inspect an exact original article, date and code. |
 | [Zenn CAPTCHA](https://zenn.dev/topics/captcha) | ja | Topic directory read; no complete article accepted. | Find exact article and verify primary links. |
 | [Previous catalogue](catalog/LEGACY.md) | mixed | All previous entries preserved; only ledger-backed entries are promoted to the main list. | Prioritize challenge-VM writeups and transport tools; review 8 pending items per daily deepening. |
@@ -30,3 +30,14 @@ No useful search results in a lane means an unresolved coverage gap, not absence
 The rastvl Cloudflare article was promoted as a bounded 2023 snapshot after full methodological review; see the [Cloudflare snapshot report](reports/2026-09-12-cloudflare-habr.md). It remains the same publisher group as the accepted Akamai article and is not independent corroboration.
 
 Seven RE resources from legacy and the historical Russian Akamai article now have individual acceptance records; see the [RE correction report](reports/2026-09-12-re-focus.md). The original legacy text is preserved, including claims that this review corrected rather than repeated.
+
+## Regional and protocol leads — 2026-09-12
+
+| Original | Inspection and decision | Next evidence |
+| --- | --- | --- |
+| [Android signing-chain analysis](https://bbs.kanxue.com/thread-292935.htm) · zh-Hans | Partial read; version/hashes and call-path excerpts, but signer dataflow remains uncertain. HOLD, unscored. | Finish original/replies; inspect public reproducible artifacts and absolute publication date. |
+| [App unpacking and request-signature analysis](https://bbs.kanxue.com/thread-292866.htm) · zh-Hans | Partial read of the dated 2026-09-04 article; signing/serialization details. HOLD, unscored. | Finish code/replies; establish sample version/provenance and anti-abuse scope. |
+| [Two sides of anti-bot detection](https://habr.com/ru/articles/1063180/) · ru | Configuration examples and author observations; no isolated TLS experiment or reproducible PoW vector inspected. Not accepted. | Find source/verifier, parameters and raw observations before rescoring. |
+| [HTTP/2 fingerprinting](https://lwthiker.com/networks/2022/06/17/http2-fingerprinting.html) · en | Original dated snapshot read; provisional 92/100. HOLD pending independent review. | Validate bounded wording and inspect linked source/trace provenance. No current-client claim. |
+
+See [the review report](reports/2026-09-12-scope-and-regional-review.md) for method, limitations and honest coverage. GitHub Following remains unread: neither the public page nor the public API read succeeded in this pass. No candidate is attributed to a followed account.

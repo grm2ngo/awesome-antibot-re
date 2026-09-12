@@ -1,7 +1,7 @@
 {
   "version": "1.1",
   "effective_date": "2026-09-12",
-  "scope": "Reverse engineering of browser anti-bot implementations and the methods/tools used to inspect them; related standards, detection, CAPTCHA design and service docs are supporting material.",
+  "scope": "Anti-bot/CAPTCHA implementation RE and directly supporting inspection methods; excludes standalone integration, usability surveys, generic automation and unrelated security.",
   "fresh_window_days": 365,
   "accept_score": 85,
   "watch_score": 70,
@@ -120,12 +120,16 @@
     },
     "category_target_is_acceptance_quota": false,
     "working_definition": "Only a dated runtime-tested record with version, environment, procedure, expected/actual output and public evidence within 30 days.",
-    "pow_definition": "Only a record exposing the challenge algorithm, difficulty/parameters, verifier or reference implementation, and a reproducible test; computational cost is not proof of human identity."
+    "pow_definition": "Only a record exposing the challenge algorithm, difficulty/parameters, verifier or reference implementation, and a reproducible test; computational cost is not proof of human identity.",
+    "supporting_required_fields": [
+      "re_use"
+    ]
   },
   "freshness_routes": [
     "recent",
     "living",
     "foundation",
     "snapshot"
-  ]
+  ],
+  "scope_revision": "2026-09-12-implementation-only"
 }

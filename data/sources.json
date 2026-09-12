@@ -38,7 +38,7 @@
     ],
     "kind": "community",
     "status": "content-checked",
-    "checked_at": "2026-09-11",
+    "checked_at": "2026-09-12",
     "publisher_group": "habr.com",
     "selection_rule": "Original author, technical mechanism and dated evidence; distinguish company blogs, translation and repost.",
     "discovery_only": true
@@ -69,7 +69,7 @@
     "status": "content-checked",
     "checked_at": "2026-09-11",
     "publisher_group": "yandex",
-    "selection_rule": "Use actual documented integration and limits; separate regional availability and vendor assertions.",
+    "selection_rule": "Use documented protocol boundaries only as evidence for a concrete RE case; standalone integration guides are excluded.",
     "discovery_only": true
   },
   {
@@ -80,11 +80,12 @@
       "zh-Hans"
     ],
     "kind": "forum",
-    "status": "blocked",
-    "checked_at": "2026-09-11",
+    "status": "content-checked",
+    "checked_at": "2026-09-12",
     "publisher_group": "bbs.kanxue.com",
     "selection_rule": "Exact public thread plus original author/traces required; never substitute a forum home page for a read article.",
-    "discovery_only": true
+    "discovery_only": true,
+    "inspection_note": "Read sections of exact public threads 292935 and 292866; neither has been accepted. This supersedes the earlier access failure."
   },
   {
     "id": "csdn",
@@ -210,10 +211,11 @@
     ],
     "kind": "community",
     "status": "directory-checked",
-    "checked_at": "2026-09-11",
+    "checked_at": "2026-09-12",
     "publisher_group": "viblo.asia",
     "selection_rule": "Prioritize original Vietnamese experiments with exact version and source references.",
-    "discovery_only": true
+    "discovery_only": true,
+    "inspection_note": "Reverse-engineering tag directory read; no original anti-bot article established."
   },
   {
     "id": "sstic",
@@ -327,7 +329,7 @@
     "status": "content-checked",
     "checked_at": "2026-09-11",
     "publisher_group": "www.w3.org",
-    "selection_rule": "Record Draft/Note/Recommendation status and version; avoid presenting a draft as a final standard.",
+    "selection_rule": "Use exact protocol semantics to resolve a concrete RE observation; general surveys do not become catalogue entries.",
     "discovery_only": true
   },
   {
@@ -392,7 +394,7 @@
     "status": "content-checked",
     "checked_at": "2026-09-11",
     "publisher_group": "hcaptcha",
-    "selection_rule": "Check server-side contract, test guidance and stated limits; do not infer effectiveness.",
+    "selection_rule": "Use documented protocol boundaries only as evidence for a concrete RE case; standalone integration guides are excluded.",
     "discovery_only": true
   },
   {

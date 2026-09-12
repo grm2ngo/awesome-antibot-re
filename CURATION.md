@@ -1,12 +1,14 @@
 # Curation policy 1.1
 
-This draft adds the maintainer-requested research company and manual review process to policy 1.1. Version 1.1 corrects the loss of implementation RE in the 1.0 migration; acceptance scores are unchanged. Machine thresholds live in [config/curation.json](config/curation.json).
+Scope revision, 2026-09-12: the owner requested a narrower anti-bot/CAPTCHA RE catalogue and explicitly authorized this cleanup and publication. Policy 1.1's score, evidence and independent-review requirements are retained; organizational playbooks and duplicate navigation are removed. Machine thresholds live in [config/curation.json](config/curation.json).
 
 ## Scope and source types
 
-Public research on browser anti-bot reverse engineering, challenge design, JavaScript/VM analysis, instrumentation, TLS/HTTP and browser fingerprints, detection, human-verification usability, and reproducible measurement. Include source, docs, defensive service specifications, original blogs, explainers, public forum threads, papers, datasets and talks when they teach this scope. General technology news and geographic representation alone do not qualify.
+Public analysis of anti-bot/CAPTCHA implementations: JavaScript/VM, sensor and request signing, challenge/verifier logic, anti-debugging, browser-engine instrumentation and protocol/fingerprint reconstruction. Mobile signing belongs only when the request-integrity or anti-abuse mechanism is identified. Generic mobile unpacking, malware, game cheats and unrelated vulnerability research are outside scope.
 
-Public vendor documentation is eligible as first-party documentation; it is not evidence of comparative superiority. Paid solving storefronts, account markets, referral placements, gated-only content and thin SEO compilations remain excluded. Commercial authors may contribute excellent public technical work.
+Require inspected code, disassembly, a concrete trace, or a reproducible experiment tied to the stated mechanism. A code block that only configures an SDK is insufficient. Papers, forums and personal blogs face the same gate; venue, popularity and language earn no exemption.
+
+Vendor specifications can corroborate a case's protocol boundary, but widget quickstarts and product introductions do not receive standalone catalogue entries. Paid solving storefronts, account markets, referral placements, gated-only content and thin SEO compilations remain excluded. Commercial authors may contribute excellent public technical work.
 
 ## Editorial priority: implementation RE
 
@@ -14,7 +16,7 @@ The main README is for reverse engineering: studies of concrete anti-bot impleme
 
 - `case-study`: JavaScript/VM deobfuscation, sensor or signing reconstruction, anti-debugging, browser-engine behavior, protocol or fingerprint analysis grounded in a specific implementation.
 - `re-tool`: AST/IR transforms, disassemblers, decompilers, trace analysis and browser/engine instrumentation with substantive documentation explaining the RE operation.
-- `supporting`: related standards, basic concepts, service integration, CAPTCHA design/accessibility, general browser drivers, detection and measurement. These remain useful and curated in [SUPPORTING.md](SUPPORTING.md), with the same score threshold, but do not count as implementation RE.
+- `supporting`: a small [RE workbench](SUPPORTING.md) for debugger operations, transport capture/comparison, detection-predicate inspection and computational challenge analysis. Every record must name its concrete `re_use`. General introductions, standalone integration guides, usability surveys, generic drivers and CAPTCHA benchmarks without an implementation-RE connection are excluded. Supporting items retain the same score threshold and do not count as cases.
 
 Spend a target 70% of discovery effort on actual RE cases/methods/tools, rotating vendors, techniques, languages and source types. This is an effort target, never a required number of accepted entries. Record exceptions and missing vendor/technique coverage. Broader diversity must not displace the repository's subject.
 
@@ -25,7 +27,7 @@ Every new or promoted item must satisfy all gates:
 1. Direct scope fit, identifiable resource and a concrete reader benefit.
 2. The exact original resource was opened and its relevant content read. Search snippets, repository stars, summaries, home pages and HTTP 200 are not substitutes.
 3. The description is supported by primary material. Claims about performance or superiority need a reproducible evaluation or at least two independent primary publishers with compatible methods; otherwise attribute the claim and remove the implied comparison.
-4. Explain technical substance: code, trace, mechanism, data, methodology, specification or a precise conceptual explanation. Popularity and volume earn no points.
+4. Show technical substance tied to implementation RE: inspected code/disassembly, a concrete trace or a reproducible experiment. For a supporting protocol reference, identify the debugger/capture operation it enables in `re_use`. Prose, SDK configuration, HTTP 200 and popularity alone earn no acceptance.
 5. No unacknowledged duplication. Canonical project and stable ID are known; forks need a concrete difference. Mirrors, translations and articles copying one source count as one origin.
 6. Dates are sourced and typed: publication, substantive update, read, verification and test dates are separate. Unknown dates remain null. Do not infer activity from copyright year, title, search crawl, cosmetic commit or a README news mention.
 7. Limitations, maturity and commercial affiliation are visible. Source-visible is not automatically open source. Record licensing per code/data/paper asset before asserting an open-source or reuse claim.
@@ -101,7 +103,7 @@ Hourly budget is 4 queries/20 pages; the daily deepening budget is 30 queries/12
 
 Discovered → watchlist → source/code-reviewed → curated. Runtime-tested is an additional evidence level. Curated → needs-review → historical/removed only with a documented reason. One blocked fetch/403/429/timeout is inconclusive; confirm ordinary dead-link suspicion over three separate runs spanning at least seven days, considering moves and author archives. A clear shutdown/deprecation notice can establish retirement sooner.
 
-For this research company, the maintainer requires approval of each concrete draft revision and optional initiative. Earlier direct-publication wording is superseded by this review workflow. Prepare a draft PR; do not merge or push to the default branch before approval. Never force-push, overwrite unrelated changes, rewrite history, spend new funds, or create empty commits to make the repo appear active. Preserve unresolved objections in the draft; elapsed time, votes and silence are not approval.
+The owner's current session instructions authorize evidence-supported updates and this scope cleanup on main. Use an atomic, non-forced update based on current main; use a ready PR if branch rules require it. Authorization does not waive evidence or independent review. Never overwrite unrelated changes, rewrite history, spend new funds or create empty activity commits.
 
 Audit migrated entries incrementally; the previous catalogue is preserved in [catalog/LEGACY.md](catalog/LEGACY.md) and is not silently certified under this policy. Every accepted entry has an evidence ledger. Reports record accepted/deferred/retired items, gaps, budgets, examined languages, reference traversal and next work. Keep machine link checks separate from editorial decisions.
 
@@ -114,14 +116,10 @@ Audit migrated entries incrementally; the previous catalogue is preserved in [ca
 
 These are design references, not endorsements. This owner-authorized, AI-assisted repository does not claim admission to the upstream Awesome index or compliance with its separate prohibition on AI-generated lists. The badge alone is not certification.
 
-## Research company and manual decisions
+## Review and publication
 
-Follow [company roles](docs/agents/company.md) and [separate search playbooks](docs/agents/README.md). Every run includes a dedicated Expansion Lead and independent Gatekeeper; staff repository, publication and social/regional researchers in waves. The parent coordinates and edits; the maintainer approves publication and new initiatives.
+A proposed promotion or materially strengthened claim needs an independent reviewer who opens its original evidence. Record actual identities, objections and responses. A second pass by the same researcher is useful self-critique, not an independent review. Unresolved material contradictions force HOLD regardless of score. If independent review is unavailable, save the candidate and missing checks in the watchlist; do not fabricate approval.
 
-Run every three days at 09:00 Asia/Saigon. Attempt English plus at least two relevant non-English languages per run, rotating the existing language atlas. Existing query/page/time limits are upper bounds for a run, not scheduled hourly work or acceptance quotas.
+Keep one catalogue and evidence ledger. Reports retain decisions, corrections, reference traversal and pending work; they are not a second acceptance list. Optional ideas must identify the problem, benefit, cost, strongest objection and smallest reversible trial. An idea is not an implemented feature.
 
-The Gatekeeper independently opens the originals for every proposed promotion and materially changed claim. Round one records objections and alternative interpretations; round two records evidence-based responses. An unresolved material contradiction forces HOLD regardless of score. Numeric thresholds remain unchanged and cannot compensate for failed gates.
-
-Approval and independent-review outcome are separate from the existing evidence levels. Use the existing ledger schema; a source-reviewed or code-reviewed label never implies reproduction. Review packets can supplement ledger evidence but must not create a competing acceptance catalogue. See [record template](docs/agents/evidence-template.md).
-
-New ideas require a problem, benefit, cost, strongest objection and a smallest reversible trial. Researching possible directions does not authorize implementing the proposed feature. Keep deferred candidates and optional ideas outside the accepted README until the existing ledger requirements and manual review are complete.
+The current cleanup is documented in [the scope review](reports/2026-09-12-scope-and-regional-review.md). Historical reports describe their original decisions and counts, not today's catalogue or schedule.

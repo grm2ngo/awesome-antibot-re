@@ -39,6 +39,12 @@ class EditorialGates(unittest.TestCase):
     def test_service_docs_cannot_be_counted_as_main_re(self):
         self.record['listing_file']='README.md'
         self.assertTrue(any('wrong listing' in x for x in self.errors()))
+    def test_supporting_needs_re_use_and_excludes_integration(self):
+        self.record.pop('re_use', None)
+        self.assertTrue(any('concrete RE use' in x for x in self.errors()))
+        self.record['re_use'] = 'Widget integration'
+        self.record['kind'] = 'service-docs'
+        self.assertTrue(any('standalone service integration' in x for x in self.errors()))
     def test_core_needs_inspected_artifact(self):
         self.record.update(editorial_role='re-tool',listing_file='README.md')
         self.assertTrue(any('core RE needs' in x for x in self.errors()))

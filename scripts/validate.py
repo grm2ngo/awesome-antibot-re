@@ -65,6 +65,12 @@ def validate_resources(records, policy, today=None):
             errors.append(f'{name}: unknown editorial role')
         elif item['listing_file'] != editorial['listings'][role]:
             errors.append(f'{name}: wrong listing for editorial role')
+        if role == 'supporting':
+            if item['kind'] == 'service-docs':
+                errors.append(f'{name}: standalone service integration is outside RE scope')
+            if any(not isinstance(item.get(k), str) or not item[k].strip()
+                   for k in editorial.get('supporting_required_fields', [])):
+                errors.append(f'{name}: supporting reference needs a concrete RE use')
         if role in editorial['main_roles']:
             if any(not item.get(k) for k in editorial['core_required_fields']):
                 errors.append(f'{name}: core RE needs target, method and artifact evidence')

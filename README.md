@@ -6,15 +6,13 @@ Selected **reverse-engineering case studies and tools for browser anti-bot syste
 
 **Start with the implementation. Trace the mechanism. Keep the evidence and limits visible.**
 
-[Tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-12-captcha-research.md)
+[Tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-12-scope-and-regional-review.md)
 
-## Browse by product and source
+## Browse implementations
 
-[TikTok](docs/products.md#tiktok) · [Douyin](docs/products.md#douyin) · [reCAPTCHA](docs/products.md#recaptcha) · [Turnstile / JSD](docs/products.md#cloudflare) · [Akamai](#akamai-sensor-and-obfuscation) · [Imperva](#imperva-devirtualization) · [AWS WAF](#aws-waf-deobfuscation) · [Trip.com](docs/products.md#tripcom)
+[Akamai](#akamai-sensor-and-obfuscation) · [Cloudflare](#cloudflare-challenge-analysis) · [reCAPTCHA](#captcha-implementation-re) · [Imperva](#imperva-devirtualization) · [AWS WAF](#aws-waf-deobfuscation) · [Douyin / Trip.com](#application-signing-and-challenge-vms)
 
-[Source atlas](SOURCES.md) · [Blogs / papers / talks](SOURCES.md) · [X](docs/discovery.md#x) · [CSDN](docs/discovery.md#csdn) · [Community discovery](docs/discovery.md#other-communities) · [Research company](docs/agents/company.md)
-
-Product pages distinguish curated entries, supporting references and pending research; a navigation link is not an acceptance decision.
+**10 case studies · 4 RE tools · 9 supporting references.** Every core entry needs an inspected implementation artifact. General integration guides and broad CAPTCHA benchmarks are outside the catalogue; unfinished reviews stay in the [watchlist](WATCHLIST.md).
 
 ## Contents
 
@@ -84,7 +82,7 @@ Product pages distinguish curated entries, supporting references and pending res
 
 ## Supporting references
 
-[Supporting references](SUPPORTING.md) contains browser debugging protocols, TLS/HTTP fingerprints, detection and measurement, CAPTCHA design, accessibility, datasets and service documentation. These help investigate systems; service integration guides do not substitute for implementation RE.
+[Supporting references](SUPPORTING.md) is a small workbench for PoW challenge analysis, debugger observation, transport comparison and detection-predicate inspection. Each entry names its RE use; it is not counted as a case study. General introductions, widget quickstarts and unrelated security material are excluded.
 
 ## Research gaps and pending cases
 

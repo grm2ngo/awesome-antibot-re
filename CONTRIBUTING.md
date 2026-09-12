@@ -4,7 +4,7 @@ Read [the policy](CURATION.md). Add a resource because it teaches something conc
 
 1. Check the main catalogue, watchlist and historical/migration files for duplicates.
 2. Open the original resource and record exact URLs, dates and what you inspected.
-3. Add an entry to `data/resources.json` with all evidence, scores, limitations and editorial role. Core RE entries need a target, method and inspected artifact; case studies also need sample/version scope. Mirror the description in its `listing_file`: README for core RE, SUPPORTING for related material.
+3. Add an entry to `data/resources.json` with all evidence, scores, limitations and editorial role. Core RE entries need a target, method and inspected artifact; case studies also need sample/version scope. Mirror the description in its `listing_file`: README for core RE, SUPPORTING for directly useful inspection references, with a concrete `re_use`. Generic introductions, integration guides and unrelated security do not qualify.
 4. Record related-source edges in `data/references.json` when used. Keep translations under one origin.
 5. For old content, provide the freshness route, reason and next review date. For “working”, provide the actual dated test record.
 6. Run `python3 scripts/validate.py` and `python3 -m unittest discover -s tests -v`.
