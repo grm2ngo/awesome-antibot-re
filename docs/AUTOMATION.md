@@ -16,7 +16,7 @@ The owner authorized recurring research and direct evidence-supported publicatio
 
 Activation status is recorded in the dated implementation report only after the scheduler confirms creation. The existence of this runbook alone does not activate a schedule.
 
-At preparation on 2026-09-11, GitHub read access worked but publication returned HTTP 403 `Resource not accessible by integration`, including a content-only attempt. The task therefore also contains the selection policy inline. Until write access is restored, it reads available repository files and public sources, returns findings marked pending publication, and does not assume these new files exist on main. It does not repeatedly attempt blocked writes. The prepared update still needs publication before the repository can hold the research ledger and quality workflow.
+The initial 2026-09-11 attempt was blocked by GitHub integration access, and a later attempt by the platform usage limit. Publication succeeded on 2026-09-12 at commit `3738915bda9abba9fe94c2b49cb049b60ae091de`, and the research task was confirmed enabled again. The policy, ledger and workflow now exist on main. The task reads current repository state on every run; the inline policy is only a fallback. See the [deployment report](../reports/2026-09-12.md) for the separate GitHub Actions startup issue.
 
 ## GitHub quality cron
 
@@ -26,6 +26,6 @@ GitHub schedule can be delayed/dropped and public-repo schedules can be disabled
 
 ## Failure and recovery
 
-Retain successful partial findings and pending URLs. Report which source failed and whether it was blocked, throttled, missing or unreadable; retry with backoff in later runs. Never treat network success as content verification. If the research scheduler stops, resume it through the task manager; if the GitHub workflow is disabled, explicitly re-enable it. Do not create empty commits to keep either system alive.
+Retain successful partial findings and pending URLs. Report which source failed and whether it was blocked, throttled, missing or unreadable; retry with backoff in later runs. Never treat network success as content verification. Temporary rate/usage limits need backoff, not repeated write attempts or permanent task cancellation. An ongoing maintenance task does not finish after one successful update. If the research scheduler stops, resume it through the task manager; if the GitHub workflow is disabled, explicitly re-enable it. Do not create empty commits to keep either system alive.
 
 The quality workflow is read-only. Research publication re-reads the current head and never force-pushes; if another author has moved main, rebuild the change on the new head. This preserves edits without requiring a synthetic global lock.

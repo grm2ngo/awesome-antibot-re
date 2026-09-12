@@ -6,7 +6,7 @@ Selected public research on browser anti-bot systems: challenge design, JavaScri
 
 **Learn the mechanism. Inspect the evidence. Keep the limits visible.**
 
-English descriptions preserve original source languages. [Hướng dẫn tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Latest review](reports/2026-09-11.md).
+English descriptions preserve original source languages. [Hướng dẫn tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Latest review](reports/2026-09-11.md) · [Deployment status](reports/2026-09-12.md).
 
 ## Contents
 
@@ -90,7 +90,7 @@ Discovery spans **16 language lanes** and multiple publication types: original r
 
 ## Maintenance
 
-Hourly research checks and daily deeper discovery follow [the automation runbook](docs/AUTOMATION.md). The included GitHub Actions workflow validates the catalogue and audits registered resource links daily once installed. See the [implementation report](reports/2026-09-11.md#publication-and-scheduler) for confirmed activation and publication status. Only meaningful, evidence-supported changes are published; an unchanged review does not produce a cosmetic commit.
+Hourly research checks and daily deeper discovery follow [the automation runbook](docs/AUTOMATION.md). The installed GitHub Actions workflow is configured to validate the catalogue and audit registered resource links daily. See the [deployment report](reports/2026-09-12.md) for publication, scheduler activation and the unresolved workflow startup failure. Only meaningful, evidence-supported changes are published; an unchanged review does not produce a cosmetic commit.
 
 New articles normally use a rolling 365-day window. Living projects are not rejected for being old; foundations and historical research need explicit reasons and review deadlines. HTTP reachability is separate from content verification and runtime testing.
 
