@@ -105,7 +105,22 @@
       "snapshot_version"
     ],
     "core_discovery_effort_target": 0.7,
-    "effort_target_is_acceptance_quota": false
+    "effort_target_is_acceptance_quota": false,
+    "category_targets": {
+      "JavaScript AST and deobfuscation": 50,
+      "JSVMP, bytecode and VM lifting": 50,
+      "Sensor, signing and crypto reconstruction": 50,
+      "Browser engine and instrumentation RE": 50,
+      "Protocol, TLS and HTTP fingerprint RE": 50,
+      "CAPTCHA and challenge implementation RE": 50,
+      "Detection, anti-debug and tamper analysis": 50,
+      "Proof-of-work and computational challenges": 50,
+      "Mobile, WebView and embedded browser RE": 50,
+      "Datasets, traces and reproducible measurements": 50
+    },
+    "category_target_is_acceptance_quota": false,
+    "working_definition": "Only a dated runtime-tested record with version, environment, procedure, expected/actual output and public evidence within 30 days.",
+    "pow_definition": "Only a record exposing the challenge algorithm, difficulty/parameters, verifier or reference implementation, and a reproducible test; computational cost is not proof of human identity."
   },
   "freshness_routes": [
     "recent",

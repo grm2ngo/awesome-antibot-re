@@ -241,5 +241,45 @@
     "child_read": true,
     "inspection_scope": "Read the complete 355-byte driver: it reads input/cf-main-challenge.js, invokes Deobfuscator.deobfuscate(), and writes output/deobfuscated_code.js. No code was executed.",
     "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/neuroradiology/InsideReCaptcha",
+    "child_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/README.md",
+    "relation": "repository-documentation",
+    "depth": 1,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read complete wire-flow, bytecode, browser-signal, XTEA and limitation sections; README states the decompiler is hardcoded to the enc sample.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/README.md",
+    "child_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/disasm.py",
+    "relation": "repository-artifact",
+    "depth": 2,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Inspected opcode handlers, encrypted-byte decoding, key/seed updates and XTEA-based byte stream decoding. No execution.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/README.md",
+    "child_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/decomp.py",
+    "relation": "repository-artifact",
+    "depth": 2,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Inspected pseudo-JavaScript object classes, opcode handlers, function reconstruction and the hardcoded enc/model.js input path. No execution.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/README.md",
+    "child_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/model.js",
+    "relation": "repository-artifact",
+    "depth": 2,
+    "observed_at": "2026-09-12",
+    "child_read": true,
+    "inspection_scope": "Read pinned model.js used as the decompiler's JavaScript model input; no execution or current endpoint comparison.",
+    "independent_corroboration": false
   }
 ]

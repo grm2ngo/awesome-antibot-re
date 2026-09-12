@@ -6,7 +6,7 @@ Selected **reverse-engineering case studies and tools for browser anti-bot syste
 
 **Start with the implementation. Trace the mechanism. Keep the evidence and limits visible.**
 
-[Tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-12-cloudflare-habr.md)
+[Tiếng Việt](README.vi.md) · [Curation policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-12-captcha-research.md)
 
 ## Browse by product and source
 
@@ -20,11 +20,13 @@ Product pages distinguish curated entries, supporting references and pending res
 
 - [Akamai sensor and obfuscation](#akamai-sensor-and-obfuscation)
 - [Cloudflare challenge analysis](#cloudflare-challenge-analysis)
+- [CAPTCHA implementation RE](#captcha-implementation-re)
 - [Imperva devirtualization](#imperva-devirtualization)
 - [AWS WAF deobfuscation](#aws-waf-deobfuscation)
 - [Application signing and challenge VMs](#application-signing-and-challenge-vms)
 - [AST and intermediate representations](#ast-and-intermediate-representations)
 - [RE instrumentation](#re-instrumentation)
+- [RE catalogue roadmap](docs/RE_CATALOG_ROADMAP.md)
 - [Supporting references](#supporting-references)
 - [Research gaps and pending cases](#research-gaps-and-pending-cases)
 - [Maintenance](#maintenance)
@@ -51,6 +53,10 @@ Product pages distinguish curated entries, supporting references and pending res
 ## Cloudflare challenge analysis
 
 - [Cloudflare JS challenge: AST deobfuscation and environment reconstruction](https://habr.com/ru/articles/716434/) - Hooks serialization to observe a fingerprint payload, then uses Babel AST passes to recover strings, simplify proxy/control-flow constructs and map browser-environment reads. **ru · snapshot study · source-reviewed**. Captured 2023 site/Chrome 109 case; exact vendor bundle hash is absent and the environment overrides are explicitly detectable.
+
+## CAPTCHA implementation RE
+
+- [InsideReCaptcha](https://github.com/neuroradiology/InsideReCaptcha) - Reconstructs the 2014 reCAPTCHA checkbox flow, disassembles and decompiles its encrypted bytecode, identifies browser-behavior inputs and documents XTEA-protected request data. **en · historical snapshot · code-reviewed**. Pinned 2014 artifact; Python 2 tooling and hardcoded sample keys are not current software or a bypass claim.
 
 ## Imperva devirtualization
 
@@ -92,6 +98,7 @@ The [watchlist](WATCHLIST.md) records Turnstile's explicitly obsolete implementa
 - Prefer new research within 365 days, while retaining qualified snapshot studies. Never refresh a source date merely because it was read or committed today.
 - Explore [16 language lanes and 33 source channels](SOURCES.md), including original blogs, forums, papers, talks and code. Current accepted source languages are en, ru and zh-Hans; other lanes remain coverage goals.
 - Recurring discovery prioritizes actual RE methods and cases. [Automation runbook](docs/AUTOMATION.md) separates research from link and catalogue checks. Actions startup remains unresolved in the [deployment report](reports/2026-09-12.md); a configured cron is not evidence of successful execution.
+- The [RE catalogue roadmap](docs/RE_CATALOG_ROADMAP.md) defines ten lanes with an approximately 50-record discovery horizon each. Targets are not acceptance quotas; `working` and `pow` require separate reproducible evidence.
 - [Contributions](CONTRIBUTING.md) need a concrete learning benefit and limitations. Author claims, source inspection and our own runtime tests remain distinct.
 
 This AI-assisted catalogue does not claim acceptance into the upstream Awesome index. Repository text is [CC0](LICENSE); linked resources retain their own licenses.

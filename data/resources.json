@@ -1747,5 +1747,73 @@
     "url": "https://habr.com/ru/articles/716434/",
     "verification": "source-reviewed",
     "why_include": "A concrete Russian-language case that joins runtime observation to reproducible AST transformation ideas while stating why its environment overrides should not be treated as a general bypass."
+  },
+  {
+    "archived": false,
+    "category": "CAPTCHA implementation RE",
+    "checked_at": "2026-09-12",
+    "code_review": {
+      "commit_or_blob": "5176f31a7dc87654bcf3e9fa98d62bd537bea32b",
+      "inspection_note": "Read the pinned Python 2 disassembler and decompiler files, including opcode handlers, encrypted-byte decoding, XTEA routine, model.js loading and the hardcoded sample-key path. No code was executed.",
+      "url": "https://github.com/neuroradiology/InsideReCaptcha/tree/5176f31a7dc87654bcf3e9fa98d62bd537bea32b"
+    },
+    "date_basis": "Repository commit history places the final typo-fix commit on 2014-12-09; README identifies the served script as recaptcha__en.js r20141202135649.",
+    "description": "Reverse engineers the 2014 reCAPTCHA checkbox flow, disassembles and decompiles encrypted bytecode, and documents browser-behavior inputs and XTEA-protected request data.",
+    "editorial_reviewed_at": "2026-09-12",
+    "editorial_role": "case-study",
+    "evidence_urls": [
+      "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/README.md",
+      "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/disasm.py",
+      "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/decomp.py",
+      "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/model.js"
+    ],
+    "freshness": "snapshot",
+    "freshness_reason": "Immutable 2014 implementation snapshot with a concrete bytecode artifact, disassembler/decompiler code and protocol observations; retained for RE method, not current CAPTCHA behavior.",
+    "id": "inside-recaptcha",
+    "inspection_note": "Read the complete README wire-flow and gathered-information sections, then inspected pinned disasm.py, decomp.py and model.js. README states that the enc sample is hardcoded and the decompiler only works on that sample; no runtime reproduction was attempted.",
+    "kind": "research",
+    "language": "en",
+    "license_note": "The Python files declare public-domain release in their headers; vendor scripts, captured enc/model data and Google endpoints retain separate rights. No redistribution of captured vendor material is assumed.",
+    "limitations": "Targets the December 2014 reCAPTCHA implementation and Python 2 tooling. Hardcoded keys/sample assumptions limit generality; the README's observations are author-reported, and no current reCAPTCHA endpoint, challenge or bypass was tested.",
+    "listing_file": "README.md",
+    "policy_version": "1.1",
+    "published_at": "2014-12-09",
+    "publisher_group": "neuroradiology",
+    "re_artifact_urls": [
+      "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/disasm.py",
+      "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/decomp.py",
+      "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/model.js"
+    ],
+    "re_method": "Protocol observation, opcode-table disassembly, pseudo-JavaScript decompilation, sample-key decoding and XTEA analysis.",
+    "re_target": "Google reCAPTCHA checkbox challenge bytecode and browser-signal collection",
+    "readme_blob_sha": "7a88e8da7f6689b99b161ef3cd681365c24c33da",
+    "readme_limit": "Pinned 2014 artifact; Python 2 tooling and hardcoded sample keys are not current software or a bypass claim.",
+    "repository_status_evidence_url": "https://github.com/neuroradiology/InsideReCaptcha/tree/5176f31a7dc87654bcf3e9fa98d62bd537bea32b",
+    "review_due": "2026-12-11",
+    "reviewer": "Codex; pinned README, disasm.py, decomp.py and model.js read on 2026-09-12",
+    "runtime_test": null,
+    "sample_scope": "The repository's enc/model.js sample for reCAPTCHA script generation r20141202135649; README names anchor/frame requests and browser-signal fields.",
+    "score": {
+      "depth": 5,
+      "distinctiveness": 5,
+      "documentation": 5,
+      "evidence": 5,
+      "scope": 5
+    },
+    "score_rationale": {
+      "depth": "Contains opcode handlers, bytecode decoding, decompiler objects and encryption details rather than a surface protocol summary.",
+      "distinctiveness": "Adds a CAPTCHA-specific VM/disassembly case with wire-level observations and XTEA analysis, distinct from JavaScript AST cleanup.",
+      "documentation": "README explains request sequence, signal classes, sample boundaries and how to run the decompiler.",
+      "evidence": "Pinned source files and an immutable commit provide direct artifacts; captured sample generality and current behavior are explicitly excluded.",
+      "scope": "Directly reverse engineers CAPTCHA implementation bytecode and browser-signal collection."
+    },
+    "score_total": 100,
+    "snapshot_version": "Commit 5176f31a7dc87654bcf3e9fa98d62bd537bea32b; reCAPTCHA script r20141202135649 and repository enc/model.js sample.",
+    "status": "curated",
+    "substantively_updated_at": null,
+    "title": "InsideReCaptcha: bytecode disassembly and decompilation",
+    "url": "https://github.com/neuroradiology/InsideReCaptcha",
+    "verification": "code-reviewed",
+    "why_include": "A concrete historical CAPTCHA RE artifact with disassembler, decompiler, browser-signal analysis and cryptographic request encoding, retained with strict version limits."
   }
 ]
