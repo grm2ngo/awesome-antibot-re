@@ -33,6 +33,14 @@ def valid_url(value):
     except (TypeError, ValueError):
         return False
 
+def quality_tier(score, policy):
+    """Ranking only; callers must also enforce evidence and scope gates."""
+    if score >= policy['gold_score']:
+        return 'gold'
+    if score >= policy['accept_score']:
+        return 'useful'
+    return 'watchlist' if score >= policy['watch_score'] else 'deferred'
+
 def validate_resources(records, policy, today=None):
     today = today or date.today()
     errors, ids, urls = [], set(), set()
@@ -112,6 +120,17 @@ def validate_resources(records, policy, today=None):
             errors.append(f'{name}: invalid ISO date')
         if item['freshness'] not in policy['freshness_routes']:
             errors.append(f'{name}: unsupported freshness route')
+        if item['freshness']=='snapshot':
+            if any(not isinstance(item.get(k), str) or not item[k].strip()
+                   for k in ('historical_scope', 'snapshot_version', 'method_value')):
+                errors.append(f'{name}: snapshot needs bounded scope, version/artifact identifier and method value')
+            artifacts=item.get('snapshot_artifact_urls')
+            if not isinstance(artifacts,list) or not artifacts or any(
+                not valid_url(u) or u not in item['evidence_urls'] for u in artifacts
+            ):
+                errors.append(f'{name}: snapshot needs inspected artifact evidence')
+            if re.search(r'\b(working|undetectable|guaranteed)\b',item['description'],re.I):
+                errors.append(f'{name}: snapshot cannot imply current operational effectiveness')
         if item['verification'] not in ('source-reviewed','code-reviewed','runtime-tested'):
             errors.append(f'{name}: unsupported verification level')
         if item['verification']=='code-reviewed':
@@ -147,7 +166,7 @@ def validate_markdown(root):
                 errors.append(f'{path.name}: link escapes repository: {target}')
             elif not file.exists():
                 errors.append(f'{path.name}: missing local link: {target}')
-            elif parsed.fragment and file.suffix=='.md' and unquote(parsed.fragment) not in headings(file.read_text()):
+            elif parsed.fragment and file.suffix=='.md' and unquote(parsed.fragment) not in headings(file.read_text(encoding='utf-8')):
                 errors.append(f'{path.name}: missing anchor: {target}')
     return errors
 
@@ -155,10 +174,12 @@ def validate(root=ROOT):
     p=load(root/'config/curation.json'); records=load(root/'data/resources.json')
     errors=validate_resources(records,p)+validate_markdown(root)
     if sum(p['weights'].values()) !=100: errors.append('weights must sum to 100')
+    if not 0 <= p['watch_score'] < p['accept_score'] < p['gold_score'] <= 100:
+        errors.append('quality thresholds must be ordered watch < useful < gold')
     if len(p['languages'])!=len(set(p['languages'])): errors.append('duplicate language lanes')
     lanes=load(root/'config/languages.json')
     if {x['language'] for x in lanes}!=set(p['languages']): errors.append('language registry mismatch')
-    listings={name:(root/name).read_text() for name in set(p['editorial']['listings'].values())}
+    listings={name:(root/name).read_text(encoding='utf-8') for name in set(p['editorial']['listings'].values())}
     for e in records:
         listing=e.get('listing_file')
         if f']({e["url"]})' not in listings.get(listing,''):

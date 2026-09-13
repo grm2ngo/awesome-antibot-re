@@ -13,8 +13,8 @@ validator=module('validate');audit=module('audit_links')
 
 class EditorialGates(unittest.TestCase):
     def setUp(self):
-        self.policy=json.loads((ROOT/'config/curation.json').read_text())
-        self.record=copy.deepcopy(json.loads((ROOT/'data/resources.json').read_text())[0])
+        self.policy=json.loads((ROOT/'config/curation.json').read_text(encoding='utf-8'))
+        self.record=copy.deepcopy(json.loads((ROOT/'data/resources.json').read_text(encoding='utf-8'))[0])
     def errors(self):
         return validator.validate_resources([self.record],self.policy,date(2026,9,13))
     def test_real_records_pass(self):
@@ -42,8 +42,36 @@ class EditorialGates(unittest.TestCase):
     def test_core_needs_inspected_artifact(self):
         self.record.update(editorial_role='re-tool',listing_file='README.md')
         self.assertTrue(any('core RE needs' in x for x in self.errors()))
-    def test_latest_only_rejects_snapshot_route(self):
+    def test_snapshot_requires_scope_method_and_evidence(self):
         self.record['freshness']='snapshot'
-        self.assertTrue(any('unsupported freshness route' in x for x in self.errors()))
+        self.assertTrue(any('snapshot needs' in x for x in self.errors()))
+        self.record.update(historical_scope='Study of an explicitly captured 2020 sample',
+                           snapshot_version='Fixture release 2020.01',
+                           method_value='Teaches how to inspect a verifier boundary',
+                           snapshot_artifact_urls=[self.record['evidence_urls'][0]])
+        self.record['published_at']='2020-01-01'
+        self.assertEqual(self.errors(),[])
+        self.record.pop('snapshot_version')
+        self.assertTrue(any('version/artifact identifier' in x for x in self.errors()))
+        self.record['snapshot_version']='Fixture release 2020.01'
+        self.record['snapshot_artifact_urls']=['https://example.com/uninspected']
+        self.assertTrue(any('inspected artifact' in x for x in self.errors()))
+    def test_useful_boundary_does_not_relax_evidence_gate(self):
+        self.record['score']={k:4 for k in self.policy['weights']}
+        self.record['score_total']=80
+        self.assertEqual(self.errors(),[])
+        self.record['score']['evidence']=3
+        self.record['score']['scope']=5
+        self.assertTrue(any('threshold' in x for x in self.errors()))
+    def test_quality_tier_boundaries(self):
+        for value, expected in [(69.9,'deferred'),(70,'watchlist'),(79.9,'watchlist'),
+                                (80,'useful'),(84.5,'useful'),(85,'gold'),(100,'gold')]:
+            self.assertEqual(validator.quality_tier(value,self.policy),expected)
+    def test_snapshot_cannot_claim_current_operation(self):
+        self.record.update(freshness='snapshot',historical_scope='Old sample',
+                           method_value='Inspectable method',
+                           snapshot_artifact_urls=[self.record['evidence_urls'][0]],
+                           description='A working implementation')
+        self.assertTrue(any('snapshot cannot imply' in x for x in self.errors()))
 
 if __name__=='__main__': unittest.main()

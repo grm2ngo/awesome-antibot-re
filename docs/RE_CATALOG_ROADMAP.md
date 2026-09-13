@@ -1,6 +1,6 @@
 # RE discovery roadmap
 
-This is a search map, not a quota. Each lane may explore up to roughly 50 candidate records over time; only current, documented records meeting every gate are accepted.
+This is a search map, not a quota. Each lane may explore up to roughly 50 candidate records over time; only evidence-backed records meeting every gate are accepted.
 
 1. JavaScript AST, IR and deobfuscation
 2. JSVMP, bytecode lifting and decompilation
@@ -15,4 +15,4 @@ This is a search map, not a quota. Each lane may explore up to roughly 50 candid
 
 Rotate vendor, method, language and source type. Include original code communities, personal/niche blogs, public cyber forums, papers and talks with slides/transcripts. Regional lanes include Vietnamese, Russian/Eastern European, Chinese, Japanese and Korean sources, all under the same threshold.
 
-A lane name or famous vendor is not evidence of coverage. A record needs current content, inspectable artifacts, provenance, limitations and independent review. `working` and PoW have their own reproducibility gates.
+A lane name or famous vendor is not evidence of coverage. A record needs inspectable artifacts, provenance, limitations and independent review; historical snapshots also need bounded scope and continuing method value. Small scripts, handlers, traces and technical posts are eligible. `working` and PoW have their own reproducibility gates.

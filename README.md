@@ -2,11 +2,11 @@
 
 # Awesome Anti-Bot Reverse Engineering [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-A strict, current catalogue of tools and references for inspecting browser anti-bot and CAPTCHA implementations: JavaScript AST/IR, deobfuscation, browser-engine hooks, signing and sensor observation, TLS/HTTP fingerprints, detection predicates and computational challenges.
+An evidence-backed catalogue of tools and references for inspecting browser anti-bot and CAPTCHA implementations: JavaScript AST/IR, deobfuscation, browser-engine hooks, signing and sensor observation, TLS/HTTP fingerprints, detection predicates and computational challenges.
 
-**Current evidence only. No archive shelf, popularity filler or unverified “working” claims.**
+**Study the method and its limits. Historical research and small, substantive contributions are welcome.**
 
-[Tiếng Việt](README.vi.md) · [Policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-13-latest-only.md)
+[Tiếng Việt](README.vi.md) · [Policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-13-approved-expansion.md)
 
 **4 current RE tools · 9 current supporting references · 0 runtime-tested claims.**
 
@@ -28,9 +28,9 @@ The nine current resources for PoW structure, browser observation, transport com
 
 ## What qualifies
 
-- The source was published or substantively updated within 365 days, or is a living project with current primary documentation/status evidence.
-- A core tool names its RE target, method and inspected artifact URLs. A case study also needs a current sample/version.
-- Acceptance is at least 85/100 with scope and evidence at least 4/5. Marketing, quickstarts, reposts, solver markets, title-only pages and code without explanation do not qualify.
+- Sources may be recent, living projects, or historical snapshots with a bounded artifact/version, continuing methodological value and explicit limitations.
+- A core tool names its RE target, method and inspected artifact URLs. A case study also identifies the sample/version actually studied.
+- Useful resources score 80–<85; Gold resources score ≥85. Both require all evidence gates, including scope and evidence ≥4/5. A small script, VM handler, trace or original technical post can qualify without a full project or polished README. Unsupported dumps and promotional material still fail.
 - `working` requires a runtime test from the last 30 days: exact version, environment, procedure, expected/actual result and public evidence.
 - PoW requires the algorithm, difficulty/parameters, verifier and a reproducible vector. A PoW label in a README is insufficient.
 

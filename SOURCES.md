@@ -76,3 +76,7 @@ Coverage is driven by technical relevance and information gaps, not a ranking of
 ## Latest regional pass
 
 [Latest-only review](reports/2026-09-13-latest-only.md) records the current catalogue boundary and remaining queue. Kanxue implementation threads were partially read; Viblo remained directory-only; the Russian-language Reverse4You forum and GitHub Following reads failed. Searches aimed at Vietnamese and Polish sources did not establish an eligible original. These are coverage gaps, not claims that a community lacks useful work.
+
+## Approved expansion
+
+[Policy 1.3](CURATION.md) allows bounded historical methods and small substantive artifacts. Source freshness still matters for current compatibility claims. The [approved-change report](reports/2026-09-13-approved-expansion.md) supersedes the old latest-only eligibility rule; earlier search logs remain historical observations.
