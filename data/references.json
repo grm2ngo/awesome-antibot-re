@@ -391,5 +391,25 @@
     "child_read": true,
     "inspection_scope": "Read current challenge formats, SHA-256 and RSW parameters, verifier failure modes and opt-in nonce consumption. Documentation is primary-source evidence, not an independent security result.",
     "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://tech.kakao.com/posts/604",
+    "child_url": "https://tech.kakao.com/tag/ML",
+    "relation": "publication-date-evidence",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Kakao's tag index dates the DKAPTCHA post to 2023-09-22. The original page exposed only its title in the accessible body and no code, slides or transcript.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://tech.kakao.com/posts/604",
+    "child_url": "https://metafor.tistory.com/260",
+    "relation": "independent-event-recap",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Independent attendee recap describes map POI/watermark generation, OCR-oriented evaluation and audio/accessibility intent, but provides no code, slides, transcript, dataset or reproducible measurements.",
+    "independent_corroboration": true
   }
 ]

@@ -4,7 +4,6 @@
 
 | Lead | Lane | Current gap | Next evidence |
 | --- | --- | --- | --- |
-| [Kakao DKAPTCHA talk](https://tech.kakao.com/posts/604) | ko · CAPTCHA | Only the official title/landing page was retrievable; no substantive slides or transcript. | Retrieve public slides/transcript containing implementation or PoW/code details. |
 | [Qiita CAPTCHA](https://qiita.com/tags/captcha) | ja · community | Topic directory only; no exact current article with code was established. | Open an original dated article and inspect its code/artifacts. |
 | [Zenn CAPTCHA](https://zenn.dev/topics/captcha) | ja · independent | Topic directory only; no eligible article body was read. | Resolve an exact current article and primary repository/trace. |
 | [Nike VM](https://nullpt.rs/devirtualizing-nike-vm-1/) | en · JSVMP | Original article reads failed; no current publication/update evidence. | Use only a legitimate public author copy with current substantive update and inspect code. |

@@ -6,7 +6,7 @@ An evidence-backed catalogue of tools and references for inspecting browser anti
 
 **Study the method and its limits. Historical research and small, substantive contributions are welcome.**
 
-[Tiếng Việt](README.vi.md) · [Policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-13-metasec-review.md)
+[Tiếng Việt](README.vi.md) · [Policy](CURATION.md) · [Source atlas](SOURCES.md) · [Evidence ledger](data/resources.json) · [Latest review](reports/2026-09-13-dkaptcha-review.md)
 
 **4 current RE tools · 9 current supporting references · 0 runtime-tested claims.**
 
