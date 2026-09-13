@@ -291,5 +291,45 @@
     "child_read": true,
     "inspection_scope": "Read GeeTest 7.8.1 request, track and w-parameter reconstruction; README dates implementation to 2021.",
     "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/topics/kasada-re",
+    "child_url": "https://github.com/B00H0O/kasada-vm",
+    "relation": "discovery",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read README, repository tree, pinned disassembler and exploratory PoW verifier; no code executed.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/B00H0O/kasada-vm",
+    "child_url": "https://github.com/B00H0O/kasada-vm/blob/a4462b9b258f833c6087a788447fbbd14bc11870/tools/disasm.mjs",
+    "relation": "code-artifact",
+    "depth": 2,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read linear-sweep decoder, operand/arities heuristics and p.js j-1.2.430 header; capture provenance remains missing.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/B00H0O/kasada-vm",
+    "child_url": "https://github.com/B00H0O/kasada-vm/blob/a4462b9b258f833c6087a788447fbbd14bc11870/cd/cd-verify2.mjs",
+    "relation": "test-artifact",
+    "depth": 2,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read exploratory SHA-256 parameter search; it requires uncommitted _vm-traces and is not a public reproducible vector.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://medium.com/@glizzykingdreko/analyzing-datadome-latest-changes-424f385bcdd4",
+    "child_url": "https://github.com/glizzykingdreko/datadome-encryption",
+    "relation": "related-code",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read v1.1.1 README, tree, encryption implementation and validity fixture; bundle provenance and exact independent equivalence remain unverified.",
+    "independent_corroboration": false
   }
 ]

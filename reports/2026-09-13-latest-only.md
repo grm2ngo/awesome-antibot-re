@@ -67,3 +67,22 @@ No candidate was added to README or SUPPORTING.md. The catalogue remains 4 RE to
 2. Build benign pinned fixtures for JSHookMCP's JSVMP and WASM paths; quantify observer effects.
 3. Seek current original code from Kakao/LINE, Qiita/Zenn and Vietnamese public security communities, not tag pages.
 4. Complete Kanxue signing provenance, then rotate to current DataDome, Kasada and PerimeterX/HUMAN artifacts.
+
+## Vendor implementation rotation — 2026-09-13
+
+This bounded pass used four current searches for DataDome, Kasada, PerimeterX/HUMAN and Chinese-language implementations, then read original pages and pinned code artifacts. Commercial scraping guides, solver services, topic pages and generic bypass advice were excluded.
+
+- **Kasada VM — hold, 88/100 but evidence 3/5.** Scope 5, depth 5, evidence 3, distinctiveness 5, documentation 4. The repository includes a linear-sweep disassembler for `p.js j-1.2.430`, decoded bytecode/string tables, an exploratory SHA-256 `x-kpsdk-cd` search over four private trace directories and a Node sandbox. However, the README says `cd` is still WIP, the committed verifier depends on gitignored `_vm-traces`, and the current head only updates `LICENSE`. No captured `p.js` provenance or public expected output establishes the asserted server-valid `x-kpsdk-ct` result. It remains a strong active lead, not a catalogue entry and not `working`.
+- **DataDome encryption — hold, 87/100 but evidence 3/5.** Scope 5, depth 5, evidence 3, distinctiveness 4, documentation 5. v1.1.1 provides extensive analysis, an encrypt/decrypt rewrite, constants for CAPTCHA/interstitial modes and fixture files. The inspected test compares all but the final salt-dependent character and then performs self-roundtrip decryption; it does not independently establish equivalence to a named current DataDome bundle. Original bundle hash/version and capture provenance are missing. The README prominently advertises the author's paid bypass API, so its effectiveness claims are treated as interested-party claims.
+- **Kernel Kasada article — rejected under the code gate.** The current original describes a 449 KB VM, 1,515 decoded strings, repeating-XOR telemetry, Blink-level instrumentation and CDP/Playwright differences. It provides neither the generated extractor nor Chromium patch nor trace corpus, so the technical claims cannot be reproduced from the publication alone.
+- **PerimeterX Solver v6.7.9 — rejected and not queued.** The code is tied to an unspecified older v6.7.9 snapshot, admits hard-coded dynamic WebGL values, and offers newer versions for purchase via Telegram. A cosmetic 2026 README/contact update does not renew the implementation; the sales path is outside repository scope.
+- **DataDome/Kasada commercial guides — rejected.** Recent pages from scraping vendors primarily direct readers to paid APIs or offer generic browser/proxy advice without original artifacts. Publication recency did not compensate for absent code provenance.
+
+The obsolete GeeTest 7.8.1 lead was removed from the active watchlist immediately: no evidence suggests a current-version implementation is forthcoming. No accepted record or `working` claim changed.
+
+### Queue after vendor rotation
+
+1. Resolve Kasada VM's substantive commit date and captured `p.js` provenance; obtain a public offline fixture before executing anything.
+2. Trace DataDome fixture lineage to an immutable bundle and independently compare exact encrypt/decrypt output.
+3. Continue regional original-code search for Kakao/LINE, Qiita/Zenn, Kanxue and Vietnamese communities.
+4. Seek a current PerimeterX/HUMAN analysis with a public bundle/trace and method documentation, excluding storefronts.
