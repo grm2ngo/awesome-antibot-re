@@ -158,7 +158,7 @@ Discovery covers [16 language lanes and source channels](SOURCES.md). Original a
 
 Keyword/dork in multiple languages → open the original → inspect code/PoC/trace/protocol → follow related code, datasets and docs breadth-first (depth ≤3, ≤10 children/page) → canonicalize and deduplicate lineage → score skeptically → publish only supported changes.
 
-Discovery prioritizes implementation RE and rotates vendor, method, language and source type. GitHub Following is used only when the connector exposes the actual public list; no account is inferred. See the [roadmap](docs/RE_CATALOG_ROADMAP.md), [watchlist](WATCHLIST.md) and [automation runbook](docs/AUTOMATION.md).
+Discovery prioritizes implementation RE and rotates vendor, method, language and source type. See the [roadmap](docs/RE_CATALOG_ROADMAP.md), [watchlist](WATCHLIST.md) and [public maintenance guide](docs/AUTOMATION.md).
 
 ## Maintenance
 
@@ -171,4 +171,4 @@ python3 -m unittest discover -s tests -v
 
 A configured workflow or cron is not proof that validation ran. Check every event type and actual job steps. Link status, stars and recent commits are discovery signals only.
 
-This AI-assisted catalogue does not claim acceptance into the upstream Awesome index. Repository text is [CC0](LICENSE); linked resources retain their own licenses.
+This catalogue does not claim acceptance into the upstream Awesome index. Repository text is [CC0](LICENSE); linked resources retain their own licenses.

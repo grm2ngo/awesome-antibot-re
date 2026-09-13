@@ -4,7 +4,7 @@ Base reviewed: `a31b76d84cef713e82dda8ad25e9e1bc13df0df7`. Publication does not 
 
 ## Decision
 
-Applied the owner's latest-only rule across the ledger and listings.
+Applied the latest evidence policy across the ledger and listings.
 
 - Removed 10 version-bounded or old case studies from the current tree.
 - Kept 13 records: 4 current RE tools and 9 current supporting references.
@@ -37,11 +37,11 @@ The latest observed run before this change was [push run 34716143317](https://gi
 
 ## Next queue
 
-Kakao DKAPTCHA transcript/slides; exact current Japanese code articles; Vietnamese implementation RE; then current DataDome, Kasada, PerimeterX/HUMAN and hCaptcha leads with public artifacts. GitHub Following remains unused until the connector returns the real public list.
+Kakao DKAPTCHA transcript/slides; exact current Japanese code articles; Vietnamese implementation RE; then current DataDome, Kasada, PerimeterX/HUMAN and hCaptcha leads with public artifacts. Profile/follower pages are discovery-only and are not treated as source evidence.
 
 ## Deep discovery review — 2026-09-13
 
-This pass used multilingual keyword/dork discovery and followed code relationships to pinned implementation files. English and Simplified Chinese artifacts were read. Japanese, Korean, Russian and Vietnamese searches did not establish a current original article with inspectable anti-bot code; topic pages, blocked pages, generic tutorials and solver storefronts were not treated as evidence. GitHub Following remained unavailable as a real connector result and was not inferred.
+This pass used multilingual keyword/dork discovery and followed code relationships to pinned implementation files. English and Simplified Chinese artifacts were read. Japanese, Korean, Russian and Vietnamese searches did not establish a current original article with inspectable anti-bot code; topic pages, blocked pages, generic tutorials and solver storefronts were not treated as evidence. Profile/follower pages were not used as evidence.
 
 ### Decisions
 

@@ -22,7 +22,7 @@
     "publisher_group": "altcha-org",
     "readme_blob_sha": "02e6af765390c254cff8c57e8eb360493a59657e",
     "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -72,7 +72,7 @@
     "publisher_group": "mcaptcha",
     "readme_blob_sha": "5e61f294eb036c5863139924b1e4ca656b61f0d9",
     "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -131,7 +131,7 @@
     "repository_status_checked_at": "2026-09-13",
     "repository_status_evidence_url": "https://api.github.com/repos/j4k0xb/webcrack",
     "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -187,7 +187,7 @@
     "repository_status_checked_at": "2026-09-13",
     "repository_status_evidence_url": "https://api.github.com/repos/google/jsir",
     "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -233,7 +233,7 @@
     "publisher_group": "chromedevtools.github.io",
     "readme_blob_sha": null,
     "review_due": "2026-12-12",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -291,7 +291,7 @@
     "repository_status_checked_at": "2026-09-13",
     "repository_status_evidence_url": "https://api.github.com/repos/WhiteNightShadow/firefox-reverse",
     "review_due": "2026-10-12",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -338,7 +338,7 @@
     "publisher_group": "foxio-llc",
     "readme_blob_sha": "96e4cac5d54d5e468089bce68b0ac27b9c206cdc",
     "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -388,7 +388,7 @@
     "publisher_group": "refraction-networking",
     "readme_blob_sha": "97259092f59b62194edf8804b0c30bfeb5391dcc",
     "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -438,7 +438,7 @@
     "publisher_group": "lexiforest",
     "readme_blob_sha": "a4d5d0627ddfdfcda018b2092fba8488029c9877",
     "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -488,7 +488,7 @@
     "publisher_group": "pagpeter",
     "readme_blob_sha": "4b53256bbec6615febf368bedc7bada56634f813",
     "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -538,7 +538,7 @@
     "publisher_group": "abrahamjuliot",
     "readme_blob_sha": "c512422a501ae488053b8deef52452502e779e2e",
     "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -588,7 +588,7 @@
     "publisher_group": "antoinevastel",
     "readme_blob_sha": "88bde392ff01591ec566f0c81438f98284411adf",
     "review_due": "2026-10-11",
-    "reviewer": "Codex, acting under owner authorization on 2026-09-11",
+    "reviewer": "Editorial review record dated 2026-09-11",
     "runtime_test": null,
     "score": {
       "depth": 4,
@@ -649,7 +649,7 @@
     "readme_limit": "Maintainer-reported validation; hooks can alter observations.",
     "repository_status_evidence_url": "https://api.github.com/repos/WhiteNightShadow/camoufox-reverse-mcp",
     "review_due": "2026-10-12",
-    "reviewer": "Codex; primary material and specified source sections inspected on 2026-09-12",
+    "reviewer": "Editorial review record; primary material and specified source sections inspected on 2026-09-12",
     "runtime_test": null,
     "sample_scope": "Validation document dated 2026-09-08 and pinned repository documentation.",
     "score": {

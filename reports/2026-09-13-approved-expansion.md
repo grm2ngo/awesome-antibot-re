@@ -13,7 +13,7 @@ The maintainer approved all three proposed changes: historical methodological va
 
 Only policy_version changes in the existing resource records. Scores, sources, descriptions, review/test dates and acceptance state remain untouched. No additional independent source review is claimed by this schema migration. The validator checks structural snapshot evidence, while a human/independent reviewer still assesses whether the evidence actually supports the claim.
 
-The three-day Codex council receives the approved rules in its saved prompt. Another scheduler described in repository settings has not been changed by this update.
+The recurring research review uses these rules. Scheduling and account administration are outside this public repository.
 
 ## Validation
 

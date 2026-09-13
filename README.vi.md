@@ -25,4 +25,4 @@ Một script nhỏ, handler VM, trace, PoC hoặc bài kỹ thuật X/CSDN cũng
 
 **Useful: 80 đến dưới 85; Gold: từ 85.** Cả hai giữ scope/evidence ≥4/5 và toàn bộ điều kiện bằng chứng. Không tự nâng hạng nguồn chưa kiểm tra. `working` vẫn cần thử nghiệm runtime trong 30 ngày; PoW vẫn cần thuật toán, tham số, verifier và vector tái lập.
 
-Vòng research: keyword/dork đa ngôn ngữ → nguồn gốc → code/PoC/trace/protocol → related links tối đa ba cạnh → chống trùng lineage → chấm điểm hoài nghi → cập nhật đồng bộ. Xem [roadmap](docs/RE_CATALOG_ROADMAP.md), [watchlist](WATCHLIST.md) và [runbook](docs/AUTOMATION.md).
+Vòng research: keyword/dork đa ngôn ngữ → nguồn gốc → code/PoC/trace/protocol → related links tối đa ba cạnh → chống trùng lineage → chấm điểm hoài nghi → cập nhật đồng bộ. Xem [roadmap](docs/RE_CATALOG_ROADMAP.md), [watchlist](WATCHLIST.md) và [hướng dẫn bảo trì công khai](docs/AUTOMATION.md).

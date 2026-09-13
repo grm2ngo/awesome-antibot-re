@@ -75,7 +75,7 @@ Coverage is driven by technical relevance and information gaps, not a ranking of
 
 ## Latest regional pass
 
-[Latest-only review](reports/2026-09-13-latest-only.md) records the current catalogue boundary and remaining queue. Kanxue implementation threads were partially read; Viblo remained directory-only; the Russian-language Reverse4You forum and GitHub Following reads failed. Searches aimed at Vietnamese and Polish sources did not establish an eligible original. These are coverage gaps, not claims that a community lacks useful work.
+[Latest review](reports/2026-09-13-latest-only.md) records the catalogue boundary and remaining queue. Kanxue implementation threads were partially read; Viblo remained directory-only; the Russian-language Reverse4You forum was not established as an eligible source. Searches aimed at Vietnamese and Polish sources did not establish an eligible original. These are coverage gaps, not claims that a community lacks useful work. Profile pages and follower lists are discovery-only, never evidence.
 
 ## Approved expansion
 
