@@ -331,5 +331,45 @@
     "child_read": true,
     "inspection_scope": "Read v1.1.1 README, tree, encryption implementation and validity fixture; bundle provenance and exact independent equivalence remain unverified.",
     "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/tiagozip/cap",
+    "child_url": "https://github.com/tiagozip/cap/releases/tag/standalone%403.1.11",
+    "relation": "release-status",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Confirmed release standalone@3.1.11 was published 2026-09-04 at commit e02138579482c711ee0bb79c7be3486fe0bf3e84; release recency does not establish PoW effectiveness.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/tiagozip/cap",
+    "child_url": "https://github.com/tiagozip/cap/pull/291",
+    "relation": "independent-critique",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read contributor analysis of reproducible layout false positives, bounded browser test claims and explicit warning that fixed geometry can be shimmed. PR remains open and its runtime results apply to an unmerged branch, not the released main tree.",
+    "independent_corroboration": true
+  },
+  {
+    "parent_url": "https://github.com/tiagozip/cap/pull/291",
+    "child_url": "https://github.com/tiagozip/cap/blob/45b9d0735738e1e6748cef7738d744c51460d012/core/src/instrumentation.js",
+    "relation": "code-artifact",
+    "depth": 2,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read proposed geometry probe, retry and tolerance changes; fixed geometry remains simulable and the branch is not current released code.",
+    "independent_corroboration": true
+  },
+  {
+    "parent_url": "https://github.com/tiagozip/cap",
+    "child_url": "https://trycap.dev/guide/capjs-core",
+    "relation": "current-documentation",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read current challenge formats, SHA-256 and RSW parameters, verifier failure modes and opt-in nonce consumption. Documentation is primary-source evidence, not an independent security result.",
+    "independent_corroboration": false
   }
 ]

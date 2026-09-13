@@ -86,3 +86,14 @@ The obsolete GeeTest 7.8.1 lead was removed from the active watchlist immediatel
 2. Trace DataDome fixture lineage to an immutable bundle and independently compare exact encrypt/decrypt output.
 3. Continue regional original-code search for Kakao/LINE, Qiita/Zenn, Kanxue and Vietnamese communities.
 4. Seek a current PerimeterX/HUMAN analysis with a public bundle/trace and method documentation, excluding storefronts.
+
+## Cap PoW follow-up — 2026-09-13
+
+This pass followed the active Cap lead from the current release to the pinned core verifier, tests, current documentation and an independent contributor's open instrumentation correction. No catalogue promotion or `working` claim was made.
+
+- **Decision — hold, 84/100.** Scope 4, depth 5, evidence 4, distinctiveness 4, documentation 4. Cap is a concrete, current CAPTCHA/PoW reference implementation, but it is not itself an RE case and therefore only fits the supporting lane. The released core exposes SHA-256 prefix matching, bounded challenge count/size/difficulty, signed challenge metadata, optional one-time nonce consumption, RSW parameters and reproducible maintainer fixtures.
+- **Independent critique is useful but bounded.** PR #291, opened by a separate contributor, demonstrates false positives from zero-sized iframe layout and zoom rounding, adds regression cases, and explicitly states that fixed geometry can be simulated by a DOM shim. Its author reports 101 core tests, 38 widget tests and additional Chromium/Firefox solves, while excluding Safari, physical mobile devices and already-failing obfuscation levels 8–9. The PR is still open; these self-reported results belong to commit `45b9d0735738e1e6748cef7738d744c51460d012`, not released `main`, and are not recorded as this catalogue's runtime test.
+- **Documentation inconsistency.** The pinned core README describes `tokenKey` as `id:HMAC(secret)`, while released `src/index.js` and the current guide derive the verifier token component with SHA-256. This does not invalidate the PoW verifier, but it prevents a top documentation score and should be resolved before promotion.
+- **PoW gate status.** Algorithm, parameters, verifier and maintainer test vectors are present. Missing pieces are a public reproduction against the released commit and review evidence specifically covering the released PoW/replay path. The project therefore remains an active lead rather than being promoted merely because its release is recent.
+
+Next: reproduce the small released SHA-256 fixture in a pinned environment, record expected/actual output, then inspect the RSW verifier separately. Do not generalize a computational-cost mechanism into proof of a human or copy unmerged instrumentation results onto the release.
