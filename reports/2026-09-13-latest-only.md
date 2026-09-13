@@ -37,7 +37,7 @@ The latest observed run before this change was [push run 34716143317](https://gi
 
 ## Next queue
 
-Kakao DKAPTCHA transcript/slides; exact current Japanese code articles; Kanxue signing artifacts; Vietnamese implementation RE; then current DataDome, Kasada, PerimeterX/HUMAN and hCaptcha leads with public artifacts. GitHub Following remains unused until the connector returns the real public list.
+Kakao DKAPTCHA transcript/slides; exact current Japanese code articles; Vietnamese implementation RE; then current DataDome, Kasada, PerimeterX/HUMAN and hCaptcha leads with public artifacts. GitHub Following remains unused until the connector returns the real public list.
 
 ## Deep discovery review — 2026-09-13
 
@@ -66,7 +66,7 @@ No candidate was added to README or SUPPORTING.md. The catalogue remains 4 RE to
 1. Reproduce Cap's pinned verifier fixtures and inspect the v2 RSW path without claiming human verification.
 2. Build benign pinned fixtures for JSHookMCP's JSVMP and WASM paths; quantify observer effects.
 3. Seek current original code from Kakao/LINE, Qiita/Zenn and Vietnamese public security communities, not tag pages.
-4. Complete Kanxue signing provenance, then rotate to current DataDome, Kasada and PerimeterX/HUMAN artifacts.
+4. Rotate to current DataDome, Kasada and PerimeterX/HUMAN artifacts.
 
 ## Vendor implementation rotation — 2026-09-13
 
@@ -97,3 +97,11 @@ This pass followed the active Cap lead from the current release to the pinned co
 - **PoW gate status.** Algorithm, parameters, verifier and maintainer test vectors are present. Missing pieces are a public reproduction against the released commit and review evidence specifically covering the released PoW/replay path. The project therefore remains an active lead rather than being promoted merely because its release is recent.
 
 Next: reproduce the small released SHA-256 fixture in a pinned environment, record expected/actual output, then inspect the RSW verifier separately. Do not generalize a computational-cost mechanism into proof of a human or copy unmerged instrumentation results onto the release.
+
+## Kanxue signing scope check — 2026-09-13
+
+The original 2026-09-04 Kanxue article was read beyond its signing summary. It is a technically substantial Android reverse-engineering write-up: `/proc/pid/mem` DEX recovery, header repair, HMAC-SHA256 and alternate request-signing reconstruction, plus an ART/Vector unpacking path against a protected 51job application. The public body contains formulas, class/method names and Python-level reconstruction detail.
+
+It nevertheless fails this repository's first gate. The article establishes ordinary application API signing under an Android packer/VMP; it does not establish an anti-bot, CAPTCHA, browser challenge or abuse-detection target. The later patch/code portion is gated, and the two outbound framework links could not be resolved publicly, so the described full-unpack path also lacks a directly inspectable artifact lineage here. Technical sophistication does not substitute for scope fit.
+
+Decision: remove the lead from the active watchlist, do not score it toward the catalogue and do not retain a generic mobile-signing queue. The reference edge remains only as a documented rejected discovery path so future searches do not re-add the same article based on its title.

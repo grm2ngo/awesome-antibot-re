@@ -147,9 +147,9 @@
     "child_url": "https://bbs.kanxue.com/thread-292866.htm",
     "relation": "directory-discovery",
     "depth": 1,
-    "observed_at": "2026-09-12",
+    "observed_at": "2026-09-13",
     "child_read": true,
-    "inspection_scope": "Read introduction and signing/serialization sections; not a complete article/code review.",
+    "inspection_scope": "Read the full publicly accessible technical body: Android packer/VMP memory dumping, 51job app request signing and Python reconstruction. No anti-bot, CAPTCHA or browser-challenge purpose was evidenced; the later patch/code section and outbound framework links were gated or unresolved.",
     "independent_corroboration": false
   },
   {
