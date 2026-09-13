@@ -4,7 +4,7 @@
 
 Catalogue chọn lọc **dựa trên bằng chứng** để phân tích implementation anti-bot/CAPTCHA: AST/IR JavaScript, deobfuscation, hook browser engine, sensor/signing, fingerprint TLS/HTTP, predicate detection và challenge tính toán.
 
-[English](README.md) · [Policy](CURATION.md) · [Nguồn](SOURCES.md) · [Ledger](data/resources.json) · [Báo cáo mới nhất](reports/2026-09-13-approved-expansion.md)
+[English](README.md) · [Policy](CURATION.md) · [Nguồn](SOURCES.md) · [Ledger](data/resources.json) · [Báo cáo mới nhất](reports/2026-09-13-metasec-review.md)
 
 Hiện có **4 công cụ RE và 9 tài nguyên hỗ trợ trực tiếp; 0 mục được gắn `runtime-tested`**.
 

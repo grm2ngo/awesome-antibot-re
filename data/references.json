@@ -137,10 +137,30 @@
     "child_url": "https://bbs.kanxue.com/thread-292935.htm",
     "relation": "directory-discovery",
     "depth": 1,
-    "observed_at": "2026-09-12",
+    "observed_at": "2026-09-13",
     "child_read": true,
-    "inspection_scope": "Read selected version, native-path and limitations sections; remaining body/replies pending.",
+    "inspection_scope": "Read the complete public body: Android 45.5.3 and SO hashes, MetaSec/TTNet call-chain hypotheses, native operation IDs, header offsets, failed Frida path, Unidbg claims and explicit unconfirmed items. Referenced code, binaries and traces are local paths, not public artifacts.",
     "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://bbs.kanxue.com/thread-292935.htm",
+    "child_url": "https://www.virustotal.com/gui/file/8864fdc3f8db88b685ad7037b8e69095048257a3a074ca81c9edcc2547eff15b/detection",
+    "relation": "sample-identity",
+    "depth": 2,
+    "observed_at": "2026-09-13",
+    "child_read": false,
+    "inspection_scope": "Search resolved the exact APK SHA-256 to a VirusTotal record, but the page required JavaScript and no sample bytes, analysis detail or reproducible artifact was read.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://bbs.kanxue.com/thread-292935.htm",
+    "child_url": "https://www.cnblogs.com/theseventhson/p/15161954.html",
+    "relation": "method-lineage",
+    "depth": 2,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Independent 2021 article shows an older MetaSec `50331649` native operation and the same signing-header family, plus failed standalone loading. It supports lineage only, not current Android 45.5.3 offsets, implementation or effectiveness.",
+    "independent_corroboration": true
   },
   {
     "parent_url": "https://bbs.kanxue.com/",
