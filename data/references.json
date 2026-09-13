@@ -223,6 +223,56 @@
     "independent_corroboration": false
   },
   {
+    "parent_url": "https://github.com/hoanglongggggggggg/DOUYIN-40.2.0_metasec-ml-vmp_reverse-engineering",
+    "child_url": "https://github.com/hoanglongggggggggg/DOUYIN-40.2.0_metasec-ml-vmp_reverse-engineering/blob/5acc6fc1b859451314d3a4db941df95c64a27e97/README.md",
+    "relation": "repository-documentation",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read the complete pinned README: Douyin 40.2.0 target, binary SHA-256, VMP map, offline signing claim, reproduction requirements and explicit lack of server-acceptance proof.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/hoanglongggggggggg/DOUYIN-40.2.0_metasec-ml-vmp_reverse-engineering/blob/5acc6fc1b859451314d3a4db941df95c64a27e97/README.md",
+    "child_url": "https://github.com/hoanglongggggggggg/DOUYIN-40.2.0_metasec-ml-vmp_reverse-engineering/blob/5acc6fc1b859451314d3a4db941df95c64a27e97/docs/01-metasec-ml-vmp.md",
+    "relation": "method-documentation",
+    "depth": 2,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read the complete VMP map: ELF identity, relocation-filled handler table, direct-threaded dispatch, 48-byte instructions, register model, opcode taxonomy and the stated boundary between VM emulation and full devirtualization.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/hoanglongggggggggg/DOUYIN-40.2.0_metasec-ml-vmp_reverse-engineering/blob/5acc6fc1b859451314d3a4db941df95c64a27e97/docs/01-metasec-ml-vmp.md",
+    "child_url": "https://github.com/hoanglongggggggggg/DOUYIN-40.2.0_metasec-ml-vmp_reverse-engineering/blob/5acc6fc1b859451314d3a4db941df95c64a27e97/tools/verify_metasec_ml.py",
+    "relation": "verification-code",
+    "depth": 3,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read the full LIEF/Capstone verifier. It checks exports, .text bounds, the claimed handler-table relocation count/range and disassembles fixed interpreter addresses, but requires the undistributed target SO and contains no bundled expected-output fixture.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/hoanglongggggggggg/DOUYIN-40.2.0_metasec-ml-vmp_reverse-engineering/blob/5acc6fc1b859451314d3a4db941df95c64a27e97/README.md",
+    "child_url": "https://github.com/hoanglongggggggggg/DOUYIN-40.2.0_metasec-ml-vmp_reverse-engineering/blob/5acc6fc1b859451314d3a4db941df95c64a27e97/docs/02-offline-signing.md",
+    "relation": "method-documentation",
+    "depth": 2,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read the complete offline-signing note: native operation map, Unidbg drive sequence, reported frameSign output, string-decrypt examples, dependency caveat and explicit non-validation of server acceptance.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/hoanglongggggggggg/DOUYIN-40.2.0_metasec-ml-vmp_reverse-engineering/blob/5acc6fc1b859451314d3a4db941df95c64a27e97/docs/02-offline-signing.md",
+    "child_url": "https://github.com/hoanglongggggggggg/DOUYIN-40.2.0_metasec-ml-vmp_reverse-engineering/tree/5acc6fc1b859451314d3a4db941df95c64a27e97/harness",
+    "relation": "implementation",
+    "depth": 3,
+    "observed_at": "2026-09-13",
+    "child_read": false,
+    "inspection_scope": "Resolved the pinned harness directory and its README/POM/source subtree, but did not read the Java implementation in this bounded pass; binary and live license are intentionally absent.",
+    "independent_corroboration": false
+  },
+  {
     "parent_url": "https://github.com/TheQmaks/awesome-web-reversing",
     "child_url": "https://github.com/vmoranv/jshookmcp",
     "relation": "discovery",
