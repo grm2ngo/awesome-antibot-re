@@ -201,5 +201,95 @@
     "child_read": false,
     "inspection_scope": "Opened repository landing page; source, version and license audit queued. Depth limit reached.",
     "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/TheQmaks/awesome-web-reversing",
+    "child_url": "https://github.com/vmoranv/jshookmcp",
+    "relation": "discovery",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Discovery seed only; repository metadata was not treated as technical verification. Read README and pinned implementation files.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/vmoranv/jshookmcp",
+    "child_url": "https://github.com/vmoranv/jshookmcp/blob/55e22b706d937c3c56f3b48b883b98b524d4166d/src/modules/deobfuscator/JSVMPDeobfuscator.ts",
+    "relation": "code-artifact",
+    "depth": 2,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read Babel-based VM detection and heuristic restoration pipeline; did not execute it or infer full devirtualization.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/vmoranv/jshookmcp",
+    "child_url": "https://github.com/j4k0xb/webcrack",
+    "relation": "dependency",
+    "depth": 2,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "JSHookMCP Deobfuscator wraps webcrack; existing curated webcrack record was not rescored.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/TheQmaks/awesome-web-reversing",
+    "child_url": "https://github.com/scrapfly/Antibot-Detector",
+    "relation": "discovery",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read current README, MAIN-world hook bridge, Akamai detector/interceptor, changelog and license.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/scrapfly/Antibot-Detector",
+    "child_url": "https://github.com/scrapfly/Antibot-Detector/blob/c1ad7486a9cf0f121736bd328796a1499e6ac573/sections/advanced/modules/akamai/akamai-interceptor.js",
+    "relation": "code-artifact",
+    "depth": 2,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read request interception and sensor_data capture code; did not test against a live vendor target.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/scrapfly/Antibot-Detector",
+    "child_url": "https://github.com/scrapfly/Antibot-Detector/blob/c1ad7486a9cf0f121736bd328796a1499e6ac573/detectors/antibot/detect-akamai.json",
+    "relation": "code-artifact",
+    "depth": 2,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Rule declares lastUpdated 2024-01-15; this prevented a current-vendor-accuracy claim.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/tiagozip/cap",
+    "child_url": "https://github.com/tiagozip/cap/blob/e02138579482c711ee0bb79c7be3486fe0bf3e84/core/src/index.js",
+    "relation": "code-artifact",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read SHA-256 prefix challenge generation, parameter bounds, verifier and replay callback; no local/runtime execution.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/tiagozip/cap",
+    "child_url": "https://github.com/tiagozip/cap/blob/e02138579482c711ee0bb79c7be3486fe0bf3e84/core/test/core.test.js",
+    "relation": "test-artifact",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read maintainer test fixtures for valid/invalid solutions, expiry, scope and replay; tests were not executed in this pass.",
+    "independent_corroboration": false
+  },
+  {
+    "parent_url": "https://github.com/xkcomeon/geetest_reverse",
+    "child_url": "https://github.com/xkcomeon/geetest_reverse/blob/67203ad9bd01a9074b7fd0b43082c47964d7c1a9/validate.py",
+    "relation": "code-artifact",
+    "depth": 1,
+    "observed_at": "2026-09-13",
+    "child_read": true,
+    "inspection_scope": "Read GeeTest 7.8.1 request, track and w-parameter reconstruction; README dates implementation to 2021.",
+    "independent_corroboration": false
   }
 ]
