@@ -56,7 +56,7 @@ Coverage is driven by technical relevance and information gaps, not a ranking of
 | [hCaptcha docs](https://docs.hcaptcha.com/) | en | vendor-docs | content-checked | Use documented protocol boundaries only as evidence for a concrete RE case; standalone integration guides are excluded. |
 | [PortSwigger Research](https://portswigger.net/research) | en | vendor-research | directory-checked | Only browser/protocol/instrumentation work directly relevant to scope; exclude unrelated vulnerability news. |
 | [Check Point Research](https://research.checkpoint.com/) | en | vendor-research | pending | Select original JavaScript/VM analysis with sample provenance; exclude generic product pages. |
-| [nullpt.rs](https://nullpt.rs/) | en | independent-blog | blocked | Nike-VM article reads failed on 2026-09-12; retry or find a legitimate author mirror. Older studies may qualify as snapshots. |
+| [nullpt.rs](https://nullpt.rs/) | en | independent-blog | blocked | Nike-VM article reads failed on 2026-09-12; retry only if a legitimate current author source is available. |
 | [GitLab](https://gitlab.com/) | en, ru, de, fr, es, pt | forge | pending | Resolve original project and public source; a mirror is not an independent resource. |
 | [Codeberg](https://codeberg.org/) | en, de, fr | forge | pending | Same repository gates as GitHub; avoid platform bias. |
 | [Gitee](https://gitee.com/) | zh-Hans | forge | pending | Establish upstream identity and license; distinguish original projects from mirrors. |
@@ -66,7 +66,7 @@ Coverage is driven by technical relevance and information gaps, not a ranking of
 ## Coverage discipline
 
 - Core lanes are searched at least every 7 days; all lanes at least every 28 days. A failed search is logged as a gap, not as proof no useful work exists.
-- Daily discovery budget: 60% recent topical work, 20% older/undated primary references, 20% new sources and neglected lanes. These are effort allocations, never acceptance quotas.
+- Daily discovery budget: 80% current topical work and 20% new sources/neglected lanes. These are effort allocations, never acceptance quotas.
 - Review concentration when one publisher supplies more than 25% of new accepted entries, or GitHub consumes more than 50% of discovery effort. Primary reference necessities can justify an explicit exception. GitHub is a host, not a single author.
 - Track topic, language, publisher, resource type, difficulty, browser/OS, stack, deployment model, license model, maturity and perspective. An apparent diversity improvement does not compensate for weak evidence.
 - Source promotion requires at least 3 inspected relevant resources from the past year, at least 2 original technical contributions, identifiable authorship, and correction/version practices. A source with too little evidence remains a seed; individual excellent articles can still pass.
@@ -75,4 +75,4 @@ Coverage is driven by technical relevance and information gaps, not a ranking of
 
 ## Latest regional pass
 
-[Scope and regional review](reports/2026-09-12-scope-and-regional-review.md) records the actual visited originals and remaining queue. Kanxue access recovered: two implementation threads were partially read, with holds. Habr originals and linked English fingerprinting research were inspected. Viblo remained directory-only; the Russian-language Reverse4You forum and GitHub Following reads failed. Searches aimed at Vietnamese and Polish sources did not establish an eligible original. These are coverage gaps, not claims that a community lacks useful work.
+[Latest-only review](reports/2026-09-13-latest-only.md) records the current catalogue boundary and remaining queue. Kanxue implementation threads were partially read; Viblo remained directory-only; the Russian-language Reverse4You forum and GitHub Following reads failed. Searches aimed at Vietnamese and Polish sources did not establish an eligible original. These are coverage gaps, not claims that a community lacks useful work.

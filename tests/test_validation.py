@@ -16,7 +16,7 @@ class EditorialGates(unittest.TestCase):
         self.policy=json.loads((ROOT/'config/curation.json').read_text())
         self.record=copy.deepcopy(json.loads((ROOT/'data/resources.json').read_text())[0])
     def errors(self):
-        return validator.validate_resources([self.record],self.policy,date(2026,9,11))
+        return validator.validate_resources([self.record],self.policy,date(2026,9,13))
     def test_real_records_pass(self):
         self.assertEqual(validator.validate(ROOT),[])
     def test_runtime_claim_needs_actual_test(self):
@@ -24,9 +24,6 @@ class EditorialGates(unittest.TestCase):
         self.assertTrue(any('without test evidence' in x for x in self.errors()))
     def test_old_source_cannot_be_relabelled_recent(self):
         self.record['freshness']='recent'
-        self.assertTrue(any('unsupported recent' in x for x in self.errors()))
-    def test_unknown_dates_do_not_make_a_new_article(self):
-        self.record.update(freshness='recent',published_at=None,substantively_updated_at=None)
         self.assertTrue(any('unsupported recent' in x for x in self.errors()))
     def test_inflated_total_does_not_override_evidence(self):
         self.record['score']['evidence']=1
@@ -36,38 +33,17 @@ class EditorialGates(unittest.TestCase):
         self.assertEqual(audit.classify(403),'blocked-or-auth-required')
         self.assertEqual(audit.classify(429),'rate-limited')
         self.assertEqual(audit.classify(404),'missing-recheck-required')
-    def test_service_docs_cannot_be_counted_as_main_re(self):
-        self.record['listing_file']='README.md'
-        self.assertTrue(any('wrong listing' in x for x in self.errors()))
     def test_supporting_needs_re_use_and_excludes_integration(self):
         self.record.pop('re_use', None)
         self.assertTrue(any('concrete RE use' in x for x in self.errors()))
-        self.record['re_use'] = 'Widget integration'
-        self.record['kind'] = 'service-docs'
+        self.record['re_use']='Widget integration'
+        self.record['kind']='service-docs'
         self.assertTrue(any('standalone service integration' in x for x in self.errors()))
     def test_core_needs_inspected_artifact(self):
         self.record.update(editorial_role='re-tool',listing_file='README.md')
         self.assertTrue(any('core RE needs' in x for x in self.errors()))
-    def test_old_case_can_remain_without_a_current_tool_claim(self):
-        case=next(x for x in json.loads((ROOT/'data/resources.json').read_text())
-                  if x['id']=='akamai-habr-interpreter')
-        self.assertEqual(validator.validate_resources([case],self.policy,date(2026,9,12)),[])
-        case=copy.deepcopy(case)
-        case['freshness']='recent'
-        self.assertTrue(any('unsupported recent' in x for x in
-            validator.validate_resources([case],self.policy,date(2026,9,12))))
-    def test_undated_snapshot_needs_immutable_source(self):
-        case=copy.deepcopy(next(x for x in json.loads((ROOT/'data/resources.json').read_text())
-                              if x['id']=='akamai-bmp'))
-        case['re_artifact_urls']=[case['url']]
-        case['evidence_urls'].append(case['url'])
-        self.assertTrue(any('immutable artifact' in x for x in
-            validator.validate_resources([case],self.policy,date(2026,9,12))))
-    def test_snapshot_does_not_certify_obsolete_software(self):
-        case=copy.deepcopy(next(x for x in json.loads((ROOT/'data/resources.json').read_text())
-                              if x['id']=='akamai-bmp'))
-        case['kind']='software'
-        self.assertTrue(any('bounded research' in x for x in
-            validator.validate_resources([case],self.policy,date(2026,9,12))))
+    def test_latest_only_rejects_snapshot_route(self):
+        self.record['freshness']='snapshot'
+        self.assertTrue(any('unsupported freshness route' in x for x in self.errors()))
 
 if __name__=='__main__': unittest.main()

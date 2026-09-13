@@ -112,13 +112,6 @@ def validate_resources(records, policy, today=None):
             errors.append(f'{name}: invalid ISO date')
         if item['freshness'] not in policy['freshness_routes']:
             errors.append(f'{name}: unsupported freshness route')
-        if item['freshness']=='snapshot':
-            if item['kind']!='research' or role!='case-study':
-                errors.append(f'{name}: snapshot is bounded research, not current tooling')
-            if not item.get('published_at') and not any(
-                re.search(r'/blob/[0-9a-f]{40}/',u) for u in item.get('re_artifact_urls',[])
-            ):
-                errors.append(f'{name}: undated snapshot needs an immutable artifact')
         if item['verification'] not in ('source-reviewed','code-reviewed','runtime-tested'):
             errors.append(f'{name}: unsupported verification level')
         if item['verification']=='code-reviewed':
@@ -145,8 +138,6 @@ def validate_markdown(root):
     for path in root.rglob('*.md'):
         if '.git' in path.parts: continue
         text=path.read_text(encoding='utf-8')
-        # The preserved old catalogue has obsolete historical anchors; no new links are added there.
-        if path.relative_to(root).as_posix()=='catalog/LEGACY.md': continue
         if len(re.findall(r'^```',text,re.M))%2: errors.append(f'{path.name}: unclosed fence')
         for target in re.findall(r'\[[^\]]*\]\(([^\s)]+)(?:\s+"[^"]*")?\)',text):
             if urlsplit(target).scheme or target.startswith('//'): continue

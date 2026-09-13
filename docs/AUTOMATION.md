@@ -1,21 +1,24 @@
-# Catalogue maintenance
+# Latest-only research and publication loop
 
-[Policy](../CURATION.md) · [Source atlas](../SOURCES.md)
+[Policy](../CURATION.md) · [Source atlas](../SOURCES.md) · [Active queue](../WATCHLIST.md)
 
-## Research passes
+## One run
 
-Read current main, policy, ledger, watchlist and latest report before discovery. Follow original code, articles and relevant references with the configured depth/page/query limits. Prefer underserved mechanisms and language lanes; preserve unresolved work. The owner has authorized supported updates. Promotions still require the policy's evidence and independent-review gates. Publish atomically on current main without force; use a ready PR if branch rules require one.
+1. Read current `main`, policy/config, listings, ledgers, watchlist and latest report.
+2. Pick underserved vendor/method/language/source lanes. Allocate roughly 70% of discovery to implementation RE.
+3. Search with precise multilingual keywords/dorks.
+4. Open the exact original; reject title-only pages, snippets, reposts, marketing and integration quickstarts.
+5. Inspect actual code, PoC, trace, protocol, verifier or dataset plus version/provenance.
+6. Follow relevant links breadth-first to depth three and at most ten children per page.
+7. Canonicalize URLs, deduplicate publisher/fork/translation lineage and score skeptically.
+8. Accept only current evidence meeting every policy gate. Delete stale or undocumented records; keep only an active lead with a concrete next step.
+9. Update README/SUPPORTING, ledgers, queue and report together.
+10. Run `python3 scripts/validate.py`, unit tests and a whitespace/diff check. Re-read current `main`, then publish an atomic non-force fast-forward commit.
 
-The repository is the durable research state. A configured interval does not establish a successful research run. Earlier documents describe different external schedules; do not infer which one is active from repository text. Inspect the task manager when schedule changes are requested. This scope cleanup changes no scheduler or workflow.
+## Truthful status
 
-## GitHub quality checks
+A configured schedule is not proof of execution. Inspect workflow runs for push, schedule and pull-request events, then inspect job steps/logs. Empty steps or a filtered-empty result is not green.
 
-`.github/workflows/quality.yml` validates the catalogue on changes and schedules an external-link audit at `43 1 * * *` UTC. Link responses do not refresh source reviews or establish that RE tools run successfully.
+A link response, recent commit or star count is not evidence that content is current, correct or working. Runtime claims require the test record defined by policy.
 
-Check **all workflow event types**, including push and schedule. A helper limited to pull-request events cannot establish that a push run is absent. Inspect the run and job steps; a configured cron or an empty filtered result is not a health signal. See the [latest observed failure](../reports/2026-09-12-scope-and-regional-review.md#workflow-health).
-
-## Failure and recovery
-
-Record blocked, throttled, missing or unreadable sources accurately; use public originals and backoff. Do not bypass access controls, retry writes repeatedly, buy services or create empty commits. Preserve partial evidence and the queue. A continuous maintenance task does not finish after one successful publication.
-
-A workflow that fails before any step starts has not validated the catalogue. Do not infer a billing, permission or YAML cause without evidence. Local validation and GitHub execution are reported separately.
+Use backoff for throttling. Never bypass access controls, buy services, invent GitHub Following contents, contact authors or create empty commits.

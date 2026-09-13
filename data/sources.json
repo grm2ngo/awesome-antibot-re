@@ -436,7 +436,7 @@
     "status": "blocked",
     "checked_at": "2026-09-12",
     "publisher_group": "nullpt.rs",
-    "selection_rule": "Inspect exact article, samples and captured version; older methods may qualify as snapshot studies.",
+    "selection_rule": "Inspect exact current article, code and sample provenance; blocked or old material is not retained.",
     "discovery_only": true,
     "observation": "Original Nike-VM parts 1 and 2 returned server errors; no article content inferred. This observation does not establish that the site is permanently unavailable."
   },

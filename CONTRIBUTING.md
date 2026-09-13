@@ -1,13 +1,13 @@
 # Contributing
 
-Read [the policy](CURATION.md). Add a resource because it teaches something concrete, not because it is popular or from an underrepresented country.
+Read [the policy](CURATION.md). Add a resource because it exposes a current anti-bot/CAPTCHA implementation or directly enables its inspection—not because it is popular.
 
-1. Check the main catalogue, watchlist and historical/migration files for duplicates.
-2. Open the original resource and record exact URLs, dates and what you inspected.
-3. Add an entry to `data/resources.json` with all evidence, scores, limitations and editorial role. Core RE entries need a target, method and inspected artifact; case studies also need sample/version scope. Mirror the description in its `listing_file`: README for core RE, SUPPORTING for directly useful inspection references, with a concrete `re_use`. Generic introductions, integration guides and unrelated security do not qualify.
-4. Record related-source edges in `data/references.json` when used. Keep translations under one origin.
-5. For old content, provide the freshness route, reason and next review date. For “working”, provide the actual dated test record.
+1. Check README, SUPPORTING, ledger and active watchlist for duplicates.
+2. Open the original source and inspect exact code/PoC/trace/protocol; record source date, version and URLs.
+3. Add a complete record to `data/resources.json`. Core RE needs target, method and artifact; a case also needs current sample/version. Supporting material needs a concrete `re_use`.
+4. Record used related-source edges in `data/references.json` and deduplicate forks, translations and reposts.
+5. Confirm current eligibility: update within 365 days or living project with current primary docs/status.
 6. Run `python3 scripts/validate.py` and `python3 -m unittest discover -s tests -v`.
-7. Submit a PR explaining benefit, primary evidence, limitations and checks. Disclose authorship/sponsorship. No marketing slogans or referral links.
+7. Submit the benefit, evidence, limitations and checks. Disclose authorship/sponsorship.
 
-Corrections and removals must explain what changed and preserve the previous decision in a dated report. If a link fails, distinguish blocked/rate-limited from dead. There is no minimum star count and no addition quota.
+Do not submit marketing, solver markets, generic integration, title-only links, unsupported “working” claims or code without methodological explanation. Removed material stays in Git history; the live tree contains only current accepted records and active leads.

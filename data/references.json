@@ -64,66 +64,6 @@
   },
   {
     "child_read": true,
-    "child_url": "https://github.com/arisune1337/akamai-bmp-research/blob/a97e5f51b335eb6dd1e6905040bf8cca42e99559/tools/disasm.js",
-    "depth": 1,
-    "independent_corroboration": false,
-    "inspection_scope": "Read the complete 3.6 KB linear opcode decoder, including unknown-opcode handling and operand-size dispatch; compared FUNC interpretation with README limitations. No runtime execution.",
-    "observed_at": "2026-09-12",
-    "parent_url": "https://github.com/arisune1337/akamai-bmp-research",
-    "relation": "repository-artifact"
-  },
-  {
-    "child_read": true,
-    "child_url": "https://github.com/OneWinged-ShunKaido/akamai-xp1m-teardown/blob/d9e0d34fb5b78bdfde67c4e5fa8755a15572fd7b/docs/index.md",
-    "depth": 1,
-    "independent_corroboration": false,
-    "inspection_scope": "Read abstract, target and layered-obfuscation explanation, section 5 backward slice and DOM-probe analysis, and reproducibility limitations. This is a document review, not engine code review.",
-    "observed_at": "2026-09-12",
-    "parent_url": "https://github.com/OneWinged-ShunKaido/akamai-xp1m-teardown",
-    "relation": "repository-artifact"
-  },
-  {
-    "child_read": true,
-    "child_url": "https://github.com/recurism/decapsula/blob/9db9ad646816eb0d978edcb80433aad35414f559/src/processing/flatten.rs",
-    "depth": 1,
-    "independent_corroboration": false,
-    "inspection_scope": "Inspected AbsVal representation, triplet loop, deferred forcing and reduction/depth limits in flatten.rs; did not audit the complete 32 KB module or end-to-end extraction.",
-    "observed_at": "2026-09-12",
-    "parent_url": "https://github.com/recurism/decapsula",
-    "relation": "repository-artifact"
-  },
-  {
-    "child_read": true,
-    "child_url": "https://github.com/juanfrilla/FamousRussianMarketplace/blob/917a0a56048e29e8dbf86a9da5594e8ab37775e7/js/ast-babel-deobfuscation/main.js",
-    "depth": 1,
-    "independent_corroboration": false,
-    "inspection_scope": "Read complete Babel pipeline driver: three transforms, metadata-stripped AST hashing, stage exports and ten-iteration cap. Read writeup sections on anti-debugging, selective tracing and reconstruction; did not inspect every VM handler.",
-    "observed_at": "2026-09-12",
-    "parent_url": "https://github.com/juanfrilla/FamousRussianMarketplace",
-    "relation": "repository-artifact"
-  },
-  {
-    "child_read": true,
-    "child_url": "https://github.com/juanfrilla/awswaf_ast/blob/005f2114f2e57aaf8738619b569f4b88fb83113d/main.js",
-    "depth": 1,
-    "independent_corroboration": false,
-    "inspection_scope": "Read the complete driver, plugin array, AST-hash convergence check, per-stage writes and ten-iteration cap; compared loaded plugins with README. Individual plugin implementations were not audited.",
-    "observed_at": "2026-09-12",
-    "parent_url": "https://github.com/juanfrilla/awswaf_ast",
-    "relation": "repository-artifact"
-  },
-  {
-    "child_read": true,
-    "child_url": "https://github.com/juanfrilla/trip_vm_reversed/blob/a692ec0a814c888f76b55ff75a048454b15694a2/js/vm_logged.js",
-    "depth": 1,
-    "independent_corroboration": false,
-    "inspection_scope": "Inspected browser-global stubs, commented Proxy/watch setup and selected arithmetic/bitwise logging sites in vm_logged.js. Did not audit all 104 KB, execute the VM or test the scraper.",
-    "observed_at": "2026-09-12",
-    "parent_url": "https://github.com/juanfrilla/trip_vm_reversed",
-    "relation": "repository-artifact"
-  },
-  {
-    "child_read": true,
     "child_url": "https://github.com/WhiteNightShadow/camoufox-reverse-mcp/blob/da5162a45b09901fa3bf78dc3893691d42f5a71a/docs/REAL_SOURCE_VALIDATION.md",
     "depth": 1,
     "independent_corroboration": false,
@@ -131,26 +71,6 @@
     "observed_at": "2026-09-12",
     "parent_url": "https://github.com/WhiteNightShadow/camoufox-reverse-mcp",
     "relation": "repository-artifact"
-  },
-  {
-    "child_read": true,
-    "child_url": "https://github.com/rastvl/akamai-deobfuscator-2.0",
-    "depth": 1,
-    "independent_corroboration": false,
-    "inspection_scope": "Linked repository README only; no implementation audit.",
-    "observed_at": "2026-09-12",
-    "parent_url": "https://habr.com/ru/articles/720588/",
-    "relation": "implementation"
-  },
-  {
-    "child_read": true,
-    "child_url": "https://habr.com/ru/articles/716434/",
-    "depth": 1,
-    "independent_corroboration": false,
-    "inspection_scope": "Read the original article in full: Playwright serialization hook, Babel AST constant/string/proxy/control-flow passes, browser-environment reconstruction, final Chrome 109 example and explicit detection warning.",
-    "observed_at": "2026-09-12",
-    "parent_url": "https://habr.com/ru/articles/720588/",
-    "relation": "previous-article"
   },
   {
     "parent_url": "https://github.com/CircuitSavage/cloudflare-turnstile-reversed",
@@ -210,76 +130,6 @@
     "observed_at": "2026-09-12",
     "child_read": true,
     "inspection_scope": "Read complete workflow; set +e means capture errors do not fail the run and may append sitekey=none.",
-    "independent_corroboration": false
-  },
-  {
-    "parent_url": "https://habr.com/ru/articles/716434/",
-    "child_url": "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/README.md",
-    "relation": "search-discovered-same-author-implementation",
-    "depth": 1,
-    "observed_at": "2026-09-12",
-    "child_read": true,
-    "inspection_scope": "Read the pinned README and repository tree. The implementation exposes matching AST transform families, but the retrieved article text did not visibly link it; same authorship is not independent corroboration.",
-    "independent_corroboration": false
-  },
-  {
-    "parent_url": "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/README.md",
-    "child_url": "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/deobfuscator/Deobfuscator.js",
-    "relation": "repository-artifact",
-    "depth": 2,
-    "observed_at": "2026-09-12",
-    "child_read": true,
-    "inspection_scope": "Inspected the parser/traversal setup and selected routines for constant evaluation, string recovery, proxy/object/logical transforms and the commented control-flow-flattening path. This is a scoped static read, not full audit or execution.",
-    "independent_corroboration": false
-  },
-  {
-    "parent_url": "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/README.md",
-    "child_url": "https://github.com/rastvl/cloudflare-main-challenge-deobfuscator/blob/c653ec47a10fef4def0a762ff5852decb8e31974/index.js",
-    "relation": "repository-artifact",
-    "depth": 2,
-    "observed_at": "2026-09-12",
-    "child_read": true,
-    "inspection_scope": "Read the complete 355-byte driver: it reads input/cf-main-challenge.js, invokes Deobfuscator.deobfuscate(), and writes output/deobfuscated_code.js. No code was executed.",
-    "independent_corroboration": false
-  },
-  {
-    "parent_url": "https://github.com/neuroradiology/InsideReCaptcha",
-    "child_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/README.md",
-    "relation": "repository-documentation",
-    "depth": 1,
-    "observed_at": "2026-09-12",
-    "child_read": true,
-    "inspection_scope": "Read complete wire-flow, bytecode, browser-signal, XTEA and limitation sections; README states the decompiler is hardcoded to the enc sample.",
-    "independent_corroboration": false
-  },
-  {
-    "parent_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/README.md",
-    "child_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/disasm.py",
-    "relation": "repository-artifact",
-    "depth": 2,
-    "observed_at": "2026-09-12",
-    "child_read": true,
-    "inspection_scope": "Inspected opcode handlers, encrypted-byte decoding, key/seed updates and XTEA-based byte stream decoding. No execution.",
-    "independent_corroboration": false
-  },
-  {
-    "parent_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/README.md",
-    "child_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/decomp.py",
-    "relation": "repository-artifact",
-    "depth": 2,
-    "observed_at": "2026-09-12",
-    "child_read": true,
-    "inspection_scope": "Inspected pseudo-JavaScript object classes, opcode handlers, function reconstruction and the hardcoded enc/model.js input path. No execution.",
-    "independent_corroboration": false
-  },
-  {
-    "parent_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/README.md",
-    "child_url": "https://github.com/neuroradiology/InsideReCaptcha/blob/5176f31a7dc87654bcf3e9fa98d62bd537bea32b/model.js",
-    "relation": "repository-artifact",
-    "depth": 2,
-    "observed_at": "2026-09-12",
-    "child_read": true,
-    "inspection_scope": "Read pinned model.js used as the decompiler's JavaScript model input; no execution or current endpoint comparison.",
     "independent_corroboration": false
   },
   {

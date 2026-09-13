@@ -1,7 +1,7 @@
 {
-  "version": "1.1",
-  "effective_date": "2026-09-12",
-  "scope": "Anti-bot/CAPTCHA implementation RE and directly supporting inspection methods; excludes standalone integration, usability surveys, generic automation and unrelated security.",
+  "version": "1.2",
+  "effective_date": "2026-09-13",
+  "scope": "Current anti-bot/CAPTCHA implementation RE and directly supporting inspection methods; excludes version-only/obsolete material, standalone integration, generic automation and unrelated security.",
   "fresh_window_days": 365,
   "accept_score": 85,
   "watch_score": 70,
@@ -50,8 +50,8 @@
     "daily_pages": 120,
     "daily_minutes": 30,
     "new_source_budget_percent": 20,
-    "undated_or_old_budget_percent": 20,
-    "fresh_budget_percent": 60,
+    "undated_or_old_budget_percent": 0,
+    "fresh_budget_percent": 80,
     "domain_parallelism": 2,
     "domain_delay_seconds": 2
   },
@@ -66,9 +66,7 @@
     "service-docs": 30,
     "software": 30,
     "research": 90,
-    "standard": 90,
-    "foundation": 180,
-    "historical": 180
+    "standard": 90
   },
   "publication": {
     "authorized_by_owner": true,
@@ -127,9 +125,7 @@
   },
   "freshness_routes": [
     "recent",
-    "living",
-    "foundation",
-    "snapshot"
+    "living"
   ],
-  "scope_revision": "2026-09-12-implementation-only"
+  "scope_revision": "2026-09-13-latest-only"
 }
